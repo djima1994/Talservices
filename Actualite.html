@@ -1,0 +1,4089 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="Blog Talservis : apprenez à booster votre business avec nos guides sur le SEO, l'e-commerce, le design UX/UI et le marketing digital. Conseils d'experts pour entrepreneurs togolais.">
+    <title>Blog Talservis : Conseils Experts en Création Web, SEO et E-commerce au Togo</title>
+    <meta name="description" content="Découvrez nos articles sur le développement web, le marketing digital, le design UX/UI et les stratégies e-commerce. Expertise Talservis.">
+    
+    <!-- Mêmes ressources que votre site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+
+
+
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog Talservis",
+        "description": "Conseils et expertises en marketing digital, développement web et design",
+        "url": "https://talservis.com/blog",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Talservis",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https://talservis.com/logo.png"
+            }
+        }
+        }
+    </script>
+
+
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'Montserrat': ['Montserrat', 'sans-serif'],
+                        'Inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+
+
+    <style>
+        
+        
+        .gradient-text {
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Header */
+        .header-transparent {
+            background-color: transparent;
+            transition: all 0.5s ease;
+        }
+        
+        .header-scrolled {
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        /* Animation des articles */
+        .blog-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .blog-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Pagination */
+        .pagination-item {
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-item:hover {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+        }
+        
+        /* Catégories */
+        .category-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .category-tag:hover {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Slider articles populaires */
+        .popular-slider {
+            scrollbar-width: none;
+        }
+        
+        .popular-slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Effets au survol */
+        .article-hover {
+            transition: all 0.4s ease;
+        }
+        
+        .article-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                order: 2;
+                margin-top: 3rem;
+            }
+            
+            .main-content {
+                order: 1;
+            }
+        }
+        
+        /* Animation de chargement */
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+        
+        .loading-shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 1000px 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        
+        /* Badge nouveauté */
+        .new-badge {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .new-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+            animation: shine 3s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-logo {
+            font-size: 2rem;
+            color: white;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .loading-logo {
+                font-size: 1.3rem;
+                color: white;
+                animation: pulse 2s ease-in-out infinite;
+            }
+        }
+
+
+
+
+
+
+        /* Supprimer les bordures arrondies de tous les boutons */
+        .btn,
+        .btn-primary,
+        .btn-secondary,
+        .btn-animated,
+        .learn-more-btn,
+        .filter-btn,
+        .nav-button,
+        .mobile-nav-link,
+        .mobile-dropdown-link {
+            border-radius: 0 !important;
+        }
+    </style>
+
+
+
+</head>
+
+<body class="bg-light">
+
+
+    <!-- <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo font-['Montserrat'] font-bold">Talservis</div>
+    </div> -->
+
+    <div class="loading-screen" id="loadingScreen">
+        <img 
+            src="Logo talservis/LOGO-blancs-04.png" 
+            alt="Talservis"
+            class="loading-logo-image"
+        >
+    </div>
+
+    <style>
+                .loading-logo-image{
+            width: 220px;
+            max-width: 80%;
+            height: auto;
+            object-fit: contain;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px){
+            .loading-logo-image{
+                width: 170px;
+            }
+        }
+
+        @media (max-width: 480px){
+            .loading-logo-image{
+                width: 140px;
+            }
+        }
+    </style>
+
+
+
+
+
+    <header class="header-transparent fixed top-0 w-full z-50 border-b border-transparent transition-all duration-500"
+        id="mainHeader">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="flex justify-between items-center h-16">
+                
+                
+                <!-- <a href="index.html" target="_blank" >
+                    <div class="flex items-center">
+                        <div class="font-['Montserrat'] text-2xl font-bold gradient-text">Talservis</div>
+                    </div>
+                </a> -->
+
+                <a href="index.html" class="flex items-center">
+                    <img 
+                        src="Logo talservis/LOGO-02-02.png" 
+                        alt="Talservis Logo" 
+                        class="site-logo"
+                    >
+                </a>
+
+                <!-- css logo -->
+                 <style>
+                    /* ===== LOGO HEADER ===== */
+
+                    .site-logo{
+                        width: auto;
+                        height: 42px;
+                        object-fit: contain;
+                        transition: all 0.3s ease;
+                    }
+
+                    .site-logo:hover{
+                        transform: scale(1.03);
+                    }
+
+                    /* Responsive */
+                    @media (max-width: 768px){
+                        .site-logo{
+                            height: 50px;
+                        }
+                    }
+
+                    @media (max-width: 480px){
+                        .site-logo{
+                            height: 40px;
+                        }
+                    }
+                </style>
+
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" target="_blank" class="nav-link text-gray-700 hover:text-primary font-medium">Accueil</a>
+                    <a href="a-propos.html" target="_blank" class="nav-link text-gray-700 hover:text-primary font-medium">A propos</a>
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 hover:text-primary font-medium flex items-center">
+                            Services
+                            <div class="w-4 h-4 flex items-center justify-center ml-1">
+                                <i
+                                    class="ri-arrow-down-s-line text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                            </div>
+                        </button>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white shadow-lg border border-gray-100 py-2">
+                            <a href="index.html" target="_blank"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Création
+                                de sites web</a>
+                            <a href="e-commerce.html" target="_blank"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">E-commerce</a>
+                            <a href="Conception-Graphique.html" target="_blank"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Conception
+                                graphique</a>
+                            
+                        </div>
+                    </div>
+
+                    
+                    <a href="Portfolio.html" target="_blank" class="nav-link text-gray-700 hover:text-primary font-medium">Portfolio</a>
+                    <a href="Actualite.html" class="nav-link text-gray-700 hover:text-primary font-medium">Actualité</a>
+
+
+
+                    <a href="https://api.whatsapp.com/send/?phone=%2B22897420145&text=Bonjour+Talservis+%21+Je+suis+intéressé%28e%29+par+votre+offre+de+site+web+gratuit.+Pouvez-vous+me+donner+plus+d%27informations+%3F&type=phone_number&app_absent=0"
+                        target="_blank"
+                        class="nav-link text-gray-700 font-medium bg-primary text-white px-4 py-1 hover:bg-primary/90 transition-all duration-300 after:hidden">
+                        Nous Contacter
+                    </a>
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <button class="md:hidden flex items-center justify-center w-8 h-8 transition-all duration-300"
+                    id="mobileMenuButton">
+                    <i class="ri-menu-line"></i>
+                    <i class="ri-close-line" style="display: none;"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <!-- <i class="ri-close-line"></i> -->
+        </button>
+        <div class="mobile-menu-container">
+            <nav class="mobile-nav">
+                <a href="index.html" target="_blank" class="mobile-nav-link">Accueil</a>
+                <a href="a-propos.html" target="_blank" class="mobile-nav-link">A propos</a>
+                <div class="mobile-dropdown">
+                    <button class="mobile-nav-link flex items-center justify-center gap-2" id="mobileServicesButton">
+                        Services <i class="ri-arrow-down-s-line text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="index.html" target="_blank" class="mobile-dropdown-link">Création de sites web</a>
+                        <a href="e-commerce.html" target="_blank" class="mobile-dropdown-link">E-commerce</a>
+                        <a href="Conception-Graphique.html" target="_blank" class="mobile-dropdown-link">Conception graphique</a>
+                        <!-- <a href="#wordpress" class="mobile-dropdown-link">WordPress</a> -->
+                    </div>
+                </div>
+
+                <a href="Portfolio.html" target="_blank" class="mobile-nav-link">Portfolio</a>
+                <a href="Actualite.html" class="mobile-nav-link">Actualité</a>
+                
+
+                
+
+
+                <a href="https://api.whatsapp.com/send/?phone=%2B22897420145&text=Bonjour+Talservis+%21+Je+suis+intéressé%28e%29+par+votre+offre+de+site+web+gratuit.+Pouvez-vous+me+donner+plus+d%27informations+%3F&type=phone_number&app_absent=0"
+                        target="_blank"
+                        class="nav-link text-gray-700 font-medium bg-primary text-white px-4 py-1 hover:bg-primary/90 transition-all duration-300 after:hidden">
+                        Nous Contacter
+                    </a>
+            </nav>
+        </div>
+    </div>
+
+
+    <style>
+        /* ===== SOLUTION PROFESSIONNELLE AVANCÉE MENU MOBILE ===== */
+
+        /* Header */
+        .header-transparent {
+            background-color: transparent;
+            transition: background-color 0.5s ease;
+        }
+
+        .header-scrolled {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Menu Mobile Overlay - ESPACEMENT RÉDUIT */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding-top: 100px;
+            /* ESPACEMENT RÉDUIT entre header et menu */
+        }
+
+        .mobile-menu-open {
+            opacity: 1 !important;
+            display: block !important;
+        }
+
+        .mobile-menu-container {
+            position: relative;
+            height: calc(100% - 100px);
+            /* Ajustement hauteur */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Alignement en haut */
+            align-items: center;
+            padding: 4rem 2rem;
+            /* Padding réduit */
+            overflow-y: auto;
+            /* Scroll si nécessaire */
+        }
+
+        /* Bouton Fermeture */
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            /* Position ajustée */
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            z-index: 30000;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu-open .mobile-menu-close {
+            opacity: 1;
+            z-index: 30000;
+        }
+
+        /* Navigation Mobile - CENTRAGE PARFAIT */
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            /* Espacement réduit */
+            width: 100%;
+            max-width: 280px;
+            margin-top: 2rem;
+            /* Marge depuis le haut */
+        }
+
+        .mobile-nav-link {
+            font-size: 1.2rem;
+            /* Taille légèrement réduite */
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            /* Padding réduit */
+            border-radius: 0 !important;
+            transition: all 0.3s ease;
+            transform: translateY(15px);
+            /* Animation réduite */
+            opacity: 0;
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+
+        .mobile-menu-open .mobile-nav-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Délais d'animation - ACCUEIL IMMOBILE */
+        .mobile-nav-link:nth-child(1) {
+            transition-delay: 0.1s;
+            transform: translateY(0) !important;
+            /* Accueil ne bouge pas */
+        }
+
+        .mobile-nav-link:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .mobile-nav-link:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-nav-link:nth-child(4) {
+            transition-delay: 0.25s;
+        }
+
+        .mobile-nav-link:nth-child(5) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-nav-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        /* ===== DROPDOWN MOBILE AMÉLIORÉ ===== */
+        .mobile-dropdown {
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .mobile-dropdown-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            padding: 0rem;
+            background: rgba(249, 250, 251, 0.9);
+            border-radius: 0 !important;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            transform-origin: top;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* DROPDOWN ACTIF - SEUL LE BAS BOUGE */
+        .mobile-dropdown.active .mobile-dropdown-content {
+            max-height: 180px;
+            transform: scaleY(1);
+        }
+
+        .mobile-dropdown-link {
+            font-size: 0.95rem;
+            color: #4b5563;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0 !important;
+            transition: all 0.2s ease;
+            text-align: center;
+            display: block;
+        }
+
+        .mobile-dropdown-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        /* ===== CORRECTION BOUTON MENU ===== */
+        #mobileMenuButton {
+            display: none;
+            width: 32px;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10001;
+            background: none;
+            border: none;
+            cursor: pointer;
+            perspective: 100px; /* Ajouté pour l'animation 3D */
+        }
+
+        /* ===== ANIMATION AVANCÉE HAMBURGER → CROIX ===== */
+        #mobileMenuButton .ri-menu-line,
+        #mobileMenuButton .ri-close-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 1.5rem;
+            color: #333;
+            transform-style: preserve-3d;
+        }
+
+        /* État initial hamburger */
+        #mobileMenuButton .ri-menu-line {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) scale(1);
+            filter: blur(0px);
+        }
+
+    
+
+        /* Animation ouverture - Hamburger disparaît en tournant */
+        .mobile-menu-open ~ header #mobileMenuButton .ri-menu-line {
+            opacity: 0;
+            transform: translate(-50%, -50%) rotateX(-90deg) rotateY(-90deg) scale(0.3);
+            filter: blur(2px);
+        }
+
+        /* Animation ouverture - Croix apparaît en tournant */
+        .mobile-menu-open ~ header #mobileMenuButton .ri-close-line {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) scale(1);
+            filter: blur(0px);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Effet 3D sur le bouton */
+        #mobileMenuButton:hover {
+            transform: translateY(-2px);
+        }
+
+        #mobileMenuButton:active {
+            transform: translateY(1px) scale(0.95);
+        }
+
+        /* Affichage responsive */
+        @media (max-width: 767px) {
+            #mobileMenuButton {
+                display: flex !important;
+            }
+
+            .hidden.md\:flex {
+                display: none !important;
+            }
+
+            /* Ajustements mobiles supplémentaires */
+            .mobile-menu-overlay {
+                padding-top: 80px;
+                /* Encore plus réduit sur mobile */
+            }
+
+            .mobile-menu-container {
+                height: calc(100% - 80px);
+                padding: 0.5rem 1rem;
+            }
+
+            .mobile-nav {
+                gap: 0rem;
+                margin-top: 1.5rem;
+            }
+
+            .mobile-nav-link {
+                font-size: 1.2rem;
+                padding: 0.7rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mobileMenuButton {
+                display: none !important;
+            }
+
+            .hidden.md\:flex {
+                display: flex !important;
+            }
+        }
+
+        /* Styles pour le logo */
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation Desktop */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Desktop */
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .group:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Z-index du header */
+        #mainHeader {
+            z-index: 10000;
+        }
+    </style>
+
+    <script>
+        // ===== SOLUTION PROFESSIONNELLE AVANCÉE - GESTION DU MENU MOBILE =====
+
+        // Animation du header au scroll
+        const header = document.getElementById('mainHeader');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.remove('header-transparent');
+                header.classList.add('header-scrolled');
+                header.style.borderColor = 'rgba(229, 231, 235, 1)';
+            } else {
+                header.classList.add('header-transparent');
+                header.classList.remove('header-scrolled');
+                header.style.borderColor = 'transparent';
+            }
+        });
+
+        // Gestion du menu mobile
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileServicesButton = document.getElementById('mobileServicesButton');
+        const mobileDropdown = mobileServicesButton?.closest('.mobile-dropdown');
+
+        let isMenuOpen = false;
+
+        // Fonction pour changer l'icône
+        function toggleMenuIcon() {
+            const menuIcon = mobileMenuButton.querySelector('.ri-menu-line');
+            const closeIcon = mobileMenuButton.querySelector('.ri-close-line');
+
+            if (isMenuOpen) {
+                menuIcon.style.display = 'none';
+                closeIcon.style.display = 'block';
+            } else {
+                menuIcon.style.display = 'block';
+                closeIcon.style.display = 'none';
+            }
+        }
+
+        // Fonction pour ouvrir le menu
+        function openMobileMenu() {
+            mobileMenu.style.display = 'block';
+
+            // Forcer le reflow pour l'animation
+            void mobileMenu.offsetHeight;
+
+            mobileMenu.classList.add('mobile-menu-open');
+            document.body.style.overflow = 'hidden';
+
+            isMenuOpen = true;
+            toggleMenuIcon();
+        }
+
+        // Fonction pour fermer le menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('mobile-menu-open');
+
+            // Fermer le dropdown si ouvert
+            if (mobileDropdown?.classList.contains('active')) {
+                mobileDropdown.classList.remove('active');
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            }
+
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+
+            isMenuOpen = false;
+            toggleMenuIcon();
+        }
+
+        // Gestion du dropdown mobile - OPTIMISÉ
+        if (mobileServicesButton && mobileDropdown) {
+            mobileServicesButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isActive = mobileDropdown.classList.contains('active');
+                mobileDropdown.classList.toggle('active');
+
+                // Animation de la flèche
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) {
+                    icon.style.transform = isActive ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
+
+                // EMPÊCHER LE DÉPLACEMENT DES AUTRES ELEMENTS
+
+            });
+        }
+
+        // Événements
+        mobileMenuButton.addEventListener('click', () => {
+            if (!isMenuOpen) {
+                openMobileMenu();
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+        // Fermer le menu en cliquant sur un lien (sauf Services)
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link:not(#mobileServicesButton), .mobile-dropdown-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Petit delai pour voir l'animation
+                setTimeout(() => {
+                    closeMobileMenu();
+                }, 100);
+            });
+        });
+
+        // Fermer le menu en cliquant en dehors
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+
+        // Fermer avec Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMobileMenu();
+            }
+        });
+
+        // Initialiser l'icône
+        toggleMenuIcon();
+
+        // Empêcher le scroll quand le dropdown est ouvert
+        document.addEventListener('touchmove', (e) => {
+            if (isMenuOpen && mobileDropdown?.classList.contains('active')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+
+
+
+<main>
+
+
+
+    <!-- Hero Section Blog -->
+<style>
+    /* ===== BLOG HEADER STYLES ===== */
+    .blog-header-section {
+        background: #0112b3;
+        position: relative;
+        overflow: hidden;
+        padding: 8rem 0 6rem;
+        margin-top: 4rem;
+    }
+
+    .blog-badge {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+
+    .blog-badge-dot {
+        background: linear-gradient(135deg, #ffffff, #93c5fd);
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+    }
+
+    .blog-title {
+        font-size: clamp(4.5rem, 6.5vw, 6.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    .blog-subtitle {
+        font-size: clamp(0.9rem, 1.6vw, 1.3rem);
+        line-height: 1.2;
+        max-width: 600px;
+        margin-bottom: 2rem;
+        color: #ffffffbd;
+    }
+
+    .search-container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .search-input {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+
+    .search-input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .search-icon {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .category-tag {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.9);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .category-tag::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .category-tag:hover::before {
+        left: 100%;
+    }
+
+    .category-tag:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .category-tag.active {
+        background: white;
+        color: var(--primary);
+        border-color: white;
+        font-weight: 600;
+    }
+
+    /* Toast notification */
+    .search-toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        color: var(--primary);
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .search-toast.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1024px) {
+        .blog-header-section {
+            padding: 6rem 0 4rem;
+        }
+        
+        .category-tag {
+            padding: 0.75rem 1.25rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .blog-header-section {
+            padding: 5rem 0 5rem;
+            
+        }
+        
+        .blog-title {
+            font-size: 3rem;
+        }
+        
+        .blog-subtitle {
+            font-size: 1.2rem;
+        }
+        
+        /* GRID 3x3 POUR LES BOUTONS SUR MOBILE */
+        #categoryFilters {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        
+        .category-tag {
+            padding: 0.75rem 0.5rem;
+            font-size: 0.75rem;
+            text-align: center;
+            height: 100%;
+            min-height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+        }
+        
+        /* Première ligne (3 boutons) */
+        .category-tag[data-category="all"] {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        
+        .category-tag[data-category="Développement Web"] {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+        
+        .category-tag[data-category="E-commerce"] {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+        
+        /* Deuxième ligne (3 boutons) */
+        .category-tag[data-category="Marketing Digital"] {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+        
+        .category-tag[data-category="Design UX/UI"] {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+        
+        .category-tag[data-category="SEO"] {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .blog-title {
+            font-size: 2.5rem;
+        }
+        
+        .blog-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        #categoryFilters {
+            gap: 0.4rem;
+            padding: 0 0.5rem;
+        }
+        
+        .category-tag {
+            padding: 0.6rem 0.4rem;
+            font-size: 0.7rem;
+            min-height: 3.2rem;
+        }
+        
+        .category-tag[data-category="Développement Web"],
+        .category-tag[data-category="Marketing Digital"],
+        .category-tag[data-category="Design UX/UI"] {
+            font-size: 0.65rem;
+            line-height: 1.1;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #categoryFilters {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.4rem;
+            max-width: 100%;
+            padding: 0;
+        }
+        
+        .category-tag {
+            padding: 0.5rem 0.3rem;
+            font-size: 0.65rem;
+            min-height: 3rem;
+        }
+        
+        .category-tag[data-category="Développement Web"],
+        .category-tag[data-category="Marketing Digital"],
+        .category-tag[data-category="Design UX/UI"] {
+            font-size: 0.6rem;
+        }
+    }
+
+    /* Pour les très petits écrans (iPhone SE, etc.) */
+    @media (max-width: 375px) {
+        #categoryFilters {
+            gap: 0.3rem;
+        }
+        
+        .category-tag {
+            padding: 1.4rem 0.2rem;
+            font-size: 0.8rem;
+            min-height: 2.8rem;
+        }
+        
+        .category-tag[data-category="Développement Web"],
+        .category-tag[data-category="Marketing Digital"],
+        .category-tag[data-category="Design UX/UI"] {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+<!-- Section Header du Blog -->
+<section class="blog-header-section">
+    <div class="blog-header-overlay"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20 relative z-10">
+        <div class="text-center mb-6 md:mb-12 mt-16 md:mt-4">
+            <!-- Badge élégant -->
+            <div class="inline-flex items-center px-6 py-3 blog-badge ">
+                <div class="w-2 h-2 blog-badge-dot mr-3"></div>
+                <span class="font-semibold text-sm tracking-wider">Expertise Digitale</span>
+            </div>
+            
+            <!-- Titre principal -->
+            <h1 class="blog-title text-white mb-2">
+                Le Blog <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white">
+                    Talservis
+                </span>
+            </h1>
+            
+            <!-- Sous-titre -->
+            <p class="blog-subtitle text-white/90 mb-0 mx-auto">
+                Découvrez nos analyses expertes, conseils pratiques et tendances digitales 
+                pour booster votre présence en ligne et développer votre business.
+            </p>
+            
+            <!-- Barre de recherche -->
+            <div class="search-container">
+                <div class="relative">
+                    <input 
+                        type="text"
+                        id="searchInput"
+                        placeholder="Rechercher un article, une tendance, un conseil..."
+                        class="search-input w-full px-6 py-4 outline-none transition-all duration-300 text-lg"
+                    >
+                    <span class="absolute right-4 top-1/2 -translate-y-1/2 search-icon">
+                        <i class="ri-search-line text-xl"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Toast notification recherche -->
+            <div id="searchToast" class="search-toast">
+                <span id="searchToastMessage"></span>
+            </div>
+        </div>
+        
+        <!-- Catégories principales - Grille 3x3 sur mobile -->
+        <div class="flex flex-wrap justify-center gap-4 mb-8" id="categoryFilters">
+            <button data-category="all" class="category-tag px-6 py-3 font-medium active">
+                Tous les articles
+            </button>
+            <button data-category="Développement Web" class="category-tag px-6 py-3 font-medium">
+                Développement Web
+            </button>
+            <button data-category="E-commerce" class="category-tag px-6 py-3 font-medium">
+                E-commerce
+            </button>
+            <button data-category="Marketing Digital" class="category-tag px-6 py-3 font-medium">
+                Marketing Digital
+            </button>
+            <button data-category="Design UX/UI" class="category-tag px-6 py-3 font-medium">
+                Design UX/UI
+            </button>
+            <button data-category="SEO" class="category-tag px-6 py-3 font-medium">
+                SEO
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const searchToast = document.getElementById('searchToast');
+        const searchToastMessage = document.getElementById('searchToastMessage');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            if (searchTerm.length > 2) {
+                searchToastMessage.textContent = `Recherche : "${searchTerm}"`;
+                searchToast.classList.add('show');
+                
+                setTimeout(() => {
+                    searchToast.classList.remove('show');
+                }, 3000);
+            } else {
+                searchToast.classList.remove('show');
+            }
+        });
+        
+        const categoryTags = document.querySelectorAll('.category-tag');
+        categoryTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                categoryTags.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                console.log(`Filtrage par catégorie : ${category}`);
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        /* ===== TOAST SEARCH POPUP CENTRÉ ===== */
+        .search-toast {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            z-index: 9999;
+
+            min-width: 260px;
+            max-width: 360px;
+            padding: 16px 24px;
+
+            background: rgba(33, 150, 39, 0.72); /* vert pro */
+            backdrop-filter: blur(14px);
+
+            border-radius: 14px;
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.12),
+                0 4px 10px rgba(0, 0, 0, 0.05);
+
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+
+            opacity: 0;
+            pointer-events: none;
+
+            transition:
+                opacity 0.35s ease,
+                transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* visible */
+        .search-toast.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .search-toast.error {
+            background: rgba(206, 33, 33, 0.72); /* vert pro */
+        }
+
+        /* mobile responsive */
+        @media (max-width: 640px) {
+            .search-toast {
+                min-width: 80%;
+                padding: 14px 20px;
+            }
+        }
+
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Contenu Principal -->
+    <section class="py-12 bg-white" id="tous-blog">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Articles Principaux (2/3) -->
+                <div class="lg:col-span-2">
+
+
+                    <!-- Article Vedette -->
+                    <article class="blog-card visible mb-12 article-hover">
+                        <div class="relative overflow-hidden mb-6">
+
+                            <a href="Articles/SEO-2026.html">
+                                <img src="assets/Article SEO.avif" 
+                                    alt="Stratégie SEO 2024"  
+                                    class="w-full h-64 md:h-80 object-cover transform transition-transform duration-700 hover:scale-105" target="_blank">
+                            </a>
+                            <div class="absolute top-4 left-4">
+                                <span class="new-badge bg-primary text-white px-4 py-2 font-bold text-sm relative">
+                                    NOUVEAU
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 mb-4">
+                            <a href="Articles/SEO-2026.html" target="_blank" class="px-4 py-1 bg-primary/10 text-primary text-sm font-medium hover:bg-primary hover:text-white transition-colors">SEO</a>
+                            <span class="text-gray-500 text-sm"><i class="ri-calendar-line mr-1"></i> 15 Jan 2024</span>
+                            <span class="text-gray-500 text-sm"><i class="ri-time-line mr-1"></i> 8 min lecture</span>
+                        </div>
+                        
+                        <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4">
+                            <a href="Articles/SEO-2026.html" target="_blank" class="hover:text-primary transition-colors">
+                                Stratégie SEO 2024 : Les Nouvelles Règles de Google
+                            </a>
+                        </h2>
+                        
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Découvrez les dernières mises à jour de l'algorithme Google et comment adapter 
+                            votre stratégie SEO pour rester compétitif en 2024. Analyse complète avec cas pratiques.
+                        </p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
+                                    SC
+                                </div>
+                                <div>
+                                    <div class="font-medium text-dark">Simone Clark</div>
+                                    <div class="text-gray-500 text-sm">Expert SEO</div>
+                                </div>
+                            </div>
+                            <a href="Articles/SEO-2026.html" target="_blank" class="text-primary font-medium hover:text-secondary flex items-center gap-2">
+                                Lire l'article
+                                <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
+
+                    </article>
+
+                    <!-- Grille des articles -->
+                    <div id="articlesContainer" class="grid md:grid-cols-2 gap-8 mb-12">
+                        <!-- Article 1 -->
+                         
+                        
+
+                        <!-- Article 2 -->
+                        
+
+                        <!-- Article 3 -->
+                        
+                        <!-- Article 4 -->
+                        
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex justify-center items-center gap-2 mb-12" id="paginationContainer">
+                        <button class="pagination-item w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-primary">
+                            <i class="ri-arrow-left-s-line"></i>
+                        </button>
+                        <button class="pagination-item w-10 h-10 flex items-center justify-center border border-primary bg-primary text-white">1</button>
+                        <button class="pagination-item w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-primary">2</button>
+                        <button class="pagination-item w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-primary">3</button>
+                        <span class="px-2">...</span>
+                        <button class="pagination-item w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-primary">8</button>
+                        <button class="pagination-item w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-primary">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar (1/3) -->
+                <div class="sidebar">
+
+                    <!-- Newsletter -->
+                    <!-- Newsletter Fonctionnelle avec Formspree -->
+                    <!-- Newsletter Fonctionnelle avec Formspree -->
+                    <div class="bg-gradient-to-br from-primary to-secondary p-6 mb-8">
+                        <h3 class="text-xl font-bold text-white mb-4">Newsletter Expert</h3>
+                        <p class="text-white/90 mb-4 text-sm">
+                            Recevez nos analyses exclusives et conseils stratégiques directement dans votre boîte mail.
+                            <!-- <span class="block mt-1 text-white/70">✔ Confirmation immédiate envoyée</span> -->
+                        </p>
+                        
+                        <!-- Formulaire EmailJS -->
+                        <form id="emailjsForm" class="space-y-3">
+                            <input 
+                                type="email" 
+                                id="userEmail"
+                                placeholder="exemple@entreprise.com"
+                                required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/60 outline-none focus:bg-white/20 transition-colors duration-300"
+                            >
+                            
+                            <button 
+                                type="submit"
+                                id="emailjsSubmit"
+                                class="w-full bg-white text-primary px-4 py-3 font-medium hover:bg-gray-100 transition-all duration-300 active:scale-95 flex items-center justify-center gap-2"
+                            >
+                                <span id="submitText">S'inscrire gratuitement</span>
+                                <i class="ri-send-plane-line" id="submitIcon"></i>
+                            </button>
+                        </form>
+                        
+                        <div class="mt-4 text-white/70 text-xs">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="ri-shield-check-line"></i>
+                                <span>100% confidentialité garantie</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-spam-2-line"></i>
+                                <span>Vos données sont sécurisées</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- POPUP DE CONFIRMATION (caché par défaut) -->
+                    <div id="newsletterPopup" class="newsletter-popup">
+                        <div class="popup-overlay"></div>
+                        <div class="popup-container">
+                            <!-- Bouton fermeture -->
+                            <button class="popup-close" id="popupClose">
+                                <i class="ri-close-line"></i>
+                            </button>
+                            
+                            <!-- Contenu du popup -->
+                            <div class="popup-content">
+                                <!-- Animation de succès -->
+                                <div class="success-animation">
+                                    <div class="checkmark">✓</div>
+                                    <div class="confetti"></div>
+                                    <div class="confetti"></div>
+                                    <div class="confetti"></div>
+                                </div>
+                                
+                                <!-- Titre -->
+                                <h3 class="popup-title">🎉 Inscription Réussie !</h3>
+                                
+                                <!-- Message -->
+                                <p class="popup-message">
+                                    Merci de vous être inscrit à la newsletter <strong>Talservis</strong>.
+                                    <br>
+                                    Vous recevrez nos meilleurs conseils digitaux directement dans votre boîte mail.
+                                </p>
+
+
+                                <!-- DANS VOTRE POPUP, AJOUTEZ CE DIV -->
+                                <div id="emailConfirmationNote" class="email-confirmation-note" style="display: none;">
+                                    
+                                    <div class="user-email" id="userEmailDisplay" style="
+                                        background: #f8fafc;
+                                        padding: 10px 15px;
+                                        border-radius: 8px;
+                                        margin: 10px 0;
+                                        font-family: monospace;
+                                        color: #212122e0;
+                                        border: 1px solid #e5e7eb;
+                                        word-break: break-all;
+                                    "></div>
+                                    <p class="note-tip" style="color: #94a3b8; font-size: 0.9rem; margin-top: 10px;">
+                                        <i class="ri-information-line"></i>
+                                        Vérifiez votre boîte de réception (et vos spams)
+                                    </p>
+                                </div>
+
+
+
+
+
+                                
+                                <!-- Détails -->
+                                <!-- <div class="popup-details">
+                                    <div class="detail-item">
+                                        <i class="ri-mail-send-line"></i>
+                                        <span>Vérifiez votre email pour la confirmation</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="ri-calendar-line"></i>
+                                        <span>Premier conseil envoyé sous 24h</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="ri-shield-check-line"></i>
+                                        <span>100% sans spam - Désabonnement simple</span>
+                                    </div>
+                                </div> -->
+                                
+
+
+
+                                <!-- Bouton d'action -->
+                                <!-- <div class="popup-actions">
+                                    <button class="popup-action-btn primary" id="popupCloseBtn">
+                                        Continuer la lecture
+                                    </button>
+                                    <button class="popup-action-btn secondary" onclick="window.location.href='Actualite.html'">
+                                        Voir plus d'articles
+                                    </button>
+                                </div> -->
+                                
+
+
+
+                                <!-- Statut -->
+                                <div class="popup-status">
+                                    <div class="status-dots">
+                                        <span class="status-dot active"></span>
+                                        <span class="status-dot"></span>
+                                        <span class="status-dot"></span>
+                                    </div>
+                                    <p class="status-text">Préparation de votre première édition...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Catégories -->
+                    <div class="bg-white border border-gray-100 p-6 mb-8">
+                        <h3 class="text-xl font-bold text-dark mb-6 pb-4 border-b">Catégories</h3>
+
+                        <!-- Remplacer la liste par : -->
+                        <ul class="space-y-3" id="sidebarCategories">
+                            <li>
+                                <button data-category="Développement Web" class="w-full flex justify-between items-center text-gray-700 hover:text-primary transition-colors group category-sidebar-btn">
+                                    <span class="group-hover:font-medium text-left">Développement Web</span>
+                                    <span class="bg-gray-100 text-gray-600 px-2 py-1 text-xs">12</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button data-category="E-commerce" class="w-full flex justify-between items-center text-gray-700 hover:text-primary transition-colors group category-sidebar-btn">
+                                    <span class="group-hover:font-medium text-left">E-commerce</span>
+                                    <span class="bg-gray-100 text-gray-600 px-2 py-1 text-xs">8</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button data-category="Marketing Digital" class="w-full flex justify-between items-center text-gray-700 hover:text-primary transition-colors group category-sidebar-btn">
+                                    <span class="group-hover:font-medium text-left">Marketing Digital</span>
+                                    <span class="bg-gray-100 text-gray-600 px-2 py-1 text-xs">15</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button data-category="Design UX/UI" class="w-full flex justify-between items-center text-gray-700 hover:text-primary transition-colors group category-sidebar-btn">
+                                    <span class="group-hover:font-medium text-left">Design UX/UI</span>
+                                    <span class="bg-gray-100 text-gray-600 px-2 py-1 text-xs">9</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button data-category="SEO" class="w-full flex justify-between items-center text-gray-700 hover:text-primary transition-colors group category-sidebar-btn">
+                                    <span class="group-hover:font-medium text-left">SEO & Référencement</span>
+                                    <span class="bg-gray-100 text-gray-600 px-2 py-1 text-xs">11</span>
+                                </button>
+                            </li>
+                        </ul>
+                            
+
+                    </div>
+
+                    <!-- Articles Populaires -->
+                    <div class="bg-white border border-gray-100 p-6 mb-8">
+                        <h3 class="text-xl font-bold text-dark mb-6 pb-4 border-b">Articles Populaires</h3>
+                        <div class="space-y-4">
+                            
+                            <!-- a ne pas supprimer cette section -->
+
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="bg-white border border-gray-100 p-6">
+                        <h3 class="text-xl font-bold text-dark mb-6 pb-4 border-b">Mots-clés</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-700 text-sm hover:bg-primary hover:text-white transition-colors">SEO</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-700 text-sm hover:bg-primary hover:text-white transition-colors">E-commerce</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-700 text-sm hover:bg-primary hover:text-white transition-colors">Shopify</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-700 text-sm hover:bg-primary hover:text-white transition-colors">WordPress</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-700 text-sm hover:bg-primary hover:text-white transition-colors">UX Design</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-700 text-sm hover:bg-primary hover:text-white transition-colors">Marketing</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-700 text-sm hover:bg-primary hover:text-white transition-colors">Conversion</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-700 text-sm hover:bg-primary hover:text-white transition-colors">Performance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- style newsletter Popup -->
+
+    <style>
+        /* ===== POPUP NEWSLETTER ===== */
+
+        /* Overlay */
+        .newsletter-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .newsletter-popup.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Container du popup */
+        .popup-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 90%;
+            max-width: 500px;
+            background: white;
+            
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            animation: popupAppear 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes popupAppear {
+            0% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Bouton fermeture */
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: rgba(0, 0, 0, 0.15);
+            color: #333;
+            transform: rotate(90deg);
+        }
+
+        /* Contenu */
+        .popup-content {
+            padding: 40px 30px 30px;
+        }
+
+        /* Animation de succès */
+        .success-animation {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+        }
+
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            animation: checkmarkPop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .confetti:nth-child(2) {
+            top: -10px;
+            left: 35px;
+            animation: confettiFly 1s 0.3s ease-out forwards;
+        }
+
+        .confetti:nth-child(3) {
+            top: 20px;
+            right: -10px;
+            background: #ef4444;
+            animation: confettiFly 1s 0.5s ease-out forwards;
+        }
+
+        .confetti:nth-child(4) {
+            bottom: -10px;
+            left: 20px;
+            background: #10b981;
+            animation: confettiFly 1s 0.7s ease-out forwards;
+        }
+
+        @keyframes checkmarkPop {
+            0% { transform: scale(0); }
+            70% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes confettiFly {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Titre */
+        .popup-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Message */
+        .popup-message {
+            text-align: center;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        /* Détails */
+        .popup-details {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 8px 0;
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-item i {
+            color: #6366f1;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .detail-item span {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Actions */
+        .popup-actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .popup-action-btn {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .popup-action-btn.primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+        }
+
+        .popup-action-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        .popup-action-btn.secondary {
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
+        .popup-action-btn.secondary:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        /* Statut */
+        .popup-status {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .status-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            animation: dotPulse 1.5s infinite ease-in-out;
+        }
+
+        .status-dot.active {
+            background: #6366f1;
+        }
+
+        .status-dot:nth-child(2) { animation-delay: 0.2s; }
+        .status-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes dotPulse {
+            0%, 60%, 100% { opacity: 0.6; transform: scale(1); }
+            30% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .status-text {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            animation: textFade 2s infinite;
+        }
+
+        @keyframes textFade {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        /* Tablettes */
+        @media (max-width: 768px) {
+            .popup-container {
+                width: 95%;
+                max-width: 400px;
+            }
+            
+            .popup-content {
+                padding: 30px 20px 20px;
+            }
+            
+            .popup-title {
+                font-size: 1.5rem;
+            }
+            
+            .popup-message {
+                font-size: 1rem;
+            }
+            
+            .popup-actions {
+                flex-direction: column;
+            }
+            
+            .popup-action-btn {
+                width: 100%;
+            }
+        }
+
+        /* Mobiles */
+        @media (max-width: 480px) {
+            .popup-container {
+                width: 95%;
+                
+            }
+            
+            .popup-content {
+                padding: 25px 15px 15px;
+            }
+            
+            .checkmark {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+            
+            .success-animation {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .popup-title {
+                font-size: 1.3rem;
+            }
+            
+            .popup-message {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+            
+            .popup-details {
+                padding: 15px;
+            }
+            
+            .detail-item {
+                font-size: 0.9rem;
+            }
+            
+            .detail-item i {
+                font-size: 1rem;
+            }
+            
+            .popup-action-btn {
+                padding: 12px 16px;
+                font-size: 0.95rem;
+            }
+            
+            .popup-close {
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+                top: 15px;
+                right: 15px;
+            }
+        }
+
+        /* Très petits mobiles */
+        @media (max-width: 360px) {
+            .popup-container {
+                width: 98%;
+                max-height: 85vh;
+            }
+            
+            .popup-title {
+                font-size: 1.2rem;
+            }
+            
+            .detail-item {
+                font-size: 0.85rem;
+            }
+            
+            .popup-action-btn {
+                font-size: 0.9rem;
+                padding: 10px 14px;
+            }
+        }
+
+        /* Animation de fermeture */
+        .newsletter-popup.closing .popup-overlay {
+            animation: fadeOut 0.3s ease forwards;
+        }
+
+        .newsletter-popup.closing .popup-container {
+            animation: popupDisappear 0.3s ease forwards;
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        @keyframes popupDisappear {
+            from {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0;
+            }
+        }
+
+        /* Empêcher le scroll quand le popup est ouvert */
+        body.popup-open {
+            overflow: hidden;
+            padding-right: 15px; /* Pour éviter le décalage dû à la barre de scroll */
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+    <!-- style catégorie et pagination -->
+    <style>
+        /* Ajouter dans la section <style> */
+        .category-tag.active {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-color: #6366f1;
+        }
+
+        .category-sidebar-btn.active span:first-child {
+            color: #6366f1;
+            font-weight: 600;
+        }
+
+        .category-sidebar-btn.active span:last-child {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+        }
+
+
+
+        /* ===== CATÉGORIES DES ARTICLES (BADGES) ===== */
+
+        .article-category-btn {
+            display: inline-block;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff !important;
+
+            /* Dégradé bleu moderne */
+            background:  #3849e0ff; 
+
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+
+            transition: all 0.3s ease;
+        }
+
+        /* Hover élégant */
+        .article-category-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(99, 101, 241, 0.15);
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        }
+
+        /* Focus clavier (accessibilité) */
+        .article-category-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35);
+        }
+
+    </style>
+
+    <style>
+        /* Styles pour la pagination active */
+        .pagination-item.active {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-color: #6366f1 !important;
+        }
+
+        .pagination-item[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-item[disabled]:hover {
+            border-color: #e5e7eb !important;
+            background: transparent !important;
+            color: inherit !important;
+        }
+
+        /* Styles pour les boutons de catégorie des articles */
+        .article-category-btn {
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+    <!-- Section Articles Recommandés (Slider) -->
+    <section class="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="flex justify-between items-center mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-dark mb-2">
+                        Articles
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                            Recommandés
+                        </span>
+                    </h2>
+                    <p class="text-gray-600">Découvrez nos sélections d'articles les plus pertinents</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="slider-prev w-10 h-10 flex items-center justify-center bg-white border border-gray-200 hover:border-primary">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button class="slider-next w-10 h-10 flex items-center justify-center bg-white border border-gray-200 hover:border-primary">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slider Articles -->
+            <div class="relative">
+                <div class="popular-slider overflow-x-auto pb-8 scroll-smooth" id="articleSlider">
+                    <div class="flex gap-6 min-w-max">
+                        <!-- Article 1 -->
+                        <article class="w-80 flex-shrink-0 bg-white border border-gray-100 article-hover">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                                     alt="Marketing"
+                                     class="w-full h-48 object-cover transform transition-transform duration-700 hover:scale-105">
+                                <div class="absolute top-4 left-4">
+                                    <span class="px-3 py-1 bg-secondary text-white text-xs font-medium">WORDPRESS & DEV WEB</span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-dark mb-3">
+                                    <a href="Articles/WordPress-Development.html" target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors">
+                                        WordPress vs Custom Development
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4">
+                                    Quand choisir WordPress et quand opter pour un développement sur mesure.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-500 text-xs">11 min lecture</span>
+                                    <a href="Articles/WordPress-Development.html" target="_blank" rel="noopener noreferrer" class="text-secondary text-sm font-medium">Lire →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 2 -->
+                        <article class="w-80 flex-shrink-0 bg-white border border-gray-100 article-hover">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                                     alt="E-commerce"
+                                     class="w-full h-48 object-cover transform transition-transform duration-700 hover:scale-105">
+                                <div class="absolute top-4 left-4">
+                                    <span class="px-3 py-1 bg-primary text-white text-xs font-medium">GOOGLE A</span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-dark mb-3">
+                                    <a href="Articles/GA4.html" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+                                        Google Analytics 4 : Guide Complet
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4">
+                                    Maîtrisez la nouvelle version de Google Analytics pour vos analyses.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-500 text-xs">7 min lecture</span>
+                                    <a href="Articles/GA4.html" target="_blank" rel="noopener noreferrer" class="text-primary text-sm font-medium">Lire →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 3 -->
+                        <article class="w-80 flex-shrink-0 bg-white border border-gray-100 article-hover">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                                     alt="Performance"
+                                     class="w-full h-48 object-cover transform transition-transform duration-700 hover:scale-105">
+                                <div class="absolute top-4 left-4">
+                                    <span class="px-3 py-1 bg-secondary text-white text-xs font-medium">RESPONSIVE D</span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-dark mb-3">
+                                    <a href="Articles/Mobile-First.html" target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors">
+                                        AMobile First : L'Approche Essentielle
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4">
+                                    Pourquoi et comment adopter une approche mobile-first.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-500 text-xs">10 min lecture</span>
+                                    <a href="Articles/Mobile-First.html" target="_blank" rel="noopener noreferrer" class="text-secondary text-sm font-medium">Lire →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 4 -->
+                        <article class="w-80 flex-shrink-0 bg-white border border-gray-100 article-hover">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                                     alt="Design"
+                                     class="w-full h-48 object-cover transform transition-transform duration-700 hover:scale-105">
+                                <div class="absolute top-4 left-4">
+                                    <span class="px-3 py-1 bg-primary text-white text-xs font-medium">DESIGN</span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-dark mb-3">
+                                    <a href="#" class="hover:text-primary transition-colors">
+                                        Design System : Optimisez Votre Workflow
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4">
+                                    Mettez en place un design system pour gagner en cohérence et efficacité.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-500 text-xs">9 min lecture</span>
+                                    <a href="#" class="text-primary text-sm font-medium">Lire →</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Indicateurs de pagination slider -->
+                <div class="flex justify-center gap-2 mt-8" id="sliderIndicators">
+                    <div class="w-3 h-3 bg-primary rounded-full"></div>
+                    <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                    <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                    <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CTA Newsletter -->
+    <!-- CTA Newsletter -->
+    <!-- CTA Newsletter -->
+    <section class="py-16 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ne Ratez Aucun Conseil d'Expert
+            </h2>
+            <p class="text-xl text-white/90 mb-8">
+                Inscrivez-vous à notre newsletter pour recevoir nos meilleurs articles directement dans votre boîte mail.
+            </p>
+            
+            <!-- CHANGEMENT : id="newsletterCTAForm" au lieu de emailjsForm -->
+            <form id="newsletterCTAForm" class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                <input 
+                    type="email" 
+                    id="ctaEmail"  
+                    placeholder="Votre adresse email professionnelle"
+                    class="flex-1 px-6 py-4 bg-white/10 border border-white/20 text-white placeholder-white/60 outline-none focus:bg-white/20"
+                    required
+                >
+                <button 
+                    type="submit" 
+                    id="ctaSubmit"  
+                    class="bg-white text-primary px-8 py-4 font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+                >
+                    <span id="ctaSubmitText">S'abonner</span>  <!-- CHANGÉ -->
+                    <i id="ctaSubmitIcon" class="ri-send-plane-line"></i>  <!-- CHANGÉ -->
+                </button>
+            </form>
+            
+            <p class="text-white/70 text-sm mt-4">
+                +2 500 professionnels nous font déjà confiance
+            </p>
+        </div>
+    </section>
+    
+
+</main>    
+
+
+    <!-- Footer (identique à votre site) -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="font-['Pacifico'] text-2xl mb-4">Talservis</div>
+                    <p class="text-gray-400 mb-6">
+                        Agence digitale innovante spécialisée en création de sites web, design graphique et marketing
+                        digital.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-all">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-all">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-all">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Création de
+                                sites web</a>
+                        </li>
+                        <li><a href="e-commerce.html" target="_blank"
+                                class="hover:text-white transition-colors">E-commerce</a></li>
+                        <li><a href="#" target="_blank" class="hover:text-white transition-colors">WordPress</a></li>
+                        <li><a href="Conception-Graphique.html" target="_blank"
+                                class="hover:text-white transition-colors">Design graphique</a></li>
+                        <li><a href="#" target="_blank" class="hover:text-white transition-colors">Marketing digital</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Entreprise</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="Apropos.html" target="_blank" class="hover:text-white transition-colors">À
+                                propos</a></li>
+                        <li><a href="Portfolio.html" target="_blank"
+                                class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#" target="_blank" class="hover:text-white transition-colors">Équipe</a></li>
+                        <li><a href="#" target="_blank" class="hover:text-white transition-colors">Carrières</a></li>
+                        <li><a href="Actualite.html" target="_blank" class="hover:text-white transition-colors">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>123 Avenue Avédji Totsi Blimkomé</li>
+                        <li>00228 Lomé, Togo</li>
+                        <li>+228 97 42 01 45</li>
+                        <li>contact@talservis.fr</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Talservis. Tous droits réservés.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Politique de
+                        confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    
+
+    <script>
+        // Scripts pour le blog
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header au scroll
+            const header = document.getElementById('mainHeader');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.remove('header-transparent');
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.add('header-transparent');
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // Animation des cartes articles
+            const blogCards = document.querySelectorAll('.blog-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            blogCards.forEach(card => observer.observe(card));
+
+            // Slider articles recommandés
+            const slider = document.getElementById('articleSlider');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            const indicators = document.querySelectorAll('#sliderIndicators > div');
+            let currentSlide = 0;
+            const slideWidth = 320 + 24; // width + gap
+
+            function updateSlider() {
+                slider.scrollTo({
+                    left: currentSlide * slideWidth,
+                    behavior: 'smooth'
+                });
+                
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('bg-primary', index === currentSlide);
+                    indicator.classList.toggle('bg-gray-300', index !== currentSlide);
+                });
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < indicators.length - 1) {
+                    currentSlide++;
+                    updateSlider();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlider();
+                }
+            });
+
+            // Navigation par indicateurs
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlider();
+                });
+            });
+
+
+
+            // Effet de chargement simulé
+            setTimeout(() => {
+                document.querySelectorAll('.loading-shimmer').forEach(el => {
+                    el.classList.remove('loading-shimmer');
+                });
+            }, 1000);
+        });
+    </script>
+
+
+
+
+
+    <script id="loading-animation">
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.style.opacity = '0';
+                setTimeout(function () {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 3000);
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- Bouton Retour en Haut -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut de la page">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+
+    <style>
+            /* ===== BOUTON RETOUR EN HAUT ÉLÉGANT & PROFESSIONNEL ===== */
+
+        .back-to-top {
+            /* Position et apparence */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 9990;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.8);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Pas de bords arrondis */
+            border-radius: 0;
+            
+            /* Effets d'ombre élégants */
+            box-shadow: 
+                0 4px 20px rgba(99, 102, 241, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+                0 2px 10px rgba(0, 0, 0, 0.1);
+            
+            /* Pour centrer l'icône */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Effet de brillance */
+            overflow: hidden;
+        }
+
+        /* Effet de brillance animé */
+        .back-to-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: left 0.7s ease;
+        }
+
+        .back-to-top:hover::before {
+            left: 100%;
+        }
+
+        /* Bouton visible */
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Animation au hover */
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 8px 30px rgba(99, 102, 241, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                0 4px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        }
+
+        /* Animation au clic */
+        .back-to-top:active {
+            transform: translateY(-1px) scale(0.98);
+            transition: transform 0.1s ease;
+        }
+
+        /* Icône avec animation */
+        .back-to-top i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-top:hover i {
+            transform: translateY(-2px);
+        }
+
+        /* Effet de lueur externe */
+        .back-to-top::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(
+                circle at center,
+                rgba(99, 102, 241, 0.2) 0%,
+                transparent 70%
+            );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .back-to-top:hover::after {
+            opacity: 1;
+        }
+
+        /* Animation d'apparition progressive */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Animation de pulsation subtile */
+        @keyframes subtlePulse {
+            0%, 100% {
+                box-shadow: 
+                    0 4px 20px rgba(99, 102, 241, 0.3),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            }
+            50% {
+                box-shadow: 
+                    0 6px 25px rgba(99, 102, 241, 0.4),
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            }
+        }
+
+        .back-to-top.visible {
+            animation: 
+                fadeInUp 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+                subtlePulse 3s ease-in-out infinite;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        /* Desktop large */
+        @media (min-width: 1440px) {
+            .back-to-top {
+                bottom: 40px;
+                right: 40px;
+                width: 60px;
+                height: 60px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* Desktop moyen */
+        @media (max-width: 1439px) and (min-width: 1024px) {
+            .back-to-top {
+                bottom: 35px;
+                right: 35px;
+            }
+        }
+
+        /* Tablet landscape */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .back-to-top {
+                bottom: 30px;
+                right: 30px;
+                width: 52px;
+                height: 52px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Tablet portrait & Mobile landscape */
+        @media (max-width: 767px) and (min-width: 480px) {
+            .back-to-top {
+                bottom: 25px;
+                right: 25px;
+                width: 48px;
+                height: 48px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Mobile portrait */
+        @media (max-width: 479px) and (min-width: 375px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.2rem;
+            }
+            
+            /* Réduire les effets d'ombre sur très petit écran */
+            .back-to-top {
+                box-shadow: 
+                    0 3px 15px rgba(99, 102, 241, 0.25),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            }
+            
+            .back-to-top:hover {
+                box-shadow: 
+                    0 5px 20px rgba(99, 102, 241, 0.35),
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            }
+        }
+
+        /* Très petit mobile */
+        @media (max-width: 374px) {
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.1rem;
+            }
+            
+            /* Encore plus léger sur très petit écran */
+            .back-to-top {
+                box-shadow: 
+                    0 2px 10px rgba(99, 102, 241, 0.2),
+                    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            }
+        }
+
+        /* Pour les écrans très hauts (par exemple en mode paysage) */
+        @media (max-height: 500px) {
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Adaptation pour le mode sombre si jamais vous l'implémentez */
+        @media (prefers-color-scheme: dark) {
+            .back-to-top {
+                background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+                box-shadow: 
+                    0 4px 20px rgba(99, 102, 241, 0.4),
+                    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            }
+            
+            .back-to-top:hover {
+                box-shadow: 
+                    0 8px 30px rgba(99, 102, 241, 0.5),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            }
+        }
+
+        /* Pour les appareils avec préférence de mouvement réduit */
+        @media (prefers-reduced-motion: reduce) {
+            .back-to-top {
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            
+            .back-to-top,
+            .back-to-top i,
+            .back-to-top::before,
+            .back-to-top::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+
+
+
+    <script>
+        // ===== BOUTON RETOUR EN HAUT PROFESSIONNEL =====
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            
+            // Vérifier si le bouton existe
+            if (!backToTopButton) return;
+            
+            // Seuil d'apparition du bouton (en pixels)
+            const SCROLL_THRESHOLD = 300;
+            
+            // Durée de l'animation de scroll (en ms)
+            const SCROLL_DURATION = 800;
+            
+            // Fonction pour afficher/masquer le bouton
+            function toggleBackToTopButton() {
+                if (window.scrollY > SCROLL_THRESHOLD) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            }
+            
+            // Fonction pour le scroll smooth vers le haut
+            function scrollToTop() {
+                // Animation avec easing (easeInOutCubic)
+                const startPosition = window.scrollY;
+                const startTime = performance.now();
+                
+                function animateScroll(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / SCROLL_DURATION, 1);
+                    
+                    // Easing function: easeInOutCubic
+                    const easing = progress < 0.5 
+                        ? 4 * progress * progress * progress 
+                        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+                    
+                    window.scrollTo(0, startPosition * (1 - easing));
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animateScroll);
+                    } else {
+                        // Animation terminée
+                        backToTopButton.blur();
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Événements
+            window.addEventListener('scroll', toggleBackToTopButton);
+            backToTopButton.addEventListener('click', scrollToTop);
+            
+            // Vérifier l'état initial
+            toggleBackToTopButton();
+            
+            // Animation au clic avec feedback visuel
+            backToTopButton.addEventListener('mousedown', function() {
+                this.style.transform = 'translateY(-1px) scale(0.95)';
+            });
+            
+            backToTopButton.addEventListener('mouseup', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            backToTopButton.addEventListener('mouseleave', function() {
+                if (window.scrollY > SCROLL_THRESHOLD) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+            
+            // Support clavier (accessibilité)
+            backToTopButton.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    scrollToTop();
+                }
+            });
+            
+            // Pour les écrans tactiles
+            backToTopButton.addEventListener('touchstart', function() {
+                this.style.transform = 'translateY(-1px) scale(0.95)';
+            }, { passive: true });
+            
+            backToTopButton.addEventListener('touchend', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            }, { passive: true });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+<script>
+    // Système de gestion des articles avec filtrage et pagination
+    const articlesData = [
+        {
+            id: 1,
+            title: "Stratégie SEO 2024 : Les Nouvelles Règles de Google",
+            excerpt: "Découvrez les dernières mises à jour de l'algorithme Google et comment adapter votre stratégie SEO pour rester compétitif en 2024.",
+            category: "SEO",
+            categorySlug: "seo",
+            author: "Simone Clark",
+            date: "15 Jan 2024",
+            readTime: "8 min",
+            image: "assets/Article SEO.avif",
+            slug: "seo-2024",
+            featured: true,
+            tags: ["SEO", "Google", "Référencement", "Algorithme"]
+        },
+        {
+            id: 2,
+            title: "Les 10 Principes du Design qui Convertissent",
+            excerpt: "Découvrez comment un design réfléchi peut multiplier vos taux de conversion.",
+            category: "Design UX/UI",
+            categorySlug: "design-ux-ui",
+            author: "Marie Sanchez",
+            date: "12 Jan 2024",
+            readTime: "6 min",
+            image: "assets/Graphique.avif",
+            slug: "design-principes-conversion",
+            customLink: "Articles/Design.html",
+            featured: false,
+            tags: ["UX", "UI", "Design", "Conversion"]
+        },
+        {
+            id: 3,
+            title: "Shopify vs WooCommerce : Le Guide Complet 2024",
+            excerpt: "Comparaison détaillée pour choisir la meilleure solution e-commerce.",
+            category: "E-commerce",
+            categorySlug: "ecommerce",
+            author: "Alexandre Traoré",
+            date: "10 Jan 2024",
+            readTime: "10 min",
+            image: "assets/Shopify et woocommerce.avif",
+            slug: "shopify-vs-woocommerce",
+            customLink: "Articles/shopify-vs-woocommerce.html",
+            featured: false,
+            tags: ["E-commerce", "Shopify", "WooCommerce", "Comparaison"]
+        },
+        {
+            id: 4,
+            title: "Stratégie réseaux sociaux",
+            excerpt: "Comment développer une présence efficace sur les réseaux sociaux pour votre entreprise.",
+            category: "Développement Web",
+            categorySlug: "developpement-web",
+            author: "Alexandre Traoré",
+            date: "8 Jan 2024",
+            readTime: "7 min",
+            image: "assets/optimisation web.avif",
+            slug: "optimisation-performance-web",
+            customLink: "Articles/réseaux-sociaux.html",
+            featured: false,
+            tags: ["Performance", "Optimisation", "Web", "Chargement"]
+        },
+        {
+            id: 5,
+            title: "Optimisation Web : Passer de 3s à 0.8s de Chargement",
+            excerpt: "Techniques avancées pour améliorer les performances de votre site.",
+            category: "Marketing Digital",
+            categorySlug: "marketing-digital",
+            author: "Simone Clark",
+            date: "5 Jan 2024",
+            readTime: "9 min",
+            image: "assets/Stratégie Instagram.avif",
+            slug: "Optimisation-Web",
+            customLink: "Articles/Optimisation-Web.html",
+            featured: false,
+            tags: ["Instagram", "Marketing", "Leads", "Réseaux Sociaux"]
+        },
+        // Ajoutez plus d'articles pour tester la pagination
+        {
+            id: 6,
+            title: "WordPress vs Custom Development",
+            excerpt: "Quand choisir WordPress et quand opter pour un développement sur mesure.",
+            category: "WORDPRESS & DEV WEB",
+            categorySlug: "developpement-web",
+            author: "Alexandre Traoré",
+            date: "3 Jan 2024",
+            readTime: "11 min",
+            image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+            slug: "wordpress-vs-custom",
+            customLink: "Articles/WordPress-Development.html",
+            featured: false,
+            tags: ["WordPress", "Développement", "CMS"]
+        },
+        {
+            id: 7,
+            title: "Google Analytics 4 : Guide Complet",
+            excerpt: "Maîtrisez la nouvelle version de Google Analytics pour vos analyses.",
+            category: "Google A",
+            categorySlug: "marketing-digital",
+            author: "Simone Clark",
+            date: "2 Jan 2024",
+            readTime: "9 min",
+            image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+            slug: "google-analytics-4",
+            customLink: "Articles/GA4.html",
+            featured: false,
+            tags: ["Analytics", "Google", "Marketing"]
+        },
+        {
+            id: 8,
+            title: "Mobile First : L'Approche Essentielle",
+            excerpt: "Pourquoi et comment adopter une approche mobile-first en 2024.",
+            category: "Responsive D",
+            categorySlug: "design-ux-ui",
+            author: "Marie Sanchez",
+            date: "28 Dec 2023",
+            readTime: "7 min",
+            image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+            slug: "mobile-first-approach",
+            customLink: "Articles/Mobile-First.html",
+            featured: false,
+            tags: ["Mobile", "UX", "Design", "Responsive"]
+        }
+    ];
+
+    // Variables globales
+    let currentCategory = 'all';
+    let currentPage = 1;
+    const articlesPerPage = 4;
+    let searchQuery = '';
+
+
+
+    // Fonction pour créer le HTML d'un article
+    /* =========================
+    HTML ARTICLE
+    ========================= */
+    function createArticleHTML(article) {
+        const articleLink = article.customLink || `article/${article.slug}.html`;
+        const targetAttr = article.customLink ? 'target="_blank" rel="noopener noreferrer"' : '';
+        
+        return `
+        <article class="bg-white border border-gray-100">
+            <a href="${articleLink}" ${targetAttr}>
+                <img src="${article.image}" class="w-full h-48 object-cover">
+            </a>
+            <div class="p-6">
+                <button data-category="${article.categorySlug}"
+                    class="article-category-btn text-xs text-primary mb-2">
+                    ${article.category}
+                </button>
+                <h3 class="text-xl font-bold mb-2">
+                    <a href="${articleLink}" ${targetAttr}>${article.title}</a>
+                </h3>
+                <p class="text-gray-600 text-sm mb-4">${article.excerpt}</p>
+                <div class="text-xs text-gray-500">
+                    ${article.date} • ${article.readTime}
+                </div>
+            </div>
+        </article>
+        `;
+    }
+
+
+
+
+
+
+
+    // Fonction pour créer le HTML d'un article populaire
+    // Fonction pour créer le HTML d'un article populaire
+    function createPopularArticleHTML(article, index) {
+        // Liens personnalisés pour les 3 premiers articles
+        const articleSlug = (index === 0) 
+            ? 'Articles/SEO-2026.html' 
+            : (index === 1) 
+                ? 'Articles/Design.html'
+                : (index === 2) 
+                    ? 'Articles/shopify-vs-woocommerce.html'
+                    : `article/${article.slug}.html`;
+        
+        return `
+        <article class="flex gap-4 group">
+            <div class="w-16 h-16 flex-shrink-0 overflow-hidden">
+                <a href="${articleSlug}" target="_blank" rel="noopener noreferrer">
+                    <img src="${article.image}" 
+                        alt="${article.title}"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </a>
+            </div>
+            <div>
+                <h4 class="font-medium text-dark group-hover:text-primary transition-colors mb-1">
+                    <a href="${articleSlug}" target="_blank" rel="noopener noreferrer">${article.title}</a>
+                </h4>
+                <div class="flex items-center gap-2 text-gray-500 text-xs">
+                    <span>${article.date}</span>
+                    <span>•</span>
+                    <span>${article.readTime}</span>
+                </div>
+            </div>
+        </article>
+        `;
+    }
+
+    // Fonction pour obtenir les articles filtrés
+    function getFilteredArticles() {
+        if (currentCategory === 'all') {
+            return articlesData.filter(article => !article.featured);
+        }
+        return articlesData.filter(article => 
+            article.category === currentCategory && !article.featured
+        );
+    }
+
+
+
+
+
+
+    // Fonction pour afficher les articles
+    // Fonction pour afficher les articles
+    /* =========================
+    RENDER ARTICLES
+    ========================= */
+    function renderArticles() {
+        const container = document.getElementById('articlesContainer');
+        if (!container) return;
+
+        const filtered = getFilteredArticles();
+        const start = (currentPage - 1) * articlesPerPage;
+        const paginated = filtered.slice(start, start + articlesPerPage);
+
+        if (paginated.length === 0) {
+            container.innerHTML = `
+                <div class="col-span-2 text-center py-12">
+                    <p class="text-gray-500 text-lg">
+                        Aucun article ne correspond à votre recherche
+                    </p>
+                </div>`;
+            return;
+        }
+
+        container.innerHTML = paginated.map(createArticleHTML).join('');
+    }
+
+
+
+
+
+
+
+    /* =========================
+    FILTRAGE GLOBAL
+    ========================= */
+    function getFilteredArticles() {
+        return articlesData.filter(article => {
+            if (article.featured) return false;
+
+            const matchCategory =
+                currentCategory === 'all' ||
+                article.category === currentCategory ||
+                article.categorySlug === currentCategory;
+
+            const searchableText = `
+                ${article.title}
+                ${article.excerpt}
+                ${article.category}
+                ${article.tags.join(' ')}
+            `.toLowerCase();
+
+            const matchSearch =
+                searchQuery === '' ||
+                searchableText.includes(searchQuery);
+
+            return matchCategory && matchSearch;
+        });
+    }
+
+
+
+    /* =========================
+    PAGINATION
+    ========================= */
+    function updatePagination() {
+        const container = document.getElementById('paginationContainer');
+        if (!container) return;
+
+        const totalPages = Math.ceil(getFilteredArticles().length / articlesPerPage);
+        if (totalPages <= 1) {
+            container.innerHTML = '';
+            return;
+        }
+
+        let html = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            html += `
+                <button 
+                    class="px-4 py-2 border ${i === currentPage ? 'bg-primary text-white' : 'bg-white'}"
+                    onclick="goToPage(${i})">
+                    ${i}
+                </button>`;
+        }
+
+        container.innerHTML = html;
+    }
+
+    function goToPage(page) {
+        currentPage = page;
+        renderArticles();
+    }
+
+
+
+
+    /* =========================
+    RECHERCHE EN TEMPS RÉEL
+    ========================= */
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim().toLowerCase();
+        currentPage = 1;
+        renderArticles();
+        updatePagination();
+    });
+
+
+
+
+
+
+
+
+    /* =========================
+    RECHERCHE LIVE + NOTIFICATION
+    ========================= */
+    document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('searchInput');
+    const toast = document.getElementById('searchToast');
+    const toastMessage = document.getElementById('searchToastMessage');
+
+    let toastTimeout;
+
+    function showToast(message, type = 'success') {
+        clearTimeout(toastTimeout);
+
+        toast.className = `search-toast ${type}`;
+        toastMessage.innerHTML = message;
+
+        requestAnimationFrame(() => {
+            toast.classList.add('show');
+        });
+
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 5000);
+    }
+
+    searchInput.addEventListener('input', () => {
+        searchQuery = searchInput.value.trim().toLowerCase();
+        currentPage = 1;
+
+        const resultsCount = getFilteredArticles().length;
+
+        if (searchQuery.length > 1) {
+            if (resultsCount > 0) {
+                showToast(
+                    `🔍 <strong>${resultsCount}</strong> article(s) trouvé(s)`,
+                    'success'
+                );
+            } else {
+                showToast(
+                    `❌ Aucun résultat trouvé`,
+                    'error'
+                );
+            }
+        }
+
+            renderArticles();
+            updatePagination();
+        });
+    });
+
+
+
+
+
+
+    /* =========================
+    CATÉGORIES
+    ========================= */
+    document.querySelectorAll('.category-tag').forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentCategory = btn.dataset.category;
+            currentPage = 1;
+
+            document.querySelectorAll('.category-tag')
+                .forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            renderArticles();
+            updatePagination();
+        });
+    });
+
+
+
+
+
+
+
+    // Fonction pour mettre à jour la pagination
+    // Fonction pour mettre à jour la pagination
+    function updatePagination() {
+        const filteredArticles = getFilteredArticles();
+        const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+        const paginationContainer = document.getElementById('paginationContainer');
+        
+        if (!paginationContainer) {
+            console.error('Conteneur de pagination non trouvé');
+            return;
+        }
+        
+        // Si une seule page ou aucune, masquer la pagination
+        if (totalPages <= 1) {
+            paginationContainer.innerHTML = '';
+            return;
+        }
+        
+        let paginationHTML = `
+            <button class="pagination-item w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-primary prev-page" ${currentPage === 1 ? 'disabled' : ''}>
+                <i class="ri-arrow-left-s-line"></i>
+            </button>
+        `;
+        
+        // Calcul des pages à afficher
+        const maxVisiblePages = 5;
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, currentPage + 2);
+        
+        // Ajuster pour toujours afficher maxVisiblePages si possible
+        if (endPage - startPage + 1 < maxVisiblePages) {
+            if (startPage === 1) {
+                endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            } else {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+        }
+        
+        // Première page + ellipsis si nécessaire
+        if (startPage > 1) {
+            paginationHTML += `
+                <button class="pagination-item w-10 h-10 flex items-center justify-center border ${currentPage === 1 ? 'border-primary bg-primary text-white' : 'border-gray-200 hover:border-primary'} page-number" data-page="1">
+                    1
+                </button>
+            `;
+            if (startPage > 2) {
+                paginationHTML += `<span class="px-2">...</span>`;
+            }
+        }
+        
+        // Pages principales
+        for (let i = startPage; i <= endPage; i++) {
+            paginationHTML += `
+                <button class="pagination-item w-10 h-10 flex items-center justify-center border ${currentPage === i ? 'border-primary bg-primary text-white' : 'border-gray-200 hover:border-primary'} page-number" data-page="${i}">
+                    ${i}
+                </button>
+            `;
+        }
+        
+        // Dernière page + ellipsis si nécessaire
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationHTML += `<span class="px-2">...</span>`;
+            }
+            paginationHTML += `
+                <button class="pagination-item w-10 h-10 flex items-center justify-center border ${currentPage === totalPages ? 'border-primary bg-primary text-white' : 'border-gray-200 hover:border-primary'} page-number" data-page="${totalPages}">
+                    ${totalPages}
+                </button>
+            `;
+        }
+        
+        // Bouton suivant
+        paginationHTML += `
+            <button class="pagination-item w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-primary next-page" ${currentPage === totalPages ? 'disabled' : ''}>
+                <i class="ri-arrow-right-s-line"></i>
+            </button>
+        `;
+        
+        paginationContainer.innerHTML = paginationHTML;
+        
+        // Ajouter les événements
+        const prevBtn = paginationContainer.querySelector('.prev-page:not([disabled])');
+        const nextBtn = paginationContainer.querySelector('.next-page:not([disabled])');
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderArticles();
+                    updatePagination();
+                }
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderArticles();
+                    updatePagination();
+                }
+            });
+        }
+        
+        document.querySelectorAll('.page-number').forEach(btn => {
+            btn.addEventListener('click', function() {
+                currentPage = parseInt(this.dataset.page);
+                renderArticles();
+                updatePagination();
+            });
+        });
+    }
+
+    // Fonction pour mettre à jour la catégorie active
+    function updateActiveCategory() {
+        // Mettre à jour les boutons du haut
+        document.querySelectorAll('.category-tag').forEach(btn => {
+            const isActive = btn.dataset.category === currentCategory;
+            btn.classList.toggle('active', isActive);
+            btn.classList.toggle('bg-primary', isActive);
+            btn.classList.toggle('text-white', isActive);
+            btn.classList.toggle('bg-white', !isActive);
+            btn.classList.toggle('border', !isActive);
+            btn.classList.toggle('border-gray-200', !isActive);
+            btn.classList.toggle('text-gray-700', !isActive);
+        });
+        
+        // Mettre à jour les boutons de la sidebar
+        document.querySelectorAll('.category-sidebar-btn').forEach(btn => {
+            const isActive = btn.dataset.category === currentCategory;
+            btn.classList.toggle('active', isActive);
+        });
+    }
+
+    // Initialiser
+    document.addEventListener('DOMContentLoaded', () => {
+        renderArticles();
+        updatePagination();
+        
+        // Initialiser les articles populaires
+        const popularArticlesContainer = document.querySelector('.space-y-4');
+        if (popularArticlesContainer) {
+            const popularArticles = articlesData.slice(0, 3);
+            popularArticlesContainer.innerHTML = popularArticles.map(createPopularArticleHTML).join('');
+        }
+        
+        // Gestion des filtres de catégorie (boutons en haut)
+        document.querySelectorAll('.category-tag').forEach(button => {
+            button.addEventListener('click', function() {
+                currentCategory = this.dataset.category;
+                currentPage = 1;
+                updateActiveCategory();
+                renderArticles();
+                updatePagination();
+                
+                // Scroll vers les articles
+                const articlesSection = document.querySelector('.grid.lg\\:grid-cols-3');
+                if (articlesSection) {
+                    articlesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Gestion des filtres de catégorie (sidebar)
+        document.querySelectorAll('.category-sidebar-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                currentCategory = this.dataset.category;
+                currentPage = 1;
+                updateActiveCategory();
+                renderArticles();
+                updatePagination();
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+<!-- Toast notification recherche -->
+<div id="searchToast" class="search-toast">
+    <span id="searchToastMessage"></span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // === 1. CONFIGURATION EMAILJS ===
+    const EMAILJS_CONFIG = {
+        PUBLIC_KEY: 'Q2p0MvyJm3L2xrZ3I',
+        SERVICE_ID: 'service_09d4o7q',
+        TEMPLATE_ADMIN: 'template_94zmc8u',
+        TEMPLATE_USER: 'template_fs2zp2z'
+    };
+    
+    console.log('📧 Configuration EmailJS chargée');
+    
+    // === 2. INITIALISATION ===
+    try {
+        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+        console.log('✅ EmailJS initialisé');
+    } catch (error) {
+        console.error('❌ Erreur initialisation:', error);
+        showNotification('Configuration EmailJS incorrecte', 'error');
+        return;
+    }
+    
+    // === 3. FONCTIONS PARTAGÉES ===
+    
+    function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+    
+    function extractName(email) {
+        return email.split('@')[0]
+            .replace(/[._-]/g, ' ')
+            .replace(/\b\w/g, l => l.toUpperCase());
+    }
+    
+    function showNotification(message, type = 'info') {
+        // Supprimer anciennes notifications
+        document.querySelectorAll('.talservis-notification').forEach(n => n.remove());
+        
+        const notification = document.createElement('div');
+        notification.className = `talservis-notification fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg z-50 animate-slideIn ${
+            type === 'success' ? 'bg-green-500 text-white' :
+            type === 'error' ? 'bg-red-500 text-white' :
+            type === 'warning' ? 'bg-yellow-500 text-white' :
+            'bg-blue-500 text-white'
+        }`;
+        
+        const icons = {
+            success: 'ri-checkbox-circle-fill',
+            error: 'ri-error-warning-fill',
+            warning: 'ri-alert-fill',
+            info: 'ri-information-fill'
+        };
+        
+        notification.innerHTML = `
+            <div class="flex items-center gap-3">
+                <i class="${icons[type] || 'ri-information-fill'} text-lg"></i>
+                <span class="font-medium">${message}</span>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.classList.add('animate-slideOut');
+            setTimeout(() => notification.remove(), 300);
+        }, 5000);
+    }
+    
+    function setButtonLoading(button, isLoading, isCTA = false) {
+        if (isLoading) {
+            button.disabled = true;
+            const text = button.querySelector('span');
+            const icon = button.querySelector('i');
+            
+            if (text) text.textContent = 'Envoi en cours...';
+            if (icon) {
+                icon.className = 'ri-loader-4-line animate-spin';
+            } else {
+                button.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Envoi...';
+            }
+        } else {
+            button.disabled = false;
+            const text = button.querySelector('span');
+            const icon = button.querySelector('i');
+            
+            if (text) text.textContent = isCTA ? 'S\'abonner' : 'S\'inscrire gratuitement';
+            if (icon) {
+                icon.className = 'ri-send-plane-line';
+            } else {
+                button.innerHTML = isCTA 
+                    ? 'S\'abonner <i class="ri-send-plane-line"></i>'
+                    : 'S\'inscrire gratuitement <i class="ri-send-plane-line"></i>';
+            }
+        }
+    }
+    
+    function saveEmailLocally(email, source) {
+        try {
+            const subscribers = JSON.parse(localStorage.getItem('talservis_subscribers') || '[]');
+            if (!subscribers.includes(email.toLowerCase())) {
+                subscribers.push({
+                    email: email.toLowerCase(),
+                    date: new Date().toISOString(),
+                    source: source
+                });
+                localStorage.setItem('talservis_subscribers', JSON.stringify(subscribers));
+                console.log(`💾 Email sauvegardé (${source}):`, email);
+                return true;
+            }
+            return false;
+        } catch (e) {
+            console.warn('⚠️ Erreur sauvegarde locale:', e);
+            return false;
+        }
+    }
+    
+    async function sendEmails(email, source) {
+        try {
+            console.log(`📤 Envoi depuis ${source}:`, email);
+            
+            // Envoyer à admin
+            await emailjs.send(
+                EMAILJS_CONFIG.SERVICE_ID,
+                EMAILJS_CONFIG.TEMPLATE_ADMIN,
+                {
+                    user_email: email,
+                    date: new Date().toLocaleDateString('fr-FR'),
+                    time: new Date().toLocaleTimeString('fr-FR'),
+                    source: source
+                }
+            );
+            
+            // Envoyer à utilisateur
+            await emailjs.send(
+                EMAILJS_CONFIG.SERVICE_ID,
+                EMAILJS_CONFIG.TEMPLATE_USER,
+                {
+                    to_email: email,
+                    user_name: extractName(email),
+                    confirmation_date: new Date().toLocaleDateString('fr-FR')
+                }
+            );
+            
+            console.log(`✅ Emails envoyés (${source})`);
+            return { success: true };
+            
+        } catch (error) {
+            console.error(`❌ Erreur (${source}):`, error);
+            return { 
+                success: false, 
+                error: error,
+                status: error.status,
+                message: error.text 
+            };
+        }
+    }
+    
+    
+
+
+    function openPopup(email) {
+        const popup = document.getElementById('newsletterPopup');
+        if (popup) {
+            // 1. Afficher l'email
+            const emailDisplay = document.getElementById('userEmailDisplay');
+            if (emailDisplay) {
+                emailDisplay.textContent = email;
+            }
+            
+            // 2. AFFICHER la section email confirmation (IMPORTANT!)
+            const emailNote = document.getElementById('emailConfirmationNote');
+            if (emailNote) {
+                emailNote.style.display = 'block'; // ← CHANGEMENT ICI
+            }
+            
+            // 3. Ajouter un style CSS pour mieux présenter
+            const style = document.createElement('style');
+            style.id = 'popup-email-style';
+            style.textContent = `
+                #emailConfirmationNote {
+                    background: linear-gradient(135deg, #f0f9ff 0%, #fdf4ff 100%);
+                    padding: 20px;
+                    border-radius: 12px;
+                    margin: 20px 0;
+                    border: 1px solid #e0e7ff;
+                    text-align: center;
+                }
+                #emailConfirmationNote .note-tip {
+                    color: #64748b;
+                    font-size: 0.9rem;
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                }
+                #userEmailDisplay {
+                    background: white;
+                    padding: 12px 15px;
+                    border-radius: 8px;
+                    margin: 10px 0;
+                    font-family: 'Courier New', monospace;
+                    color: #6366f1;
+                    border: 1px solid #e5e7eb;
+                    word-break: break-all;
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                }
+            `;
+            // Ajouter le style seulement une fois
+            if (!document.getElementById('popup-email-style')) {
+                document.head.appendChild(style);
+            }
+            
+            // 4. Ouvrir le popup
+            document.body.classList.add('popup-open');
+            popup.classList.add('active');
+            console.log('🎉 Popup ouvert pour:', email);
+        }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    function closePopup() {
+        const popup = document.getElementById('newsletterPopup');
+        if (popup) {
+            popup.classList.remove('active');
+            document.body.classList.remove('popup-open');
+        }
+    }
+    
+    // Fonction pour gérer un formulaire
+    async function handleFormSubmission(formId, emailId, submitId, isCTA = false) {
+        const form = document.getElementById(formId);
+        const emailInput = document.getElementById(emailId);
+        const submitBtn = document.getElementById(submitId);
+        
+        if (!form || !emailInput || !submitBtn) {
+            console.error(`❌ Éléments manquants: ${formId}`);
+            return;
+        }
+        
+        const email = emailInput.value.trim();
+        const source = isCTA ? 'cta' : 'sidebar';
+        
+        // Validation
+        if (!email) {
+            showNotification('Veuillez entrer votre adresse email', 'error');
+            emailInput.focus();
+            return;
+        }
+        
+        if (!isValidEmail(email)) {
+            showNotification('Veuillez entrer une adresse email valide', 'error');
+            emailInput.focus();
+            return;
+        }
+        
+        // Désactiver bouton
+        setButtonLoading(submitBtn, true, isCTA);
+        
+        try {
+            // Sauvegarder localement
+            const saved = saveEmailLocally(email, source);
+            
+            // Envoyer emails
+            const result = await sendEmails(email, source);
+            
+            if (result.success) {
+                // Succès
+                showNotification('🎉 Inscription réussie ! Vérifiez votre email.', 'success');
+                emailInput.value = '';
+                openPopup(email);
+                
+            } else {
+                // Erreur mais sauvegarde locale réussie
+                if (saved) {
+                    showNotification('✅ Inscription enregistrée localement', 'warning');
+                    emailInput.value = '';
+                    openPopup(email);
+                } else {
+                    throw result.error;
+                }
+            }
+            
+        } catch (error) {
+            console.error('❌ Erreur:', error);
+            
+            let message = 'Une erreur est survenue. ';
+            if (error.status === 400) message = 'Configuration EmailJS incorrecte';
+            else if (error.status === 422) message = 'Problème de template EmailJS';
+            else if (error.status === 429) message = 'Limite d\'envoi atteinte';
+            else if (error.status === 412) message = 'Permissions Gmail insuffisantes';
+            else message += `Code: ${error.status}`;
+            
+            showNotification(message, 'error');
+            
+        } finally {
+            // Réactiver bouton
+            setButtonLoading(submitBtn, false, isCTA);
+        }
+    }
+    
+    // === 4. INITIALISATION DES FORMULAIRES ===
+    
+    // Formulaire sidebar (original)
+    const sidebarForm = document.getElementById('emailjsForm');
+    if (sidebarForm) {
+        sidebarForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleFormSubmission('emailjsForm', 'userEmail', 'emailjsSubmit', false);
+        });
+        console.log('✅ Formulaire sidebar initialisé');
+    }
+    
+    // Formulaire CTA (nouveau)
+    const ctaForm = document.getElementById('newsletterCTAForm');
+    if (ctaForm) {
+        ctaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleFormSubmission('newsletterCTAForm', 'ctaEmail', 'ctaSubmit', true);
+        });
+        console.log('✅ Formulaire CTA initialisé');
+    }
+    
+    // === 5. GESTION FERMETURE POPUP ===
+    document.getElementById('popupClose')?.addEventListener('click', closePopup);
+    document.getElementById('popupCloseBtn')?.addEventListener('click', closePopup);
+    document.querySelector('.popup-overlay')?.addEventListener('click', closePopup);
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closePopup();
+    });
+    
+    // === 6. CSS ANIMATIONS ===
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes slideIn { from { transform: translate(-50%, -50px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
+        @keyframes slideOut { from { transform: translate(-50%, 0); opacity: 1; } to { transform: translate(-50%, -50px); opacity: 0; } }
+        .animate-spin { animation: spin 1s linear infinite; }
+        .animate-slideIn { animation: slideIn 0.3s ease-out; }
+        .animate-slideOut { animation: slideOut 0.3s ease-in; }
+        button:disabled { opacity: 0.7; cursor: not-allowed !important; }
+        button:disabled:hover { transform: none !important; }
+    `;
+    document.head.appendChild(style);
+    
+    console.log('✅ Système newsletter initialisé');
+});
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

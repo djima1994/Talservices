@@ -1,0 +1,2449 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<script>
+    // PROTECTION AMÉLIORÉE
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        return false;
+    });
+
+    document.addEventListener("keydown", function (e) {
+        // Combinaisons de touches à bloquer
+        const blockedCombinations = [
+            e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i'), // Ctrl+Shift+I
+            e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j'), // Ctrl+Shift+J
+            e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c'), // Ctrl+Shift+C
+            e.ctrlKey && e.shiftKey && (e.key === 'S' || e.key === 's'), // Ctrl+Shift+S
+            e.ctrlKey && e.shiftKey && (e.key === 'L' || e.key === 'l'), // Ctrl+Shift+L
+            e.ctrlKey && (e.key === 'U' || e.key === 'u'), // Ctrl+U
+            e.ctrlKey && (e.key === 'Q' || e.key === 'q'), // Ctrl+Q
+            e.key === 'F12' // F12
+        ];
+
+        if (blockedCombinations.some(combination => combination)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+    });
+
+    // Protection supplémentaire contre l'inspection
+    setInterval(() => {
+        if (window.outerHeight - window.innerHeight > 200 ||
+            window.outerWidth - window.innerWidth > 200) {
+            window.close();
+        }
+    }, 1000);
+</script>
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talservis - Projet Centre de Formation | Site Responsive Optimisé</title>
+    <meta name="description"
+        content="Découvrez notre projet de site web pour centre de formation : design responsive, optimisation multi-écrans et technologies modernes.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'Montserrat': ['Montserrat', 'Montserrat'],
+                        'Montserrat': ['Montserrat', 'Montserrat']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Styles spécifiques à la page projet */
+        .project-hero {
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .device-mockup {
+            position: relative;
+            transition: all 0.5s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .device-mockup:hover {
+            transform: translateY(-10px);
+        }
+
+        .responsive-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #6366f1;
+        }
+
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: #f9fafb;
+            border-color: #6366f1;
+            color: #6366f1;
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid #f3f4f6;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #e5e7eb;
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+            margin: 1rem 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #6366f1;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.5rem;
+            bottom: -2rem;
+            width: 2px;
+            background: #e5e7eb;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+
+
+
+
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-logo {
+            font-size: 3rem;
+            color: white;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .loading-logo {
+                font-size: 2rem;
+                color: white;
+                animation: pulse 2s ease-in-out infinite;
+            }
+
+            .section-divider {
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+                margin: 2rem 0;
+            }
+        }
+
+
+
+
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+
+
+    <!-- <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo font-['Montserrat'] font-bold">Talservis</div>
+    </div> -->
+
+    <div class="loading-screen" id="loadingScreen">
+        <img 
+            src="Logo talservis/LOGO-blancs-04.png" 
+            alt="Talservis"
+            class="loading-logo-image"
+        >
+    </div>
+
+    <style>
+                .loading-logo-image{
+            width: 220px;
+            max-width: 80%;
+            height: auto;
+            object-fit: contain;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px){
+            .loading-logo-image{
+                width: 170px;
+            }
+        }
+
+        @media (max-width: 480px){
+            .loading-logo-image{
+                width: 140px;
+            }
+        }
+    </style>
+
+
+    <header class="header-transparent fixed top-0 w-full z-50 border-b border-transparent transition-all duration-500"
+        id="mainHeader">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="flex justify-between items-center h-16">
+                
+                <!-- <a href="index.html">
+                    <div class="flex items-center">
+                        <div class="font-['Montserrat'] text-2xl font-bold gradient-text">Talservis</div>
+                    </div>
+                </a> -->
+
+                <a href="index.html" class="flex items-center">
+                    <img 
+                        src="Logo talservis/LOGO-02-02.png" 
+                        alt="Talservis Logo" 
+                        class="site-logo"
+                    >
+                </a>
+
+                <!-- css logo -->
+                 <style>
+                    /* ===== LOGO HEADER ===== */
+
+                    .site-logo{
+                        width: auto;
+                        height: 42px;
+                        object-fit: contain;
+                        transition: all 0.3s ease;
+                    }
+
+                    .site-logo:hover{
+                        transform: scale(1.03);
+                    }
+
+                    /* Responsive */
+                    @media (max-width: 768px){
+                        .site-logo{
+                            height: 50px;
+                        }
+                    }
+
+                    @media (max-width: 480px){
+                        .site-logo{
+                            height: 40px;
+                        }
+                    }
+                </style>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-primary font-medium">Accueil</a>
+                    <a href="https://api.whatsapp.com/send/?phone=%2B22897420145&text=Bonjour+Talservis+%21+Je+suis+intéressé%28e%29+par+votre+offre+de+site+web+gratuit.+Pouvez-vous+me+donner+plus+d%27informations+%3F&type=phone_number&app_absent=0" target="_blank" class="elegant-btn-head primary-btn group">
+                        <div class="btn-content">
+                            <i class="ri-chat-3-line mr-3  transition-transform"></i>
+                            Entrons contact
+                        </div>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <div class="relative group">
+                        <!-- <button class="nav-link text-gray-700 hover:text-primary font-medium flex items-center">
+                            Services
+                            <div class="w-4 h-4 flex items-center justify-center ml-1">
+                                <i
+                                    class="ri-arrow-down-s-line text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                            </div>
+                        </button> -->
+                        <!-- <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white shadow-lg border border-gray-100 py-2">
+                            <a href="#creation-web"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Création
+                                de sites web</a>
+                            <a href="#ecommerce"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">E-commerce</a>
+                            <a href="#wordpress"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">WordPress</a>
+                        </div> -->
+                    </div>
+                    <!-- <a href="#design" class="nav-link text-gray-700 hover:text-primary font-medium">Conception
+                        graphique</a> -->
+                    <!-- <a href="#marketing" class="nav-link text-gray-700 hover:text-primary font-medium">Marketing
+                        digital</a> -->
+                    <!-- <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium">Contact</a> -->
+                </div>
+
+                <button class="md:hidden flex items-center justify-center w-8 h-8 transition-all duration-300"
+                    id="mobileMenuButton">
+                    <i class="ri-menu-line"></i>
+                    <i class="ri-close-line" style="display: none;"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <!-- <i class="ri-close-line"></i> -->
+        </button>
+        <div class="mobile-menu-container">
+            <nav class="mobile-nav">
+                <a href="index.html" class="mobile-nav-link">Accueil</a>
+
+
+                <a href="index.html#rendez-vous" class="elegant-btn-head primary-btn group">
+                    <div class="btn-content">
+                        <i class="ri-chat-3-line mr-3  transition-transform"></i>
+                        Entrons contact
+                    </div>
+                    <div class="btn-glow"></div>
+                </a>
+
+
+                <!-- <div class="mobile-dropdown">
+                    <button class="mobile-nav-link flex items-center justify-center gap-2" id="mobileServicesButton">
+                        Services <i class="ri-arrow-down-s-line text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="#creation-web" class="mobile-dropdown-link">Création de sites web</a>
+                        <a href="#ecommerce" class="mobile-dropdown-link">E-commerce</a>
+                        <a href="#wordpress" class="mobile-dropdown-link">WordPress</a>
+                    </div>
+                </div> -->
+                <a href="#design" class="mobile-nav-link"></a>
+                <a href="#marketing" class="mobile-nav-link"></a>
+                <a href="#contact" class="mobile-nav-link"></a>
+            </nav>
+        </div>
+    </div>
+
+    <style>
+        /* ===== SOLUTION PROFESSIONNELLE AVANCÉE MENU MOBILE ===== */
+
+        /* Header */
+        .header-transparent {
+            background-color: transparent;
+            transition: background-color 0.5s ease;
+        }
+
+        .header-scrolled {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Menu Mobile Overlay - ESPACEMENT RÉDUIT */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding-top: 100px;
+            /* ESPACEMENT RÉDUIT entre header et menu */
+        }
+
+        .mobile-menu-open {
+            opacity: 1 !important;
+            display: block !important;
+        }
+
+        .mobile-menu-container {
+            position: relative;
+            height: calc(100% - 100px);
+            /* Ajustement hauteur */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Alignement en haut */
+            align-items: center;
+            padding: 4rem 2rem;
+            /* Padding réduit */
+            overflow-y: auto;
+            /* Scroll si nécessaire */
+        }
+
+        /* Bouton Fermeture */
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            /* Position ajustée */
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            z-index: 30000;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu-open .mobile-menu-close {
+            opacity: 1;
+            z-index: 30000;
+        }
+
+        /* Navigation Mobile - CENTRAGE PARFAIT */
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            /* Espacement réduit */
+            width: 100%;
+            max-width: 280px;
+            margin-top: 2rem;
+            /* Marge depuis le haut */
+        }
+
+        .mobile-nav-link {
+            font-size: 1.2rem;
+            /* Taille légèrement réduite */
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            /* Padding réduit */
+            border-radius: 0 !important;
+            transition: all 0.3s ease;
+            transform: translateY(15px);
+            /* Animation réduite */
+            opacity: 0;
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+
+        .mobile-menu-open .mobile-nav-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Délais d'animation - ACCUEIL IMMOBILE */
+        .mobile-nav-link:nth-child(1) {
+            transition-delay: 0.1s;
+            transform: translateY(0) !important;
+            /* Accueil ne bouge pas */
+        }
+
+        .mobile-nav-link:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .mobile-nav-link:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-nav-link:nth-child(4) {
+            transition-delay: 0.25s;
+        }
+
+        .mobile-nav-link:nth-child(5) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-nav-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        /* ===== DROPDOWN MOBILE AMÉLIORÉ ===== */
+        .mobile-dropdown {
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .mobile-dropdown-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            padding: 0rem;
+            background: rgba(249, 250, 251, 0.9);
+            border-radius: 0 !important;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            transform-origin: top;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* DROPDOWN ACTIF - SEUL LE BAS BOUGE */
+        .mobile-dropdown.active .mobile-dropdown-content {
+            max-height: 180px;
+            transform: scaleY(1);
+        }
+
+        .mobile-dropdown-link {
+            font-size: 0.95rem;
+            color: #4b5563;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0 !important;
+            transition: all 0.2s ease;
+            text-align: center;
+            display: block;
+        }
+
+        .mobile-dropdown-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        /* ===== CORRECTION BOUTON MENU ===== */
+        #mobileMenuButton {
+            display: none;
+            width: 32px;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10001;
+            background: none;
+            border: none;
+            cursor: pointer;
+            perspective: 100px; /* Ajouté pour l'animation 3D */
+        }
+
+        /* ===== ANIMATION AVANCÉE HAMBURGER → CROIX ===== */
+        #mobileMenuButton .ri-menu-line,
+        #mobileMenuButton .ri-close-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 1.5rem;
+            color: #333;
+            transform-style: preserve-3d;
+        }
+
+        /* État initial hamburger */
+        #mobileMenuButton .ri-menu-line {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) scale(1);
+            filter: blur(0px);
+        }
+
+    
+
+        /* Animation ouverture - Hamburger disparaît en tournant */
+        .mobile-menu-open ~ header #mobileMenuButton .ri-menu-line {
+            opacity: 0;
+            transform: translate(-50%, -50%) rotateX(-90deg) rotateY(-90deg) scale(0.3);
+            filter: blur(2px);
+        }
+
+        /* Animation ouverture - Croix apparaît en tournant */
+        .mobile-menu-open ~ header #mobileMenuButton .ri-close-line {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) scale(1);
+            filter: blur(0px);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Effet 3D sur le bouton */
+        #mobileMenuButton:hover {
+            transform: translateY(-2px);
+        }
+
+        #mobileMenuButton:active {
+            transform: translateY(1px) scale(0.95);
+        }
+
+        /* Affichage responsive */
+        @media (max-width: 767px) {
+            #mobileMenuButton {
+                display: flex !important;
+            }
+
+            .hidden.md\:flex {
+                display: none !important;
+            }
+
+            /* Ajustements mobiles supplémentaires */
+            .mobile-menu-overlay {
+                padding-top: 80px;
+                /* Encore plus réduit sur mobile */
+            }
+
+            .mobile-menu-container {
+                height: calc(100% - 80px);
+                padding: 0.5rem 1rem;
+            }
+
+            .mobile-nav {
+                gap: 0rem;
+                margin-top: 1.5rem;
+            }
+
+            .mobile-nav-link {
+                font-size: 1.2rem;
+                padding: 0.7rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mobileMenuButton {
+                display: none !important;
+            }
+
+            .hidden.md\:flex {
+                display: flex !important;
+            }
+        }
+
+        /* Styles pour le logo */
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation Desktop */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Desktop */
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .group:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Z-index du header */
+        #mainHeader {
+            z-index: 10000;
+        }
+    </style>
+
+    <script>
+        // ===== SOLUTION PROFESSIONNELLE AVANCÉE - GESTION DU MENU MOBILE =====
+
+        // Animation du header au scroll
+        const header = document.getElementById('mainHeader');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.remove('header-transparent');
+                header.classList.add('header-scrolled');
+                header.style.borderColor = 'rgba(229, 231, 235, 1)';
+            } else {
+                header.classList.add('header-transparent');
+                header.classList.remove('header-scrolled');
+                header.style.borderColor = 'transparent';
+            }
+        });
+
+        // Gestion du menu mobile
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileServicesButton = document.getElementById('mobileServicesButton');
+        const mobileDropdown = mobileServicesButton?.closest('.mobile-dropdown');
+
+        let isMenuOpen = false;
+
+        // Fonction pour changer l'icône
+        function toggleMenuIcon() {
+            const menuIcon = mobileMenuButton.querySelector('.ri-menu-line');
+            const closeIcon = mobileMenuButton.querySelector('.ri-close-line');
+
+            if (isMenuOpen) {
+                menuIcon.style.display = 'none';
+                closeIcon.style.display = 'block';
+            } else {
+                menuIcon.style.display = 'block';
+                closeIcon.style.display = 'none';
+            }
+        }
+
+        // Fonction pour ouvrir le menu
+        function openMobileMenu() {
+            mobileMenu.style.display = 'block';
+
+            // Forcer le reflow pour l'animation
+            void mobileMenu.offsetHeight;
+
+            mobileMenu.classList.add('mobile-menu-open');
+            document.body.style.overflow = 'hidden';
+
+            isMenuOpen = true;
+            toggleMenuIcon();
+        }
+
+        // Fonction pour fermer le menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('mobile-menu-open');
+
+            // Fermer le dropdown si ouvert
+            if (mobileDropdown?.classList.contains('active')) {
+                mobileDropdown.classList.remove('active');
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            }
+
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+
+            isMenuOpen = false;
+            toggleMenuIcon();
+        }
+
+        // Gestion du dropdown mobile - OPTIMISÉ
+        if (mobileServicesButton && mobileDropdown) {
+            mobileServicesButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isActive = mobileDropdown.classList.contains('active');
+                mobileDropdown.classList.toggle('active');
+
+                // Animation de la flèche
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) {
+                    icon.style.transform = isActive ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
+
+                // EMPÊCHER LE DÉPLACEMENT DES AUTRES ÉLÉMENTS
+                // L'animation CSS s'occupe déjà de ça
+            });
+        }
+
+        // Événements
+        mobileMenuButton.addEventListener('click', () => {
+            if (!isMenuOpen) {
+                openMobileMenu();
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+        // Fermer le menu en cliquant sur un lien (sauf Services)
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link:not(#mobileServicesButton), .mobile-dropdown-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Petit délai pour voir l'animation
+                setTimeout(() => {
+                    closeMobileMenu();
+                }, 100);
+            });
+        });
+
+        // Fermer le menu en cliquant en dehors
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+
+        // Fermer avec Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMobileMenu();
+            }
+        });
+
+        // Initialiser l'icône
+        toggleMenuIcon();
+
+        // Empêcher le scroll quand le dropdown est ouvert
+        document.addEventListener('touchmove', (e) => {
+            if (isMenuOpen && mobileDropdown?.classList.contains('active')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+
+
+
+
+
+    <main class="pt-0">
+        <!-- Bannière Hero (similaire à Facebook) -->
+
+
+
+
+        <section class="project-hero py-5 md:py-24 md:pb-12 bg-white ">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+
+
+                <!-- Layout Centré Élégant -->
+                <div class="centered-layout">
+
+
+
+                    <!-- En-tête Supérieur -->
+                    <div class="hero-header text-center lg:mt-0 sm:mt-8 mt-24">
+                        <div
+                            class="elegant-badge inline-flex items-center gap-3 bg-primary/5 border border-primary/10 px-6 py-3 mb-0">
+                            <div class="w-2 h-2 bg-primary animate-pulse"></div>
+                            <span class="text-primary font-semibold text-sm uppercase tracking-wider">Site 100%
+                                Responsive</span>
+                        </div>
+
+                        <h1
+                            class="elegant-title font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+                            <!-- Centre de Formation -->
+                            <span
+                                class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mt-4">
+                                <!-- Digital Learning -->
+                            </span>
+                        </h1>
+
+                        <p
+                            class="elegant-description text-lg md:mb-0 mb-10 text-gray-600 font-semibold max-w-3xl mx-auto leading-tight">
+                            Une landing page moderne et performante, pensée pour capter
+                            l’attention et maximiser les conversions des visiteurs
+                            en prospects sur tous les écrans.
+                        </p>
+                    </div>
+
+                    <!-- Contenu Principal avec Image Centrale -->
+                    <div class="main-content-wrapper">
+
+                        <!-- Section Gauche - Fonctionnalités -->
+                        <div class="feature-section left-features">
+
+                            <div class="feature-card elegant-card mt-8">
+                                <div class="feature-icon-wrapper">
+                                    <div class="feature-icon bg-primary/10 text-primary">
+                                        <i class="ri-rocket-line text-2xl"></i>
+                                    </div>
+                                </div>
+                                <div class="feature-content">
+                                    <h3 class="feature-title">Performance Ultra-Rapide</h3>
+                                    <p class="feature-description">Chargement optimisé pour expérience fluide</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Centrale -->
+                        <div class="central-image-container">
+                            <div class="floating-image-wrapper">
+                                <div class="image-frame">
+                                    <img src="PNG T-A/ensemble.png" alt="Interface du centre de formation"
+                                        class="central-image">
+                                    <div class="image-glow"></div>
+                                </div>
+                                <div class="floating-orbital orb-1">
+                                    <i class="ri-check-line text-white text-sm"></i>
+                                </div>
+                                <div class="floating-orbital orb-2">
+                                    <i class="ri-check-line text-white text-sm"></i>
+                                </div>
+                                <!-- <div class="floating-orbital orb-3">
+                                    <i class="ri-check-line text-white text-sm"></i>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <!-- Section Droite - Fonctionnalités -->
+                        <div class="feature-section right-features">
+
+
+                            <div class="feature-card elegant-card mt-8">
+                                <div class="feature-icon-wrapper">
+                                    <div class="feature-icon bg-primary/10 text-primary">
+                                        <i class="ri-shield-check-line text-2xl"></i>
+                                    </div>
+                                </div>
+                                <div class="feature-content">
+                                    <h3 class="feature-title">Sécurité Renforcée</h3>
+                                    <p class="feature-description">Protection des données et transactions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Inférieure - CTA -->
+                    <div class="cta-section text-center mt-6">
+                        <div class="cta-buttons flex flex-col sm:flex-row gap-6 justify-center items-center">
+                            <a href="https://centre-de-formation.netlify.app/" class="elegant-btn primary-btn group">
+                                <div class="btn-content">
+                                    <i class="ri-eye-line mr-3  transition-transform"></i>
+                                    Voir le projet
+                                </div>
+                                <div class="btn-glow"></div>
+                            </a>
+
+                            <a href="https://api.whatsapp.com/send/?phone=%2B22897420145&text=Bonjour+Talservis+%21+Je+suis+intéressé%28e%29+par+votre+offre+de+site+web+gratuit.+Pouvez-vous+me+donner+plus+d%27informations+%3F&type=phone_number&app_absent=0" target="_blank" class="elegant-btn secondary-btn group">
+                                <div class="btn-content">
+                                    <i class="ri-chat-3-line mr-3 group-hover:scale-110 transition-transform"></i>
+                                    Discuter de mon projet
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Indicateurs de Performance -->
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </section>
+
+        <style>
+            /* Layout Principal */
+            .centered-layout {
+                position: relative;
+                z-index: 10;
+            }
+
+            /* Badge Élégant */
+            .elegant-badge {
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
+            }
+
+            .elegant-badge:hover {
+                background: rgb(255, 255, 255);
+                border-color: rgba(99, 102, 241, 0.2);
+                transform: translateY(-2px);
+            }
+
+            /* Titre Élégant */
+            .elegant-title {
+                text-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            }
+
+            .elegant-title span {
+                position: relative;
+            }
+
+            .elegant-title span::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, #ffffff, #f1f1f1);
+                opacity: 0.7;
+            }
+
+            /* Description Élégante */
+            .elegant-description {
+                font-weight: 350;
+                letter-spacing: -0.01em;
+            }
+
+            /* Contenu Principal */
+            .main-content-wrapper {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                gap: 0rem;
+                align-items: center;
+                margin-top: 1rem;
+            }
+
+            /* Sections de Fonctionnalités */
+            .feature-section {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .left-features {
+                align-items: flex-end;
+                text-align: right;
+            }
+
+            .right-features {
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            /* Cartes de Fonctionnalités */
+            .elegant-card {
+                background: white;
+                border: 1px solid rgba(99, 102, 241, 0.1);
+                padding: 2rem;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                max-width: 320px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .elegant-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #6366f1, transparent);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .elegant-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+                border-color: rgba(99, 102, 241, 0.2);
+            }
+
+            .elegant-card:hover::before {
+                opacity: 1;
+            }
+
+            .feature-icon-wrapper {
+                margin-bottom: 1rem;
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+
+            .elegant-card:hover .feature-icon {
+                transform: scale(1.1);
+                background: rgba(99, 102, 241, 0.15);
+            }
+
+            .feature-title {
+                font-size: 1.25rem;
+                font-weight: 600;
+                color: #1f2937;
+                margin-bottom: 0.5rem;
+            }
+
+            .feature-description {
+                color: #6b7280;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            /* Image Centrale */
+            .central-image-container {
+                /* margin-top: -10rem; */
+                display: none;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .floating-image-wrapper {
+                position: relative;
+            }
+
+            .image-frame {
+
+                position: relative;
+                overflow: hidden;
+                box-shadow:
+                    0 25px 50px -12px rgba(99, 101, 241, 0),
+                    0 0 0 1px rgba(99, 101, 241, 0);
+                transition: all 0.5s ease;
+            }
+
+            .image-frame:hover {
+                transform: scale(1.02);
+            }
+
+            .central-image {
+                width: 800px;
+                height: 435px;
+                object-fit: contain;
+                /* display: block; */
+                transition: transform 0.5s ease;
+                margin-top: -2rem;
+            }
+
+            .image-frame:hover .central-image {
+                transform: scale(1.05);
+            }
+
+
+
+            /* Orbites Flottantes */
+            .floating-orbital {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: floatOrbital 6s ease-in-out infinite;
+                box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+            }
+
+            .orb-1 {
+                top: -20px;
+                left: -4px;
+                animation-delay: 0s;
+            }
+
+            .orb-2 {
+                top: -3px;
+                right: -5px;
+                animation-delay: 2s;
+            }
+
+            /* .orb-3 {
+                bottom: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation-delay: 4s;
+            } */
+
+            @keyframes floatOrbital {
+
+                0%,
+                100% {
+                    transform: translateY(0) scale(1);
+                    opacity: 1;
+                }
+
+                50% {
+                    transform: translateY(-15px) scale(1.1);
+                    opacity: 0.8;
+                }
+            }
+
+            /* Boutons Élégants */
+
+
+            .elegant-btn-head {
+                position: relative;
+                padding: 0.5rem 2rem;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+            }
+
+
+
+
+            .elegant-btn {
+                position: relative;
+                padding: 1rem 2rem;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                display: inline-flex;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .primary-btn {
+                background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                color: white;
+                /* box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3); */
+            }
+
+            .primary-btn:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 15px 40px rgba(99, 101, 241, 0.116);
+            }
+
+            .btn-glow {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: left 0.7s ease;
+            }
+
+            .primary-btn:hover .btn-glow {
+                left: 100%;
+            }
+
+            .secondary-btn {
+                background: white;
+                color: #6366f1;
+                border: 2px solid rgba(99, 102, 241, 0.2);
+            }
+
+            .secondary-btn:hover {
+                background: rgba(99, 102, 241, 0.05);
+                border-color: #6366f1;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+            }
+
+            .btn-content {
+                display: flex;
+                align-items: center;
+                position: relative;
+                z-index: 2;
+            }
+
+            /* Indicateurs de Performance */
+            .performance-indicators {
+                position: relative;
+            }
+
+            .indicator {
+                position: relative;
+            }
+
+            .indicator::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 4px;
+                height: 4px;
+                background: #6366f1;
+                opacity: 0.6;
+            }
+
+            .indicator-value {
+                text-shadow: 0 2px 4px rgba(99, 102, 241, 0.1);
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+                .main-content-wrapper {
+                    grid-template-columns: 1fr;
+                    gap: 0rem;
+                }
+
+                .feature-section {
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .left-features,
+                .right-features {
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .central-image-container {
+                    order: -1;
+                }
+
+                .elegant-title {
+                    font-size: 3.5rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                /* .project-hero {
+                    padding: 4rem 0;
+                } */
+
+                .elegant-title {
+                    font-size: 2.5rem;
+                }
+
+                .central-image {
+                    width: 100%;
+                    max-width: 400px;
+                    height: 250px;
+                }
+
+                .elegant-card {
+                    max-width: 100%;
+                    padding: 1.5rem;
+                }
+
+                .performance-indicators {
+                    flex-direction: column;
+                    gap: 2rem;
+                }
+
+                .cta-buttons {
+                    flex-direction: column;
+                }
+
+                .elegant-btn {
+                    width: 100%;
+                    max-width: 226px;
+                    padding: 0.7rem 0.3rem;
+                    font-size: 0.9rem;
+                    justify-content: center;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .elegant-title {
+                    font-size: 2rem;
+                }
+
+                .elegant-description {
+                    font-size: 1.125rem;
+                }
+
+                .central-image {
+                    height: 200px;
+                }
+
+                .feature-icon {
+                    width: 50px;
+                    height: 50px;
+                }
+
+
+            }
+        </style>
+
+        <script>
+            // Animation des éléments au scroll
+            document.addEventListener('DOMContentLoaded', function () {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                // Animer les cartes de fonctionnalités
+                document.querySelectorAll('.elegant-card').forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                    observer.observe(card);
+                });
+
+                // Animer l'image centrale
+                const imageFrame = document.querySelector('.image-frame');
+                imageFrame.style.opacity = '0';
+                imageFrame.style.transform = 'scale(0.9)';
+                imageFrame.style.transition = 'all 0.8s ease 0.3s';
+                observer.observe(imageFrame);
+
+                // Effet de parallaxe sur les éléments orbitaux
+                window.addEventListener('mousemove', function (e) {
+                    const orbitals = document.querySelectorAll('.floating-orbital');
+                    const mouseX = e.clientX / window.innerWidth;
+                    const mouseY = e.clientY / window.innerHeight;
+
+                    orbitals.forEach((orb, index) => {
+                        const speed = 0.5 + (index * 0.2);
+                        const x = (mouseX - 0.5) * 10 * speed;
+                        const y = (mouseY - 0.5) * 10 * speed;
+
+                        orb.style.transform = `translate(${x}px, ${y}px)`;
+                    });
+                });
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Section Détails du Projet -->
+        <section id="details" class="py-0 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 md:pt-0 pt-7 mb-2">
+                        Détails du <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Projet</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-tight max-w-3xl mx-auto">
+                        Découvrez comment nous avons créé un site web performant et adaptatif a tous les écrans pour ce
+                        centre de
+                        formation
+                    </p>
+                </div>
+
+                <!-- Bureau -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-0">
+                    <div class="order-2 lg:order-1">
+                        <div class="device-mockup overflow-hidden">
+                            <img src="PNG T-A/responsive desktop.png" alt="Site sur bureau" class="w-full h-auto">
+                            <div class="text-center mt-3">
+                                <span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1">Bureau</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary">
+                                <i class="ri-computer-line text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900">Optimisation Bureau
+                            </h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-lg">
+                            Conçu pour offrir une expérience complète avec navigation étendue, mise en page spacieuse
+                            et fonctionnalités avancées accessibles en un clic.
+                        </p>
+                        <ul class="space-y-0 text-gray-600">
+                            <li class="flex items-center gap-3">
+                                <i class="ri-checkbox-circle-line text-green-500 text-xl"></i>
+                                Navigation complète avec méga-menu
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="ri-checkbox-circle-line text-green-500 text-xl"></i>
+                                Mise en page large optimisée pour 1080p+
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="ri-checkbox-circle-line text-green-500 text-xl"></i>
+                                Fonctionnalités avancées (filtres, recherche, etc.)
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="ri-checkbox-circle-line text-green-500 text-xl"></i>
+                                Espace d'administration complet
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Portatif -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-0">
+                    <div class="lg:order-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary">
+                                <i class="ri-macbook-line text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900">Adaptation Portatif
+                            </h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-lg">
+                            Interface optimisée pour les écrans de taille moyenne avec navigation intuitive
+                            et mise en page équilibrée pour une expérience utilisateur fluide.
+                        </p>
+                        <ul class="space-y-0 text-gray-600">
+                            <li class="flex items-center gap-3">
+                                <i class="ri-checkbox-circle-line text-green-500 text-xl"></i>
+                                Navigation simplifiée avec menu hamburger
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="ri-checkbox-circle-line text-green-500 text-xl"></i>
+                                Mise en page adaptative (768px - 1024px)
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="ri-checkbox-circle-line text-green-500 text-xl"></i>
+                                Contenu réorganisé pour une lecture optimale
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="ri-checkbox-circle-line text-green-500 text-xl"></i>
+                                Interactions tactiles optimisées
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lg:order-2">
+                        <div class="device-mockup overflow-hidden max-w-md mx-auto">
+                            <img src="PNG T-A/laptop responsive.png" alt="Site sur portatif" class="w-full h-auto">
+
+                            <div class="text-center mt-3">
+                                <span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1">Portatif</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="section-divider"></div>
+
+                <!-- Mobile et Tablet -->
+                <!-- Mobile et Tablet -->
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center pb-14 mb-16 lg:mb-20">
+                    <div class="order-2 lg:order-1">
+                        <div
+                            class="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center items-center lg:items-start">
+                            <div
+                                class="device-mockup overflow-hidden w-40 sm:w-48 lg:w-52 transform hover:scale-105 transition-transform duration-300">
+                                <img src="PNG T-A/mobile responsive.png" alt="Site sur mobile"
+                                    class="w-full h-auto rounded-lg shadow-lg">
+                                <div class="text-center mt-3">
+                                    <span
+                                        class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1">Mobile</span>
+                                </div>
+                            </div>
+                            <div
+                                class="device-mockup overflow-hidden w-52 sm:w-64 lg:w-72 mt-4 sm:mt-8 lg:mt-4 transform hover:scale-105 transition-transform duration-300">
+                                <img src="PNG T-A/tablette responsive.png" alt="Site sur tablette"
+                                    class="w-full h-auto rounded-lg shadow-lg">
+                                <div class="text-center mt-3">
+                                    <span
+                                        class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1">Tablette</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2">
+                        <div class="flex items-center gap-3 mb-4 lg:mb-6">
+                            <div
+                                class="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-primary/10 text-primary">
+                                <i class="ri-smartphone-line text-xl lg:text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
+                                Mobile & Tablet First
+                            </h3>
+                        </div>
+
+                        <p class="text-gray-600 mb-6 text-base lg:text-lg leading-relaxed">
+                            Approche "Mobile First" garantissant une expérience optimale sur smartphones et tablettes
+                            avec interface tactile et navigation adaptée aux petits écrans.
+                        </p>
+
+                        <ul class="space-y-0 text-gray-600">
+                            <li class="flex items-center gap-3">
+                                <i
+                                    class="ri-checkbox-circle-line text-green-500 text-lg lg:text-xl mt-0.5 flex-shrink-0"></i>
+                                <span class="text-sm lg:text-base">Design "Mobile First" pour performances
+                                    optimales</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i
+                                    class="ri-checkbox-circle-line text-green-500 text-lg lg:text-xl mt-0.5 flex-shrink-0"></i>
+                                <span class="text-sm lg:text-base">Navigation tactile intuitive et gestuelle</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i
+                                    class="ri-checkbox-circle-line text-green-500 text-lg lg:text-xl mt-0.5 flex-shrink-0"></i>
+                                <span class="text-sm lg:text-base">Chargement rapide sur réseaux mobiles 4G/5G</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i
+                                    class="ri-checkbox-circle-line text-green-500 text-lg lg:text-xl mt-0.5 flex-shrink-0"></i>
+                                <span class="text-sm lg:text-base">Interface adaptée aux doigts (zones de touche ≥
+                                    44px)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section Technologies et Processus -->
+        <section class="py-20 md:pt-0 bg-gray-50 pt-0">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
+                        Technologies & <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Processus</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Découvrez les outils et méthodologies utilisés pour créer ce site performant
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Technologies utilisées -->
+                    <div>
+                        <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-8">Technologies Utilisées
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="tech-badge">
+                                <i class="ri-html5-line text-orange-500"></i>
+                                HTML5
+                            </div>
+                            <div class="tech-badge">
+                                <i class="ri-css3-line text-blue-500"></i>
+                                CSS3 & Tailwind
+                            </div>
+                            <div class="tech-badge">
+                                <i class="ri-javascript-line text-yellow-500"></i>
+                                JavaScript
+                            </div>
+                            <div class="tech-badge">
+                                <i class="ri-reactjs-line text-blue-400"></i>
+                                React.js
+                            </div>
+                            <div class="tech-badge">
+                                <i class="ri-nodejs-line text-green-500"></i>
+                                Node.js
+                            </div>
+                            <div class="tech-badge">
+                                <i class="ri-database-2-line text-blue-600"></i>
+                                MongoDB
+                            </div>
+                            <div class="tech-badge">
+                                <i class="ri-git-branch-line text-orange-600"></i>
+                                Git & GitHub
+                            </div>
+                            <div class="tech-badge">
+                                <i class="ri-cloud-line text-blue-300"></i>
+                                Vercel
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-6 bg-white border border-gray-100">
+                            <h4 class="font-semibold text-gray-900 mb-3">Logiciels de Développement</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="tech-badge">Visual Studio Code</span>
+                                <span class="tech-badge">Figma</span>
+                                <span class="tech-badge">Adobe Creative Suite</span>
+                                <span class="tech-badge">Postman</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processus de développement -->
+                    <div>
+                        <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-8">Notre Processus</h3>
+                        <div class="space-y-8">
+                            <div class="timeline-item">
+                                <h4 class="font-semibold text-gray-900 text-lg">1. Analyse & Conception</h4>
+                                <p class="text-gray-600 mt-2">
+                                    Étude approfondie des besoins, création des personas et conception de l'architecture
+                                    de l'information.
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="font-semibold text-gray-900 text-lg">2. Design & Prototypage</h4>
+                                <p class="text-gray-600 mt-2">
+                                    Création des maquettes, prototypage interactif et validation des parcours
+                                    utilisateurs.
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="font-semibold text-gray-900 text-lg">3. Développement Responsive</h4>
+                                <p class="text-gray-600 mt-2">
+                                    Implémentation avec approche "Mobile First" et tests multi-appareils à chaque étape.
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="font-semibold text-gray-900 text-lg">4. Tests & Optimisation</h4>
+                                <p class="text-gray-600 mt-2">
+                                    Tests utilisateurs, optimisation des performances et corrections des bugs.
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="font-semibold text-gray-900 text-lg">5. Livraison & Formation</h4>
+                                <p class="text-gray-600 mt-2">
+                                    Mise en production, formation du client et support post-livraison.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <script id="loading-animation">
+            document.addEventListener('DOMContentLoaded', function () {
+                setTimeout(function () {
+                    const loadingScreen = document.getElementById('loadingScreen');
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(function () {
+                        loadingScreen.style.display = 'none';
+                    }, 500);
+                }, 3000);
+            });
+        </script>
+
+
+
+
+
+
+        <!-- CTA -->
+        <section class="py-20 bg-gradient-to-br from-primary to-secondary">
+            <div class=" mx-auto px-4 sm:px-6 xl:px-20 text-center">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+                    Prêt à créer votre site responsive ?
+                </h2>
+                <p class="text-lg text-white/90 mb-8 max-w-2xl leading-tight mx-auto">
+                    Discutons de votre projet et créons ensemble une expérience digitale optimisée pour tous les écrans.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://api.whatsapp.com/send/?phone=%2B22897420145&text=Bonjour+Talservis+%21+Je+suis+intéressé%28e%29+par+votre+offre+de+site+web+gratuit.+Pouvez-vous+me+donner+plus+d%27informations+%3F&type=phone_number&app_absent=0" target="_blank"
+                        class="bg-white text-primary px-8 py-4 font-semibold text-lg  hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center">
+                        <i class="ri-chat-3-line mr-2"></i>
+                        Discuter de mon projet
+                    </a>
+                    <a href="tal-academy.html"
+                        class="bg-transparent border-2 border-white text-white px-8 py-4 font-semibold text-lg hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center">
+                        <i class="ri-eye-line mr-2"></i>
+                        Voir autre projet
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Section Fonctionnalités -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-1">
+                        Fonctionnalités <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Clés</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Des fonctionnalités conçues pour optimiser l'expérience d'apprentissage sur tous les appareils
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-card bg-white p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary mb-6">
+                            <i class="ri-smartphone-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Design Responsive</h3>
+                        <p class="text-gray-600">
+                            Interface qui s'adapte parfaitement à tous les écrans, du smartphone au desktop.
+                        </p>
+                    </div>
+
+                    <div class="feature-card bg-white p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary mb-6">
+                            <i class="ri-dashboard-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Tableau de Bord</h3>
+                        <p class="text-gray-600">
+                            Espace personnel pour suivre sa progression, ses cours et ses certifications.
+                        </p>
+                    </div>
+
+                    <div class="feature-card bg-white p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary mb-6">
+                            <i class="ri-video-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Cours en Ligne</h3>
+                        <p class="text-gray-600">
+                            Plateforme de streaming vidéo optimisée pour différents débits internet.
+                        </p>
+                    </div>
+
+
+
+
+
+                    <div class="feature-card bg-white p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary mb-6">
+                            <i class="ri-chat-3-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Communauté</h3>
+                        <p class="text-gray-600">
+                            Espace d'échange entre apprenants et formateurs avec forums et messagerie.
+                        </p>
+                    </div>
+
+                    <div class="feature-card bg-white p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary mb-6">
+                            <i class="ri-file-text-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Ressources</h3>
+                        <p class="text-gray-600">
+                            Bibliothèque de ressources téléchargeables accessibles sur tous les appareils.
+                        </p>
+                    </div>
+
+                    <div class="feature-card bg-white p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary mb-6">
+                            <i class="ri-award-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Certifications</h3>
+                        <p class="text-gray-600">
+                            Système de certification et badges numériques accessibles mobile et desktop.
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer (identique au site principal) -->
+        <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="font-['Pacifico'] text-2xl mb-4">Talservis</div>
+                    <p class="text-gray-400 mb-6">
+                        Agence digitale innovante spécialisée en création de sites web, design graphique et marketing
+                        digital.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-all">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-all">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-all">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Création de
+                                sites web</a>
+                        </li>
+                        <li><a href="e-commerce.html" target="_blank"
+                                class="hover:text-white transition-colors">E-commerce</a></li>
+                        
+                        <li><a href="Conception-Graphique.html" target="_blank"
+                                class="hover:text-white transition-colors">Design graphique</a></li>
+                        
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Entreprise</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="a-propos.html" target="_blank" class="hover:text-white transition-colors">À
+                                propos</a></li>
+                        <li><a href="Portfolio.html" target="_blank"
+                                class="hover:text-white transition-colors">Portfolio</a></li>
+                        
+                        
+                        <li><a href="Actualite.html" target="_blank" class="hover:text-white transition-colors">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>123 Avenue Avédji Totsi Blimkomé</li>
+                        <li>00228 Lomé, Togo</li>
+                        <li>+228 97 42 01 45</li>
+                        <li>contact@talservis.fr</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Talservis. Tous droits réservés.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Politique de
+                        confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bouton Retour en Haut -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut de la page">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+
+    <style>
+            /* ===== BOUTON RETOUR EN HAUT ÉLÉGANT & PROFESSIONNEL ===== */
+
+        .back-to-top {
+            /* Position et apparence */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 9990;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.8);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Pas de bords arrondis */
+            border-radius: 0;
+            
+            /* Effets d'ombre élégants */
+            box-shadow: 
+                0 4px 20px rgba(99, 102, 241, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+                0 2px 10px rgba(0, 0, 0, 0.1);
+            
+            /* Pour centrer l'icône */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Effet de brillance */
+            overflow: hidden;
+        }
+
+        /* Effet de brillance animé */
+        .back-to-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: left 0.7s ease;
+        }
+
+        .back-to-top:hover::before {
+            left: 100%;
+        }
+
+        /* Bouton visible */
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Animation au hover */
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 8px 30px rgba(99, 102, 241, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                0 4px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        }
+
+        /* Animation au clic */
+        .back-to-top:active {
+            transform: translateY(-1px) scale(0.98);
+            transition: transform 0.1s ease;
+        }
+
+        /* Icône avec animation */
+        .back-to-top i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-top:hover i {
+            transform: translateY(-2px);
+        }
+
+        /* Effet de lueur externe */
+        .back-to-top::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(
+                circle at center,
+                rgba(99, 102, 241, 0.2) 0%,
+                transparent 70%
+            );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .back-to-top:hover::after {
+            opacity: 1;
+        }
+
+        /* Animation d'apparition progressive */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Animation de pulsation subtile */
+        @keyframes subtlePulse {
+            0%, 100% {
+                box-shadow: 
+                    0 4px 20px rgba(99, 102, 241, 0.3),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            }
+            50% {
+                box-shadow: 
+                    0 6px 25px rgba(99, 102, 241, 0.4),
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            }
+        }
+
+        .back-to-top.visible {
+            animation: 
+                fadeInUp 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+                subtlePulse 3s ease-in-out infinite;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        /* Desktop large */
+        @media (min-width: 1440px) {
+            .back-to-top {
+                bottom: 40px;
+                right: 40px;
+                width: 60px;
+                height: 60px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* Desktop moyen */
+        @media (max-width: 1439px) and (min-width: 1024px) {
+            .back-to-top {
+                bottom: 35px;
+                right: 35px;
+            }
+        }
+
+        /* Tablet landscape */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .back-to-top {
+                bottom: 30px;
+                right: 30px;
+                width: 52px;
+                height: 52px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Tablet portrait & Mobile landscape */
+        @media (max-width: 767px) and (min-width: 480px) {
+            .back-to-top {
+                bottom: 25px;
+                right: 25px;
+                width: 48px;
+                height: 48px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Mobile portrait */
+        @media (max-width: 479px) and (min-width: 375px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.2rem;
+            }
+            
+            /* Réduire les effets d'ombre sur très petit écran */
+            .back-to-top {
+                box-shadow: 
+                    0 3px 15px rgba(99, 102, 241, 0.25),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            }
+            
+            .back-to-top:hover {
+                box-shadow: 
+                    0 5px 20px rgba(99, 102, 241, 0.35),
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            }
+        }
+
+        /* Très petit mobile */
+        @media (max-width: 374px) {
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.1rem;
+            }
+            
+            /* Encore plus léger sur très petit écran */
+            .back-to-top {
+                box-shadow: 
+                    0 2px 10px rgba(99, 102, 241, 0.2),
+                    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            }
+        }
+
+        /* Pour les écrans très hauts (par exemple en mode paysage) */
+        @media (max-height: 500px) {
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .back-to-top i {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Adaptation pour le mode sombre si jamais vous l'implémentez */
+        @media (prefers-color-scheme: dark) {
+            .back-to-top {
+                background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+                box-shadow: 
+                    0 4px 20px rgba(99, 102, 241, 0.4),
+                    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            }
+            
+            .back-to-top:hover {
+                box-shadow: 
+                    0 8px 30px rgba(99, 102, 241, 0.5),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            }
+        }
+
+        /* Pour les appareils avec préférence de mouvement réduit */
+        @media (prefers-reduced-motion: reduce) {
+            .back-to-top {
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            
+            .back-to-top,
+            .back-to-top i,
+            .back-to-top::before,
+            .back-to-top::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+
+
+
+    <script>
+        // ===== BOUTON RETOUR EN HAUT PROFESSIONNEL =====
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            
+            // Vérifier si le bouton existe
+            if (!backToTopButton) return;
+            
+            // Seuil d'apparition du bouton (en pixels)
+            const SCROLL_THRESHOLD = 300;
+            
+            // Durée de l'animation de scroll (en ms)
+            const SCROLL_DURATION = 800;
+            
+            // Fonction pour afficher/masquer le bouton
+            function toggleBackToTopButton() {
+                if (window.scrollY > SCROLL_THRESHOLD) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            }
+            
+            // Fonction pour le scroll smooth vers le haut
+            function scrollToTop() {
+                // Animation avec easing (easeInOutCubic)
+                const startPosition = window.scrollY;
+                const startTime = performance.now();
+                
+                function animateScroll(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / SCROLL_DURATION, 1);
+                    
+                    // Easing function: easeInOutCubic
+                    const easing = progress < 0.5 
+                        ? 4 * progress * progress * progress 
+                        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+                    
+                    window.scrollTo(0, startPosition * (1 - easing));
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animateScroll);
+                    } else {
+                        // Animation terminée
+                        backToTopButton.blur();
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Événements
+            window.addEventListener('scroll', toggleBackToTopButton);
+            backToTopButton.addEventListener('click', scrollToTop);
+            
+            // Vérifier l'état initial
+            toggleBackToTopButton();
+            
+            // Animation au clic avec feedback visuel
+            backToTopButton.addEventListener('mousedown', function() {
+                this.style.transform = 'translateY(-1px) scale(0.95)';
+            });
+            
+            backToTopButton.addEventListener('mouseup', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            backToTopButton.addEventListener('mouseleave', function() {
+                if (window.scrollY > SCROLL_THRESHOLD) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+            
+            // Support clavier (accessibilité)
+            backToTopButton.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    scrollToTop();
+                }
+            });
+            
+            // Pour les écrans tactiles
+            backToTopButton.addEventListener('touchstart', function() {
+                this.style.transform = 'translateY(-1px) scale(0.95)';
+            }, { passive: true });
+            
+            backToTopButton.addEventListener('touchend', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            }, { passive: true });
+        });
+    </script>   
+</body>
+
+</html>

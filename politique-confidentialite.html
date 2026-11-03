@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de confidentialité - Talservis</title>
+    <meta name="description"
+        content="Augmentez vos ventes avec un site web professionnel GRATUIT. Création de sites e-commerce, vitrine et design graphique par Talservis. Des solutions digitales qui transforment les visiteurs en clients. 🚀">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Talservis",
+        "description": "Agence de création de sites web gratuits pour booster vos ventes.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Avenue Avédji",
+            "addressLocality": "Lomé",
+            "addressCountry": "TG"
+        },
+        "telephone": "+22897420145",
+        "priceRange": "$$"
+        }
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'Montserrat': ['Montserrat', 'poppins'],
+                        'Montserrat': ['Montserrat', 'Montserrat']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        .text-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .text-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-logo {
+            font-size: 2rem;
+            color: white;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .loading-logo {
+                font-size: 1.3rem;
+                color: white;
+                animation: pulse 2s ease-in-out infinite;
+            }
+        }
+
+
+
+
+
+
+        /* Supprimer les bordures arrondies de tous les boutons */
+        .btn,
+        .btn-primary,
+        .btn-secondary,
+        .btn-animated,
+        .learn-more-btn,
+        .filter-btn,
+        .nav-button,
+        .mobile-nav-link,
+        .mobile-dropdown-link {
+            border-radius: 0 !important;
+        }
+    </style>
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+
+<body class="font-sans bg-gray-50">
+
+
+
+    <!-- <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo font-['Montserrat'] font-bold">Talservis</div>
+    </div> -->
+
+    <div class="loading-screen" id="loadingScreen">
+        <img 
+            src="Logo talservis/LOGO-blancs-04.png" 
+            alt="Talservis"
+            class="loading-logo-image"
+        >
+    </div>
+
+    <style>
+                .loading-logo-image{
+            width: 220px;
+            max-width: 80%;
+            height: auto;
+            object-fit: contain;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px){
+            .loading-logo-image{
+                width: 170px;
+            }
+        }
+
+        @media (max-width: 480px){
+            .loading-logo-image{
+                width: 140px;
+            }
+        }
+    </style>
+
+
+
+    <header class="header-transparent fixed top-0 w-full z-50 border-b border-transparent transition-all duration-500"
+        id="mainHeader">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="flex justify-between items-center h-16">
+                <!-- <a href="index.html">
+                    <div class="flex items-center">
+                        <div class="font-['Montserrat'] text-2xl font-bold gradient-text">Talservis</div>
+                    </div>
+                </a> -->
+
+                <a href="index.html" class="flex items-center">
+                    <img 
+                        src="Logo talservis/LOGO-02-02.png" 
+                        alt="Talservis Logo" 
+                        class="site-logo"
+                    >
+                </a>
+
+                <!-- css logo -->
+                 <style>
+                    /* ===== LOGO HEADER ===== */
+
+                    .site-logo{
+                        width: auto;
+                        height: 42px;
+                        object-fit: contain;
+                        transition: all 0.3s ease;
+                    }
+
+                    .site-logo:hover{
+                        transform: scale(1.03);
+                    }
+
+                    /* Responsive */
+                    @media (max-width: 768px){
+                        .site-logo{
+                            height: 50px;
+                        }
+                    }
+
+                    @media (max-width: 480px){
+                        .site-logo{
+                            height: 40px;
+                        }
+                    }
+                </style>
+
+
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-primary font-medium">Accueil</a>
+                    <a href="a-propos.html" target="_blank"
+                        class="nav-link text-gray-700 hover:text-primary font-medium">A propos</a>
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 hover:text-primary font-medium flex items-center">
+                            Services
+                            <div class="w-4 h-4 flex items-center justify-center ml-1">
+                                <i
+                                    class="ri-arrow-down-s-line text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                            </div>
+                        </button>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white shadow-lg border border-gray-100 py-2">
+                            <a href="index.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Création
+                                de sites web</a>
+                            <a href="e-commerce.html" target="_blank"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">E-commerce</a>
+                            <a href="Conception-Graphique.html" target="_blank"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Conception
+                                graphique</a>
+
+                        </div>
+                    </div>
+
+
+                    <a href="Portfolio.html" target="_blank"
+                        class="nav-link text-gray-700 hover:text-primary font-medium">Portfolio</a>
+                    <a href="Actualite.html" target="_blank"
+                        class="nav-link text-gray-700 hover:text-primary font-medium">Actualité</a>
+
+
+
+                    <a href="https://api.whatsapp.com/send/?phone=%2B22897420145&text=Bonjour+Talservis+%21+Je+suis+intéressé%28e%29+par+votre+offre+de+site+web+gratuit.+Pouvez-vous+me+donner+plus+d%27informations+%3F&type=phone_number&app_absent=0"
+                        target="_blank"
+                        class="nav-link text-gray-700 font-medium bg-primary text-white px-4 py-1 hover:bg-primary/90 transition-all duration-300 after:hidden">
+                        Nous Contacter
+                    </a>
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <button class="md:hidden flex items-center justify-center w-8 h-8 transition-all duration-300"
+                    id="mobileMenuButton">
+                    <i class="ri-menu-line"></i>
+                    <i class="ri-close-line" style="display: none;"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <!-- <i class="ri-close-line"></i> -->
+        </button>
+        <div class="mobile-menu-container">
+            <nav class="mobile-nav">
+                <a href="index.html" class="mobile-nav-link">Accueil</a>
+                <a href="a-propos.html" class="mobile-nav-link">A propos</a>
+                <div class="mobile-dropdown">
+                    <button class="mobile-nav-link flex items-center justify-center gap-2" id="mobileServicesButton">
+                        Services <i class="ri-arrow-down-s-line text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="index.html" class="mobile-dropdown-link">Création de sites web</a>
+                        <a href="e-commerce.html" class="mobile-dropdown-link">E-commerce</a>
+                        <a href="Conception-Graphique.html" class="mobile-dropdown-link">Conception graphique</a>
+                        <!-- <a href="#wordpress" class="mobile-dropdown-link">WordPress</a> -->
+                    </div>
+                </div>
+
+                <a href="Portfolio.html" class="mobile-nav-link">Portfolio</a>
+                <a href="Actualite.html" class="mobile-nav-link">Actualité</a>
+
+
+
+
+
+                <a href="https://api.whatsapp.com/send/?phone=%2B22897420145&text=Bonjour+Talservis+%21+Je+suis+intéressé%28e%29+par+votre+offre+de+site+web+gratuit.+Pouvez-vous+me+donner+plus+d%27informations+%3F&type=phone_number&app_absent=0"
+                    target="_blank"
+                    class="nav-link text-gray-700 font-medium bg-primary text-white px-4 py-1 hover:bg-primary/90 transition-all duration-300 after:hidden">
+                    Nous Contacter
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+    <style>
+        /* ===== SOLUTION PROFESSIONNELLE AVANCÉE MENU MOBILE ===== */
+
+        /* Header */
+        .header-transparent {
+            background-color: transparent;
+            transition: background-color 0.5s ease;
+        }
+
+        .header-scrolled {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Menu Mobile Overlay - ESPACEMENT RÉDUIT */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding-top: 100px;
+            /* ESPACEMENT RÉDUIT entre header et menu */
+        }
+
+        .mobile-menu-open {
+            opacity: 1 !important;
+            display: block !important;
+        }
+
+        .mobile-menu-container {
+            position: relative;
+            height: calc(100% - 100px);
+            /* Ajustement hauteur */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Alignement en haut */
+            align-items: center;
+            padding: 4rem 2rem;
+            /* Padding réduit */
+            overflow-y: auto;
+            /* Scroll si nécessaire */
+        }
+
+        /* Bouton Fermeture */
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            /* Position ajustée */
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            z-index: 30000;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu-open .mobile-menu-close {
+            opacity: 1;
+            z-index: 30000;
+        }
+
+        /* Navigation Mobile - CENTRAGE PARFAIT */
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            /* Espacement réduit */
+            width: 100%;
+            max-width: 280px;
+            margin-top: 2rem;
+            /* Marge depuis le haut */
+        }
+
+        .mobile-nav-link {
+            font-size: 1.2rem;
+            /* Taille légèrement réduite */
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            /* Padding réduit */
+            border-radius: 0 !important;
+            transition: all 0.3s ease;
+            transform: translateY(15px);
+            /* Animation réduite */
+            opacity: 0;
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+
+        .mobile-menu-open .mobile-nav-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Délais d'animation - ACCUEIL IMMOBILE */
+        .mobile-nav-link:nth-child(1) {
+            transition-delay: 0.1s;
+            transform: translateY(0) !important;
+            /* Accueil ne bouge pas */
+        }
+
+        .mobile-nav-link:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .mobile-nav-link:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-nav-link:nth-child(4) {
+            transition-delay: 0.25s;
+        }
+
+        .mobile-nav-link:nth-child(5) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-nav-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        /* ===== DROPDOWN MOBILE AMÉLIORÉ ===== */
+        .mobile-dropdown {
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .mobile-dropdown-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            padding: 0rem;
+            background: rgba(249, 250, 251, 0.9);
+            border-radius: 0 !important;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            transform-origin: top;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* DROPDOWN ACTIF - SEUL LE BAS BOUGE */
+        .mobile-dropdown.active .mobile-dropdown-content {
+            max-height: 180px;
+            transform: scaleY(1);
+        }
+
+        .mobile-dropdown-link {
+            font-size: 0.95rem;
+            color: #4b5563;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0 !important;
+            transition: all 0.2s ease;
+            text-align: center;
+            display: block;
+        }
+
+        .mobile-dropdown-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        /* ===== CORRECTION BOUTON MENU ===== */
+        #mobileMenuButton {
+            display: none;
+            width: 32px;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10001;
+            background: none;
+            border: none;
+            cursor: pointer;
+            perspective: 100px;
+            /* Ajouté pour l'animation 3D */
+        }
+
+        /* ===== ANIMATION AVANCÉE HAMBURGER → CROIX ===== */
+        #mobileMenuButton .ri-menu-line,
+        #mobileMenuButton .ri-close-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 1.5rem;
+            color: #333;
+            transform-style: preserve-3d;
+        }
+
+        /* État initial hamburger */
+        #mobileMenuButton .ri-menu-line {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) scale(1);
+            filter: blur(0px);
+        }
+
+
+
+        /* Animation ouverture - Hamburger disparaît en tournant */
+        .mobile-menu-open~header #mobileMenuButton .ri-menu-line {
+            opacity: 0;
+            transform: translate(-50%, -50%) rotateX(-90deg) rotateY(-90deg) scale(0.3);
+            filter: blur(2px);
+        }
+
+        /* Animation ouverture - Croix apparaît en tournant */
+        .mobile-menu-open~header #mobileMenuButton .ri-close-line {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) scale(1);
+            filter: blur(0px);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Effet 3D sur le bouton */
+        #mobileMenuButton:hover {
+            transform: translateY(-2px);
+        }
+
+        #mobileMenuButton:active {
+            transform: translateY(1px) scale(0.95);
+        }
+
+        /* Affichage responsive */
+        @media (max-width: 767px) {
+            #mobileMenuButton {
+                display: flex !important;
+            }
+
+            .hidden.md\:flex {
+                display: none !important;
+            }
+
+            /* Ajustements mobiles supplémentaires */
+            .mobile-menu-overlay {
+                padding-top: 80px;
+                /* Encore plus réduit sur mobile */
+            }
+
+            .mobile-menu-container {
+                height: calc(100% - 80px);
+                padding: 0.5rem 1rem;
+            }
+
+            .mobile-nav {
+                gap: 0rem;
+                margin-top: 1.5rem;
+            }
+
+            .mobile-nav-link {
+                font-size: 1.2rem;
+                padding: 0.7rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mobileMenuButton {
+                display: none !important;
+            }
+
+            .hidden.md\:flex {
+                display: flex !important;
+            }
+        }
+
+        /* Styles pour le logo */
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation Desktop */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Desktop */
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .group:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Z-index du header */
+        #mainHeader {
+            z-index: 10000;
+        }
+    </style>
+
+    <script>
+        // ===== SOLUTION PROFESSIONNELLE AVANCÉE - GESTION DU MENU MOBILE =====
+
+        // Animation du header au scroll
+        const header = document.getElementById('mainHeader');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.remove('header-transparent');
+                header.classList.add('header-scrolled');
+                header.style.borderColor = 'rgba(229, 231, 235, 1)';
+            } else {
+                header.classList.add('header-transparent');
+                header.classList.remove('header-scrolled');
+                header.style.borderColor = 'transparent';
+            }
+        });
+
+        // Gestion du menu mobile
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileServicesButton = document.getElementById('mobileServicesButton');
+        const mobileDropdown = mobileServicesButton?.closest('.mobile-dropdown');
+
+        let isMenuOpen = false;
+
+        // Fonction pour changer l'icône
+        function toggleMenuIcon() {
+            const menuIcon = mobileMenuButton.querySelector('.ri-menu-line');
+            const closeIcon = mobileMenuButton.querySelector('.ri-close-line');
+
+            if (isMenuOpen) {
+                menuIcon.style.display = 'none';
+                closeIcon.style.display = 'block';
+            } else {
+                menuIcon.style.display = 'block';
+                closeIcon.style.display = 'none';
+            }
+        }
+
+        // Fonction pour ouvrir le menu
+        function openMobileMenu() {
+            mobileMenu.style.display = 'block';
+
+            // Forcer le reflow pour l'animation
+            void mobileMenu.offsetHeight;
+
+            mobileMenu.classList.add('mobile-menu-open');
+            document.body.style.overflow = 'hidden';
+
+            isMenuOpen = true;
+            toggleMenuIcon();
+        }
+
+        // Fonction pour fermer le menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('mobile-menu-open');
+
+            // Fermer le dropdown si ouvert
+            if (mobileDropdown?.classList.contains('active')) {
+                mobileDropdown.classList.remove('active');
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            }
+
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+
+            isMenuOpen = false;
+            toggleMenuIcon();
+        }
+
+        // Gestion du dropdown mobile - OPTIMISÉ
+        if (mobileServicesButton && mobileDropdown) {
+            mobileServicesButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isActive = mobileDropdown.classList.contains('active');
+                mobileDropdown.classList.toggle('active');
+
+                // Animation de la flèche
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) {
+                    icon.style.transform = isActive ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
+
+                // EMPÊCHER LE DÉPLACEMENT DES AUTRES ELEMENTS
+
+            });
+        }
+
+        // Événements
+        mobileMenuButton.addEventListener('click', () => {
+            if (!isMenuOpen) {
+                openMobileMenu();
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+        // Fermer le menu en cliquant sur un lien (sauf Services)
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link:not(#mobileServicesButton), .mobile-dropdown-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Petit delai pour voir l'animation
+                setTimeout(() => {
+                    closeMobileMenu();
+                }, 100);
+            });
+        });
+
+        // Fermer le menu en cliquant en dehors
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+
+        // Fermer avec Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMobileMenu();
+            }
+        });
+
+        // Initialiser l'icône
+        toggleMenuIcon();
+
+        // Empêcher le scroll quand le dropdown est ouvert
+        document.addEventListener('touchmove', (e) => {
+            if (isMenuOpen && mobileDropdown?.classList.contains('active')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+
+
+
+
+
+
+
+    <main>
+
+    <section class="max-w-4xl mx-auto px-6 py-16">
+
+        <h1 class="text-4xl font-bold mb-10 mt-10">
+            Politique de confidentialité
+        </h1>
+
+        <div class="space-y-8 leading-8">
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-3">
+                    Collecte des informations
+                </h2>
+
+                <p>
+                    Talservis peut collecter certaines informations
+                    personnelles lorsque vous utilisez ce site :
+                </p>
+
+                <ul class="list-disc pl-6 mt-3">
+                    <li>Nom et prénom</li>
+                    <li>Adresse email</li>
+                    <li>Numéro de téléphone</li>
+                    <li>Informations transmises via les formulaires</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-3">
+                    Utilisation des données
+                </h2>
+
+                <p>
+                    Les informations collectées servent à :
+                </p>
+
+                <ul class="list-disc pl-6 mt-3">
+                    <li>Répondre aux demandes des clients</li>
+                    <li>Améliorer les services proposés</li>
+                    <li>Assurer le suivi des projets</li>
+                    <li>Envoyer des informations importantes</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-3">
+                    Protection des données
+                </h2>
+
+                <p>
+                    Talservis met en œuvre des mesures de sécurité
+                    afin de protéger les données personnelles
+                    contre tout accès non autorisé.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-3">
+                    Cookies
+                </h2>
+
+                <p>
+                    Le site peut utiliser des cookies
+                    afin d’améliorer l’expérience utilisateur
+                    et analyser le trafic.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-3">
+                    Partage des données
+                </h2>
+
+                <p>
+                    Les données personnelles ne sont jamais revendues
+                    à des tiers.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-3">
+                    Contact
+                </h2>
+
+                <p>
+                    Pour toute demande concernant vos données :
+                    <br>
+                    contact@talservis.com
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+            <script id="loading-animation">
+                document.addEventListener('DOMContentLoaded', function () {
+                    setTimeout(function () {
+                        const loadingScreen = document.getElementById('loadingScreen');
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(function () {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 2500);
+                });
+            </script>
+
+
+            <h1 class="sr-only">Agence Talservis : Création de site internet gratuit pour augmenter vos ventes au Togo</h1>
+
+    </main>
+
+
+</body>
+
+
+</html>

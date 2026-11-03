@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="Talservis vous propose des services de conception graphique sur-mesure : création de logo, brochure, carte de visite, infographie. Design professionnel pour booster votre marque. Devis gratuit en 24h.">
+    <title>>Conception Graphique Premium au Togo | Création Logo, Brochure, Carte de visite | Talservis</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+    </style>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'Montserrat': ['Montserrat', 'Montserrat'],
+                        'Montserrat': ['Montserrat', 'Montserrat']
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Conception Graphique",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Talservis",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Avenue Avédji Totsi Blimkomé",
+      "addressLocality": "Lomé",
+      "addressCountry": "TG"
+    },
+    "telephone": "+22897420145"
+  },
+  "areaServed": "TG",
+  "description": "Création de logo, brochures, cartes de visite et infographies sur-mesure.",
+  "offers": {
+    "@type": "Offer",
+    "price": "15000",
+    "priceCurrency": "XOF"
+  }
+}
+</script>
+
+
+
+    <style>
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        .text-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .text-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-logo {
+            font-size: 2.5rem;
+            color: white;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .loading-logo {
+                font-size: 1.7rem;
+                color: white;
+                animation: pulse 2s ease-in-out infinite;
+            }
+        }
+
+
+
+
+
+
+        /* Supprimer les bordures arrondies de tous les boutons */
+        .btn,
+        .btn-primary,
+        .btn-secondary,
+        .btn-animated,
+        .learn-more-btn,
+        .filter-btn,
+        .nav-button,
+        .mobile-nav-link,
+        .mobile-dropdown-link {
+            border-radius: 0 !important;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+
+<body class="bg-gray-50">
+
+
+
+
+
+    <!-- <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo font-['Montserrat'] font-bold">Talservis</div>
+    </div> -->
+
+    <div class="loading-screen" id="loadingScreen">
+        <img 
+            src="Logo talservis/LOGO-blancs-04.png" 
+            alt="Talservis"
+            class="loading-logo-image"
+        >
+    </div>
+
+    <style>
+                .loading-logo-image{
+            width: 220px;
+            max-width: 80%;
+            height: auto;
+            object-fit: contain;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px){
+            .loading-logo-image{
+                width: 170px;
+            }
+        }
+
+        @media (max-width: 480px){
+            .loading-logo-image{
+                width: 140px;
+            }
+        }
+    </style>
+
+
+
+    <header class="header-transparent fixed top-0 w-full z-10 border-b border-transparent transition-all duration-500"
+        id="mainHeader">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="flex justify-between items-center h-16">
+                
+                <!-- <a href="index.html" target="_blank">
+                    <div class="flex items-center">
+                        <div class="font-['Montserrat'] text-2xl font-bold gradient-text">Talservis</div>
+                    </div>
+                </a> -->
+
+                <a href="index.html" class="flex items-center">
+                    <img 
+                        src="Logo talservis/LOGO-02-02.png" 
+                        alt="Talservis Logo" 
+                        class="site-logo"
+                    >
+                </a>
+
+                <!-- css logo -->
+                 <style>
+                    /* ===== LOGO HEADER ===== */
+
+                    .site-logo{
+                        width: auto;
+                        height: 42px;
+                        object-fit: contain;
+                        transition: all 0.3s ease;
+                    }
+
+                    .site-logo:hover{
+                        transform: scale(1.03);
+                    }
+
+                    /* Responsive */
+                    @media (max-width: 768px){
+                        .site-logo{
+                            height: 50px;
+                        }
+                    }
+
+                    @media (max-width: 480px){
+                        .site-logo{
+                            height: 40px;
+                        }
+                    }
+                </style>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" target="_blank" class="nav-link text-gray-700 hover:text-primary font-medium">Accueil</a>
+                    <a href="a-propos.html" target="_blank" class="nav-link text-gray-700 hover:text-primary font-medium">A propos</a>
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 hover:text-primary font-medium flex items-center">
+                            Services
+                            <div class="w-4 h-4 flex items-center justify-center ml-1">
+                                <i
+                                    class="ri-arrow-down-s-line text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                            </div>
+                        </button>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white shadow-lg border border-gray-100 py-2">
+                            <a href="index.html" target="_blank"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Création
+                                de sites web</a>
+                            <a href="e-commerce.html" target="_blank"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">E-commerce</a>
+                            <a href="Conception-Graphique.html" target="_blank"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Conception
+                                graphique</a>
+
+                        </div>
+                    </div>
+
+
+                    <a href="Portfolio.html" target="_blank"
+                        class="nav-link text-gray-700 hover:text-primary font-medium">Portfolio</a>
+                    <a href="Actualite.html" target="_blank"
+                        class="nav-link text-gray-700 hover:text-primary font-medium">Actualité</a>
+
+
+
+                    <a href="https://api.whatsapp.com/send/?phone=%2B22897420145&text=Bonjour+Talservis+%21+Je+suis+intéressé%28e%29+par+votre+offre+de+site+web+gratuit.+Pouvez-vous+me+donner+plus+d%27informations+%3F&type=phone_number&app_absent=0"
+                        target="_blank"
+                        class="nav-link text-gray-700 font-medium bg-primary text-white px-4 py-1 hover:bg-primary/90 transition-all duration-300 after:hidden">
+                        Nous Contacter
+                    </a>
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <button class="md:hidden flex items-center justify-center w-8 h-8 transition-all duration-300"
+                    id="mobileMenuButton">
+                    <i class="ri-menu-line"></i>
+                    <i class="ri-close-line" style="display: none;"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <!-- <i class="ri-close-line"></i> -->
+        </button>
+        <div class="mobile-menu-container">
+            <nav class="mobile-nav">
+                <a href="index.html" target="_blank" class="mobile-nav-link">Accueil</a>
+                <a href="Apropos.html" target="_blank" class="mobile-nav-link">A propos</a>
+                <div class="mobile-dropdown">
+                    <button class="mobile-nav-link flex items-center justify-center gap-2" id="mobileServicesButton">
+                        Services <i class="ri-arrow-down-s-line text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="index.html" target="_blank" class="mobile-dropdown-link">Création de sites web</a>
+                        <a href="e-commerce.html" target="_blank" class="mobile-dropdown-link">E-commerce</a>
+                        <a href="Conception-Graphique.html" target="_blank" class="mobile-dropdown-link">Conception graphique</a>
+                        <!-- <a href="#wordpress" class="mobile-dropdown-link">WordPress</a> -->
+                    </div>
+                </div>
+
+                <a href="Portfolio.html" target="_blank" class="mobile-nav-link">Portfolio</a>
+                <a href="#actualite" target="_blank" class="mobile-nav-link">Actualité</a>
+
+
+
+
+
+                <a href="https://api.whatsapp.com/send/?phone=%2B22897420145&text=Bonjour+Talservis+%21+Je+suis+intéressé%28e%29+par+votre+offre+de+site+web+gratuit.+Pouvez-vous+me+donner+plus+d%27informations+%3F&type=phone_number&app_absent=0"
+                    target="_blank"
+                    class="nav-link text-gray-700 font-medium bg-primary text-white px-4 py-1 hover:bg-primary/90 transition-all duration-300 after:hidden">
+                    Nous Contacter
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+    <style>
+        /* ===== SOLUTION PROFESSIONNELLE AVANCÉE MENU MOBILE ===== */
+
+        /* Header */
+        .header-transparent {
+            background-color: transparent;
+            transition: background-color 0.5s ease;
+        }
+
+        .header-scrolled {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Menu Mobile Overlay - ESPACEMENT RÉDUIT */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding-top: 100px;
+            /* ESPACEMENT RÉDUIT entre header et menu */
+        }
+
+        .mobile-menu-open {
+            opacity: 1 !important;
+            display: block !important;
+        }
+
+        .mobile-menu-container {
+            position: relative;
+            height: calc(100% - 100px);
+            /* Ajustement hauteur */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Alignement en haut */
+            align-items: center;
+            padding: 4rem 2rem;
+            /* Padding réduit */
+            overflow-y: auto;
+            /* Scroll si nécessaire */
+        }
+
+        /* Bouton Fermeture */
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            /* Position ajustée */
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            z-index: 30000;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu-open .mobile-menu-close {
+            opacity: 1;
+            z-index: 30000;
+        }
+
+        /* Navigation Mobile - CENTRAGE PARFAIT */
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            /* Espacement réduit */
+            width: 100%;
+            max-width: 280px;
+            margin-top: 2rem;
+            /* Marge depuis le haut */
+        }
+
+        .mobile-nav-link {
+            font-size: 1.2rem;
+            /* Taille légèrement réduite */
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            /* Padding réduit */
+            border-radius: 0 !important;
+            transition: all 0.3s ease;
+            transform: translateY(15px);
+            /* Animation réduite */
+            opacity: 0;
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+
+        .mobile-menu-open .mobile-nav-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Délais d'animation - ACCUEIL IMMOBILE */
+        .mobile-nav-link:nth-child(1) {
+            transition-delay: 0.1s;
+            transform: translateY(0) !important;
+            /* Accueil ne bouge pas */
+        }
+
+        .mobile-nav-link:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .mobile-nav-link:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-nav-link:nth-child(4) {
+            transition-delay: 0.25s;
+        }
+
+        .mobile-nav-link:nth-child(5) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-nav-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        /* ===== DROPDOWN MOBILE AMÉLIORÉ ===== */
+        .mobile-dropdown {
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .mobile-dropdown-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            padding: 0rem;
+            background: rgba(249, 250, 251, 0.9);
+            border-radius: 0 !important;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            transform-origin: top;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* DROPDOWN ACTIF - SEUL LE BAS BOUGE */
+        .mobile-dropdown.active .mobile-dropdown-content {
+            max-height: 180px;
+            transform: scaleY(1);
+        }
+
+        .mobile-dropdown-link {
+            font-size: 0.95rem;
+            color: #4b5563;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0 !important;
+            transition: all 0.2s ease;
+            text-align: center;
+            display: block;
+        }
+
+        .mobile-dropdown-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        /* ===== CORRECTION BOUTON MENU ===== */
+        #mobileMenuButton {
+            display: none;
+            width: 32px;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10001;
+            background: none;
+            border: none;
+            cursor: pointer;
+            perspective: 100px;
+            /* Ajouté pour l'animation 3D */
+        }
+
+        /* ===== ANIMATION AVANCÉE HAMBURGER → CROIX ===== */
+        #mobileMenuButton .ri-menu-line,
+        #mobileMenuButton .ri-close-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 1.5rem;
+            color: #333;
+            transform-style: preserve-3d;
+        }
+
+        /* État initial hamburger */
+        #mobileMenuButton .ri-menu-line {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) scale(1);
+            filter: blur(0px);
+        }
+
+
+
+        /* Animation ouverture - Hamburger disparaît en tournant */
+        .mobile-menu-open~header #mobileMenuButton .ri-menu-line {
+            opacity: 0;
+            transform: translate(-50%, -50%) rotateX(-90deg) rotateY(-90deg) scale(0.3);
+            filter: blur(2px);
+        }
+
+        /* Animation ouverture - Croix apparaît en tournant */
+        .mobile-menu-open~header #mobileMenuButton .ri-close-line {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) scale(1);
+            filter: blur(0px);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Effet 3D sur le bouton */
+        #mobileMenuButton:hover {
+            transform: translateY(-2px);
+        }
+
+        #mobileMenuButton:active {
+            transform: translateY(1px) scale(0.95);
+        }
+
+        /* Affichage responsive */
+        @media (max-width: 767px) {
+            #mobileMenuButton {
+                display: flex !important;
+            }
+
+            .hidden.md\:flex {
+                display: none !important;
+            }
+
+            /* Ajustements mobiles supplémentaires */
+            .mobile-menu-overlay {
+                padding-top: 80px;
+                /* Encore plus réduit sur mobile */
+            }
+
+            .mobile-menu-container {
+                height: calc(100% - 80px);
+                padding: 0.5rem 1rem;
+            }
+
+            .mobile-nav {
+                gap: 0rem;
+                margin-top: 1.5rem;
+            }
+
+            .mobile-nav-link {
+                font-size: 1.2rem;
+                padding: 0.7rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mobileMenuButton {
+                display: none !important;
+            }
+
+            .hidden.md\:flex {
+                display: flex !important;
+            }
+        }
+
+        /* Styles pour le logo */
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation Desktop */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Desktop */
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .group:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Z-index du header */
+        #mainHeader {
+            z-index: 10000;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section
+        class="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 md:py-32 lg:py-40 min-h-[70vh] md:min-h-[100vh]"
+        style="background-image: url('https://readdy.ai/api/search-image?query=modern%20creative%20design%20studio%20workspace%20with%20professional%20graphic%20design%20tools%2C%20clean%20minimalist%20background%2C%20soft%20lighting%2C%20contemporary%20office%20environment%2C%20design%20elements%20floating%2C%20premium%20aesthetic%2C%20left%20side%20empty%20space%20for%20text%20overlay&width=1920&height=800&seq=hero-design&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-white bg-opacity-80"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="w-full">
+
+
+
+                <div class="max-w-2xl mt-24">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 mt-8 leading-tight">
+                        Services de Conception Graphique <span class="text-primary">D'identité Visuelle</span>
+                    </h1>
+                    <p class="text-lg text-gray-700 mb-8 leading-tight">
+                        Transformez vos idées en créations visuelles exceptionnelles. Notre équipe d'experts en design
+                        graphique vous accompagne dans tous vos projets créatifs avec une approche sur-mesure et des
+                        résultats qui dépassent vos attentes.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#portofolo" class="btn btn-primary">
+                            Voir Notre Travail <i
+                                class="ri-arrow-right-line ml-2 py-1 transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+                        <!-- <a href="#portofolo" class="btn btn-secondary">
+                            <i class="fas fa-briefcase"></i>
+                            Voir Notre Travail
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Boutons d'action -->
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --white: #ffffff;
+            --light-bg: #f8faff;
+            --upcolor: #6366f1;
+            --light-gradient: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+            --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: left;
+            flex-wrap: wrap;
+            margin-bottom: 6rem;
+        }
+
+        .btn {
+            padding: 0.5rem 3rem;
+            font-weight: 500;
+            /* Plus gras */
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            border-radius: 0;
+            text-decoration: none;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            z-index: -1;
+            transition: var(--transition);
+            border-radius: 0;
+        }
+
+        .btn-primary {
+            color: white;
+            background: var(--upcolor);
+            padding: 5px 30px;
+            /* box-shadow: 0 12px 35px rgba(99, 102, 241, 0.4); */
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) translateZ(10px);
+            box-shadow: 0 18px 45px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-primary:hover::after {
+            opacity: 1;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10px);
+            color: var(--primary);
+            border: 2px solid rgba(243, 243, 243, 0.58);
+            font-weight: 700;
+            /* Plus gras */
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            border-color: rgba(252, 252, 252, 1);
+            transform: translateY(-5px) translateZ(10px);
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+
+
+            .btn {
+                padding: 1.2rem 2.5rem;
+                font-size: 1.1rem;
+            }
+
+
+        }
+
+        @media (max-width: 768px) {
+
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 225px;
+                justify-content: center;
+            }
+
+
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                padding: 0.7rem 0.3rem;
+                font-size: 0.9rem;
+            }
+        }
+
+
+
+        /* Ajoutez ce CSS à votre fichier existant */
+        @media (max-width: 768px) {
+
+            /* Centre le conteneur du texte sur mobile */
+            .max-w-2xl.mt-24 {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center !important;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            /* Centre le texte dans le h1 et p */
+            .max-w-2xl.mt-24 h1,
+            .max-w-2xl.mt-24 p {
+                text-align: center !important;
+            }
+
+            /* Centre les boutons CTA sur mobile */
+            .max-w-2xl.mt-24 .cta-buttons {
+                justify-content: center !important;
+            }
+        }
+
+        /* Sur desktop, garder l'alignement à gauche */
+        @media (min-width: 769px) {
+            .max-w-2xl.mt-24 {
+                text-align: left;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+                    Nous sommes experts dans la suite de <br>services de <span class="text-primary"> conception</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-tight">
+                    Découvrez notre gamme complète de services créatifs, conçus pour donner vie à votre identité
+                    visuelle et maximiser l'impact de votre communication.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-primary mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ri-palette-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Conception de Logo</h3>
+                    <p class="text-gray-600 mb-6">
+                        Création d'identités visuelles uniques et mémorables qui reflètent parfaitement l'essence de
+                        votre marque et se démarquent de la concurrence.
+                    </p>
+                    <div class="flex items-center text-primary font-semibold">
+                        <span>En savoir plus</span>
+                        <i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                <div class="group bg-gray-50l p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-secondary mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ri-book-open-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Brochure Design</h3>
+                    <p class="text-gray-600 mb-6">
+                        Conception de supports de communication impactants : brochures, catalogues, flyers qui captent
+                        l'attention et convertissent vos prospects.
+                    </p>
+                    <div class="flex items-center text-primary font-semibold">
+                        <span>En savoir plus</span>
+                        <i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                <div class="group bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-primary mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ri-bar-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Infographie Conception</h3>
+                    <p class="text-gray-600 mb-6">
+                        Transformation de vos données complexes en visuels attractifs et compréhensibles qui racontent
+                        une histoire et engagent votre audience.
+                    </p>
+                    <div class="flex items-center text-primary font-semibold">
+                        <span>En savoir plus</span>
+                        <i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                <div class="group bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-secondary mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ri-contacts-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Conception de Carte de Visite</h3>
+                    <p class="text-gray-600 mb-6">
+                        Création de cartes de visite premium qui marquent les esprits et renforcent votre image
+                        professionnelle lors de chaque échange.
+                    </p>
+                    <div class="flex items-center text-primary font-semibold">
+                        <span>En savoir plus</span>
+                        <i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="py-20 bg-gray-50" id="portofolo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Portfolio de Réalisations</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez quelques-unes de nos créations les plus remarquables et laissez-vous inspirer par notre
+                    expertise créative. | création de logo pas cher Lomé| design graphique entreprise Togo | 
+                    conception brochure professionnelle | carte de visite premium
+                </p>
+            </div>
+
+            <!-- <div class="flex justify-center mb-12">
+                <div class="bg-white p-1 flex flex-wrap max-w-full mx-auto">
+                    <button class="portfolio-filter active px-6 py-2 text-sm font-medium transition-colors"
+                        data-filter="all">
+                        Tous les projets
+                    </button>
+                    <button class="portfolio-filter px-6 py-2 text-sm font-medium transition-colors" data-filter="logo">
+                        Logos
+                    </button>
+                    <button class="portfolio-filter px-6 py-2 text-sm font-medium transition-colors"
+                        data-filter="print">
+                        Print
+                    </button>
+                    <button class="portfolio-filter px-6 py-2 text-sm font-medium transition-colors"
+                        data-filter="infographic">
+                        Infographies
+                    </button>
+                </div>
+            </div> -->
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="portfolio-item bg-white overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                    data-category="logo">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=creative%20restaurant%20logo%20design%2C%20food%20and%20beverage%20branding%2C%20warm%20colors%2C%20artisanal%20style%2C%20hand-crafted%20aesthetic%2C%20culinary%20identity%20design%2C%20professional%20presentation&width=400&height=300&seq=portfolio-4&orientation=landscape"
+                            alt="Création de logo pour restaurant gastronomique par Talservis - Design authentique et mémorable"
+                            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Bistro Authentique</h3>
+                        <p class="text-gray-600 text-sm mb-4">Logo et identité pour restaurant gastronomique</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-primary text-white px-3 py-1">Logo Design</span>
+                            <button class="portfolio-view-btn text-primary hover:text-blue-600 transition-colors"
+                                data-project="bistro">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item bg-white overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                    data-category="print">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=business%20card%20printing%20details%2C%20embossed%20logo%2C%20premium%20paper%20texture%2C%20professional%20finishing%2C%20luxury%20stationery%20design&width=400&height=300&seq=modal-cartes-3&orientation=landscape"
+                            alt="Cartes de visite premium pour cabinet d'avocats - Finitions luxe par Talservis"
+                            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Cartes de Visite Premium</h3>
+                        <p class="text-gray-600 text-sm mb-4">Collection pour cabinet d'avocats</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-secondary text-white px-3 py-1">Carte</span>
+                            <button class="portfolio-view-btn text-primary hover:text-blue-600 transition-colors"
+                                data-project="cartes">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item bg-white overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                    data-category="print">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=elegant%20brochure%20design%20layout%2C%20luxury%20real%20estate%20marketing%20materials%2C%20premium%20print%20design%2C%20sophisticated%20typography%2C%20professional%20photography%2C%20high-end%20aesthetic&width=400&height=300&seq=portfolio-2&orientation=landscape"
+                            alt="Brochure haut de gamme pour agence immobilière - Design élégant et professionnel"
+                            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Prestige Immobilier</h3>
+                        <p class="text-gray-600 text-sm mb-4">Brochure haut de gamme pour agence immobilière</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-secondary text-white px-3 py-1">Brochure</span>
+                            <button class="portfolio-view-btn text-primary hover:text-blue-600 transition-colors"
+                                data-project="prestige">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Bouton Voir tous les projets -->
+            <div class="text-center mt-0">
+                <a href="Portfolio.html#portfolio-communication" target="_blank"><button class="view-all-btn" id="viewAllBtn"
+                        <i class="fas fa-eye"></i>
+                        Voir tous nos projets
+                    </button>
+                </a>
+            </div>
+
+
+
+            <style>
+                /* Bouton Voir tous les projets */
+                .view-all-btn {
+                    background: linear-gradient(135deg, var(--primary), var(--secondary));
+                    color: white;
+                    padding: 1rem 2.5rem;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    border: none;
+                    cursor: pointer;
+                    transition: all 0.4s ease;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    margin: 4rem auto 0;
+                }
+
+
+                .view-all-btn:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+                }
+
+                .fa-eye:before {
+                    content: "\f06e";
+                }
+            </style>
+        </div>
+    </section>
+
+    <div id="portfolio-modal"
+        class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[100000] hidden flex items-center justify-center p-4 transition-all duration-300">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="close-modal"
+                class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition-colors z-10">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+            <div id="modal-content" class="p-8">
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="portfolio-modal"
+        class="fixed inset-0 bg-black bg-opacity-80 z-100000 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="close-modal"
+                class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition-colors z-10">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+            <div id="modal-content" class="p-8">
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="portfolio-modal"
+        class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="close-modal"
+                class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition-colors z-10">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+            <div id="modal-content" class="p-8">
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="portfolio-modal"
+        class="fixed inset-0 bg-black bg-opacity-80 z-100000 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="close-modal"
+                class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition-colors z-10">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+            <div id="modal-content" class="p-8">
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="portfolio-modal"
+        class="fixed inset-0 bg-black bg-opacity-80 z-100000 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="close-modal"
+                class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition-colors z-10">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+            <div id="modal-content" class="p-8">
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="portfolio-modal"
+        class="fixed inset-0 bg-black bg-opacity-80 z-100000 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="close-modal"
+                class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition-colors z-10">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+            <div id="modal-content" class="p-8">
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="portfolio-modal"
+        class="fixed inset-0 bg-black bg-opacity-80 z-100000 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="close-modal"
+                class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition-colors z-10">
+                <i class="ri-close-line text-xl"></i>
+            </button>
+            <div id="modal-content" class="p-8">
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Notre Méthodologie Talservis</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Un processus créatif structuré en 6 étapes pour garantir des résultats exceptionnels et une
+                    collaboration fluide.
+                </p>
+            </div>
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary hidden lg:block"></div>
+                <div class="space-y-12">
+                    <div class="flex flex-col lg:flex-row items-center">
+                        <div class="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
+                            <div
+                                class="bg-primary text-white w-12 h-12 flex items-center justify-center text-xl font-bold mb-4 lg:ml-auto">
+                                1</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 lg:text-right">Audit & Brief Créatif</h3>
+                            <p class="text-gray-600 lg:text-right">
+                                Analyse approfondie de vos besoins, de votre marché et de vos objectifs. Définition du
+                                brief créatif et des contraintes techniques.
+                            </p>
+                            <div class="mt-4 lg:text-right">
+                                <span class="text-sm text-primary font-semibold">Durée : 2-3 jours</span>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pl-12">
+                            <div class="bg-gray-50 p-6">
+                                <div class="w-8 h-8 flex items-center justify-center bg-primary mb-4">
+                                    <i class="ri-search-line text-white"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Livrables</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Document de brief validé</li>
+                                    <li>• Analyse concurrentielle</li>
+                                    <li>• Planning projet détaillé</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col lg:flex-row-reverse items-center">
+                        <div class="lg:w-1/2 lg:pl-12 mb-8 lg:mb-0">
+                            <div
+                                class="bg-secondary text-white w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">
+                                2</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Recherche Créative</h3>
+                            <p class="text-gray-600">
+                                Exploration des tendances, recherche d'inspiration et définition de l'univers créatif
+                                adapté à votre secteur et vos valeurs.
+                            </p>
+                            <div class="mt-4">
+                                <span class="text-sm text-secondary font-semibold">Durée : 3-5 jours</span>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pr-12">
+                            <div class="bg-gray-50 p-6">
+                                <div class="w-8 h-8 flex items-center justify-center bg-secondary mb-4">
+                                    <i class="ri-lightbulb-line text-white"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Livrables</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Planche d'inspiration</li>
+                                    <li>• Palette de couleurs</li>
+                                    <li>• Sélection typographique</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col lg:flex-row items-center">
+                        <div class="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
+                            <div
+                                class="bg-primary text-white w-12 h-12 flex items-center justify-center text-xl font-bold mb-4 lg:ml-auto">
+                                3</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 lg:text-right">Concepts Multiples</h3>
+                            <p class="text-gray-600 lg:text-right">
+                                Création de 3 à 5 concepts créatifs distincts pour vous offrir un maximum de choix et
+                                explorer différentes approches visuelles.
+                            </p>
+                            <div class="mt-4 lg:text-right">
+                                <span class="text-sm text-primary font-semibold">Durée : 5-7 jours</span>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pl-12">
+                            <div class="bg-gray-50 p-6">
+                                <div class="w-8 h-8 flex items-center justify-center bg-primary mb-4">
+                                    <i class="ri-palette-line text-white"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Livrables</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• 3-5 propositions créatives</li>
+                                    <li>• Présentation détaillée</li>
+                                    <li>• Recommandations d'usage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="detail-de-la-conception" class="py-20 bg-gradient-to-br from-primary to-blue-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="text-center mb-12 md:mt-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">Veuillez envoyer les détails de
+                    la conception</h2>
+                <p class="text-lg text-blue-100">
+                    Parlez-nous de votre projet et recevez une proposition sur-mesure sous 24h. agence design graphique Talservis
+                </p>
+            </div>
+            <div class="bg-white p-8 shadow-2xl">
+                <form id="project-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Prénom *</label>
+                            <input type="text" id="prenom" name="prenom"
+                                class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="Votre prénom" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Nom *</label>
+                            <input type="text" id="nom" name="nom"
+                                class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="Votre nom" required>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="votre@email.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone"
+                                class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="06 12 34 56 78">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Type de projet *</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <label
+                                class="flex items-center p-3 border border-gray-300 cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="checkbox" class="sr-only project-type" value="logo">
+                                <div
+                                    class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex items-center justify-center checkbox-custom">
+                                    <i class="ri-check-line text-white text-sm hidden"></i>
+                                </div>
+                                <span class="text-sm">Logo</span>
+                            </label>
+                            <label
+                                class="flex items-center p-3 border border-gray-300 cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="checkbox" class="sr-only project-type" value="bache">
+                                <div
+                                    class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex items-center justify-center checkbox-custom">
+                                    <i class="ri-check-line text-white text-sm hidden"></i>
+                                </div>
+                                <span class="text-sm">Bâche</span>
+                            </label>
+                            <label
+                                class="flex items-center p-3 border border-gray-300 cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="checkbox" class="sr-only project-type" value="autocollant">
+                                <div
+                                    class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex items-center justify-center checkbox-custom">
+                                    <i class="ri-check-line text-white text-sm hidden"></i>
+                                </div>
+                                <span class="text-sm">Autocollant</span>
+                            </label>
+                            <label
+                                class="flex items-center p-3 border border-gray-300 cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="checkbox" class="sr-only project-type" value="carte-visite">
+                                <div
+                                    class="w-5 h-5 border-2 border-gray-300 rounded mr-3 flex items-center justify-center checkbox-custom">
+                                    <i class="ri-check-line text-white text-sm hidden"></i>
+                                </div>
+                                <span class="text-sm">Carte visite</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Budget approximatif</label>
+                        <div class="relative">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-gray-600">5 000f CFA</span>
+                                <span id="budget-value" class="text-sm font-semibold text-primary">15 000f CFA</span>
+                                <span class="text-sm text-gray-600">50 000f CFA+</span>
+                            </div>
+                            <div class="relative">
+                                <input type="range" id="budget-slider" min="5000" max="50000" value="10000" step="100"
+                                    class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Décrivez votre projet *</label>
+                        <textarea rows="4" id="description" name="description"
+                            class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none"
+                            placeholder="Décrivez vos besoins, objectifs, contraintes..." required></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Délai souhaité</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <label
+                                class="flex items-center p-3 border border-gray-300 cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="radio" name="delai" class="sr-only" value="urgent">
+                                <div
+                                    class="w-5 h-5 border-2 border-gray-300 mr-3 flex items-center justify-center radio-custom">
+                                    <div class="w-2 h-2 bg-primary hidden"></div>
+                                </div>
+                                <span class="text-sm">Urgent (1 sem)</span>
+                            </label>
+                            <label
+                                class="flex items-center p-3 border border-gray-300 cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="radio" name="delai" class="sr-only" value="normal">
+                                <div
+                                    class="w-5 h-5 border-2 border-gray-300 mr-3 flex items-center justify-center radio-custom">
+                                    <div class="w-2 h-2 bg-primary hidden"></div>
+                                </div>
+                                <span class="text-sm">Normal (2-3 sem)</span>
+                            </label>
+                            <label
+                                class="flex items-center p-3 border border-gray-300 cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="radio" name="delai" class="sr-only" value="flexible">
+                                <div
+                                    class="w-5 h-5 border-2 border-gray-300 mr-3 flex items-center justify-center radio-custom">
+                                    <div class="w-2 h-2 bg-primary hidden"></div>
+                                </div>
+                                <span class="text-sm">Flexible (1 mois+)</span>
+                            </label>
+                            <label
+                                class="flex items-center p-3 border border-gray-300 cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="radio" name="delai" class="sr-only" value="autre">
+                                <div
+                                    class="w-5 h-5 border-2 border-gray-300 mr-3 flex items-center justify-center radio-custom">
+                                    <div class="w-2 h-2 bg-primary hidden"></div>
+                                </div>
+                                <span class="text-sm">Autre</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit"
+                            class="bg-primary text-white px-12 py-4 hover:bg-blue-600 transition-colors text-lg font-semibold whitespace-nowrap">
+                            Recevoir Mon Devis Gratuit
+                        </button>
+                        <p class="text-sm text-gray-600 mt-4">
+                            Réponse sous 24h • Devis gratuit et sans engagement
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- script après votre formulaire -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('project-form');
+            const budgetSlider = document.getElementById('budget-slider');
+            const budgetValue = document.getElementById('budget-value');
+            const phoneNumber = "22897420145"; // Votre numéro WhatsApp
+
+            // Formatage du budget en F CFA
+            budgetSlider.addEventListener('input', function () {
+                const value = parseInt(this.value);
+                const formattedValue = new Intl.NumberFormat('fr-FR').format(value);
+                budgetValue.textContent = formattedValue + 'f CFA';
+            });
+
+            // Gestion de la soumission du formulaire
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Récupération des données du formulaire
+                const formData = {
+                    prenom: document.getElementById('prenom').value,
+                    nom: document.getElementById('nom').value,
+                    email: document.getElementById('email').value,
+                    telephone: document.getElementById('telephone').value,
+                    typesProjet: getSelectedProjectTypes(),
+                    budget: budgetValue.textContent,
+                    description: document.getElementById('description').value,
+                    delai: getSelectedDelai()
+                };
+
+                // Validation basique
+                if (!formData.prenom || !formData.nom || !formData.email || !formData.description) {
+                    alert('Veuillez remplir tous les champs obligatoires (*)');
+                    return;
+                }
+
+                // Génération du message WhatsApp
+                const message = generateWhatsAppMessage(formData);
+
+                // Redirection vers WhatsApp
+                redirectToWhatsApp(message);
+            });
+
+            // Fonction pour récupérer les types de projet sélectionnés
+            function getSelectedProjectTypes() {
+                const selectedTypes = [];
+                document.querySelectorAll('.project-type:checked').forEach(checkbox => {
+                    selectedTypes.push(checkbox.value);
+                });
+                return selectedTypes;
+            }
+
+            // Fonction pour récupérer le délai sélectionné
+            function getSelectedDelai() {
+                const selectedDelai = document.querySelector('input[name="delai"]:checked');
+                return selectedDelai ? selectedDelai.value : 'Non spécifié';
+            }
+
+            // Fonction pour générer le message WhatsApp formaté
+            function generateWhatsAppMessage(data) {
+                const projectTypesMap = {
+                    'logo': 'Logo',
+                    'bache': 'Bâche',
+                    'autocollant': 'Autocollant',
+                    'carte-visite': 'Carte de visite'
+                };
+
+                const delaiMap = {
+                    'urgent': 'Urgent (1 semaine)',
+                    'normal': 'Normal (2-3 semaines)',
+                    'flexible': 'Flexible (1 mois+)',
+                    'autre': 'Autre',
+                    'Non spécifié': 'Non spécifié'
+                };
+
+                const projectTypesText = data.typesProjet.map(type => projectTypesMap[type] || type).join(', ') || 'Aucun sélectionné';
+
+                return `🎨 *NOUVELLE DEMANDE DE DEVIS - DIGITOO* 🎨
+
+            👤 *INFORMATIONS CLIENT*
+            • *Nom complet:* ${data.prenom} ${data.nom}
+            • *Email:* ${data.email}
+            • *Téléphone:* ${data.telephone || 'Non renseigné'}
+
+            📋 *DÉTAILS DU PROJET*
+            • *Type(s) de projet:* ${projectTypesText}
+            • *Budget estimé:* ${data.budget}
+            • *Délai souhaité:* ${delaiMap[data.delai]}
+
+            📝 *DESCRIPTION DU PROJET*
+            ${data.description}
+
+            ⏰ *INFORMATIONS SUPPLEMENTAIRES*
+            • *Date de demande:* ${new Date().toLocaleDateString('fr-FR')}
+            • *Heure de demande:* ${new Date().toLocaleTimeString('fr-FR')}
+
+            💬 *MESSAGE AUTOMATIQUE*
+            Bonjour l'équipe Talservis ! Je suis intéressé(e) par vos services et j'aimerais recevoir un devis personnalisé. Merci de me recontacter rapidement.`;
+            }
+
+            // Fonction de redirection vers WhatsApp
+            function redirectToWhatsApp(message) {
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Animation de confirmation avant redirection
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+
+                submitBtn.textContent = 'Redirection vers WhatsApp...';
+                submitBtn.disabled = true;
+
+                setTimeout(() => {
+                    window.open(whatsappUrl, '_blank');
+
+                    // Réinitialiser le bouton après 2 secondes
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+
+                        // Optionnel: Réinitialiser le formulaire
+                        form.reset();
+                        budgetValue.textContent = '15 000f CFA';
+                        budgetSlider.value = 10000;
+
+                        // Réinitialiser les cases à cocher visuelles
+                        document.querySelectorAll('.checkbox-custom').forEach(customCheckbox => {
+                            customCheckbox.classList.remove('bg-primary', 'border-primary');
+                            customCheckbox.classList.add('border-gray-300');
+                            customCheckbox.querySelector('i').classList.add('hidden');
+                        });
+
+                        // Réinitialiser les boutons radio visuels
+                        document.querySelectorAll('.radio-custom').forEach(customRadio => {
+                            customRadio.classList.remove('border-primary');
+                            customRadio.classList.add('border-gray-300');
+                            customRadio.querySelector('div').classList.add('hidden');
+                        });
+
+                    }, 2000);
+                }, 1500);
+            }
+
+            // Gestion des cases à cocher personnalisées
+            document.querySelectorAll('.project-type').forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    const customCheckbox = this.parentElement.querySelector('.checkbox-custom');
+                    const icon = customCheckbox.querySelector('i');
+                    if (this.checked) {
+                        customCheckbox.classList.add('bg-primary', 'border-primary');
+                        customCheckbox.classList.remove('border-gray-300');
+                        icon.classList.remove('hidden');
+                    } else {
+                        customCheckbox.classList.remove('bg-primary', 'border-primary');
+                        customCheckbox.classList.add('border-gray-300');
+                        icon.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Gestion des boutons radio personnalisés
+            document.querySelectorAll('input[name="delai"]').forEach(radio => {
+                radio.addEventListener('change', function () {
+                    document.querySelectorAll('input[name="delai"]').forEach(r => {
+                        const customRadio = r.parentElement.querySelector('.radio-custom');
+                        const dot = customRadio.querySelector('div');
+                        customRadio.classList.remove('border-primary');
+                        customRadio.classList.add('border-gray-300');
+                        dot.classList.add('hidden');
+                    });
+
+                    if (this.checked) {
+                        const customRadio = this.parentElement.querySelector('.radio-custom');
+                        const dot = customRadio.querySelector('div');
+                        customRadio.classList.add('border-primary');
+                        customRadio.classList.remove('border-gray-300');
+                        dot.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Témoignages Clients</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez ce que nos clients disent de notre expertise en conception graphique.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Talservis a créé une identité visuelle exceptionnelle pour notre startup. Le logo reflète
+                        parfaitement nos valeurs d'innovation et de modernité. L'équipe a su comprendre notre vision dès
+                        le premier échange."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary flex items-center justify-center text-white font-bold mr-4">
+                            ML
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Marie Lefebvre</div>
+                            <div class="text-sm text-gray-600">CEO, InnovTech Solutions</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Nos brochures immobilières ont été transformées ! Le design élégant et professionnel nous a
+                        permis d'augmenter notre taux de conversion de 40%. Un investissement qui se rentabilise
+                        rapidement."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-secondary flex items-center justify-center text-white font-bold mr-4">
+                            JD
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Jean Dubois</div>
+                            <div class="text-sm text-gray-600">Directeur, Prestige Immobilier</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Les infographies créées par Talservis ont révolutionné nos présentations. Nos données complexes
+                        sont maintenant claires et engageantes. Nos clients comprennent mieux nos services."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary flex items-center justify-center text-white font-bold mr-4">
+                            SM
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Sophie Martin</div>
+                            <div class="text-sm text-gray-600">Consultante, DataViz Pro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="font-['Pacifico'] text-2xl mb-4">Talservis</div>
+                    <p class="text-gray-400 mb-6">
+                        Agence digitale innovante spécialisée en création de sites web, design graphique et marketing
+                        digital.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-all">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-all">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-lg transition-all">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Création de
+                                sites web</a>
+                        </li>
+                        <li><a href="e-commerce.html" target="_blank"
+                                class="hover:text-white transition-colors">E-commerce</a></li>
+                        <li><a href="#" target="_blank" class="hover:text-white transition-colors">WordPress</a></li>
+                        <li><a href="Conception-Graphique.html" target="_blank"
+                                class="hover:text-white transition-colors">Design graphique</a></li>
+                        <li><a href="#" target="_blank" class="hover:text-white transition-colors">Marketing digital</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Entreprise</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="Apropos.html" target="_blank" class="hover:text-white transition-colors">À
+                                propos</a></li>
+                        <li><a href="Portfolio.html" target="_blank"
+                                class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#" target="_blank" class="hover:text-white transition-colors">Équipe</a></li>
+                        <li><a href="#" target="_blank" class="hover:text-white transition-colors">Carrières</a></li>
+                        <li><a href="Actualite.html" target="_blank" class="hover:text-white transition-colors">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>123 Avenue Avédji Totsi Blimkomé</li>
+                        <li>00228 Lomé, Togo</li>
+                        <li>+228 97 42 01 45</li>
+                        <li>contact@talservis.fr</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Talservis. Tous droits réservés.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Politique de
+                        confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+
+    <script id="form-controls-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxes = document.querySelectorAll('.project-type');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    const customCheckbox = this.parentElement.querySelector('.checkbox-custom');
+                    const icon = customCheckbox.querySelector('i');
+                    if (this.checked) {
+                        customCheckbox.classList.add('bg-primary', 'border-primary');
+                        customCheckbox.classList.remove('border-gray-300');
+                        icon.classList.remove('hidden');
+                    } else {
+                        customCheckbox.classList.remove('bg-primary', 'border-primary');
+                        customCheckbox.classList.add('border-gray-300');
+                        icon.classList.add('hidden');
+                    }
+                });
+            });
+            const radioButtons = document.querySelectorAll('input[name="delai"]');
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    radioButtons.forEach(r => {
+                        const customRadio = r.parentElement.querySelector('.radio-custom');
+                        const dot = customRadio.querySelector('div');
+                        customRadio.classList.remove('border-primary');
+                        customRadio.classList.add('border-gray-300');
+                        dot.classList.add('hidden');
+                    });
+                    if (this.checked) {
+                        const customRadio = this.parentElement.querySelector('.radio-custom');
+                        const dot = customRadio.querySelector('div');
+                        customRadio.classList.add('border-primary');
+                        customRadio.classList.remove('border-gray-300');
+                        dot.classList.remove('hidden');
+                    }
+                });
+            });
+            const budgetSlider = document.getElementById('budget-slider');
+            const budgetValue = document.getElementById('budget-value');
+            budgetSlider.addEventListener('input', function () {
+                const value = this.value;
+                // Formatage avec séparateur de milliers et ajout de "f CFA"
+                const formattedValue = new Intl.NumberFormat('fr-FR').format(value);
+                budgetValue.textContent = formattedValue + 'f CFA';
+            });
+
+            // Initialisation au chargement avec le format CFA
+            document.addEventListener('DOMContentLoaded', function () {
+                const initialValue = budgetSlider.value;
+                const formattedValue = new Intl.NumberFormat('fr-FR').format(initialValue);
+                budgetValue.textContent = formattedValue + 'f CFA';
+            });
+        });
+    </script>
+
+
+    <script id="portfolio-modal-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('portfolio-modal');
+            const modalContent = document.getElementById('modal-content');
+            const closeModalBtn = document.getElementById('close-modal');
+            const viewBtns = document.querySelectorAll('.portfolio-view-btn');
+
+            const projectData = {
+
+                prestige: {
+                    title: 'Prestige Immobilier',
+                    category: 'Brochure',
+                    description: 'Conception d\'une brochure haut de gamme pour Prestige Immobilier, agence spécialisée dans l\'immobilier de luxe. Le design élégant et sophistiqué met en valeur les propriétés d\'exception avec une mise en page premium.',
+                    services: ['Design de brochure', 'Mise en page', 'Sélection typographique', 'Préparation print'],
+                    mainImage: 'https://readdy.ai/api/search-image?query=elegant%20brochure%20design%20layout%2C%20luxury%20real%20estate%20marketing%20materials%2C%20premium%20print%20design%2C%20sophisticated%20typography%2C%20professional%20photography%2C%20high-end%20aesthetic&width=800&height=600&seq=modal-prestige-1&orientation=landscape',
+                    gallery: [
+                        'https://readdy.ai/api/search-image?query=luxury%20real%20estate%20brochure%20pages%20spread%2C%20interior%20design%20photography%2C%20elegant%20layout%2C%20premium%20property%20showcase%2C%20high-end%20marketing%20materials&width=400&height=300&seq=modal-prestige-2&orientation=landscape',
+                        'https://readdy.ai/api/search-image?query=real%20estate%20marketing%20folder%20design%2C%20luxury%20property%20presentation%20materials%2C%20sophisticated%20branding%2C%20professional%20real%20estate%20documents&width=400&height=300&seq=modal-prestige-3&orientation=landscape'
+                    ],
+                    client: 'Prestige Immobilier',
+                    year: '2024',
+                    duration: '3 semaines'
+                },
+
+                bistro: {
+                    title: 'Identité',
+                    category: 'Marque',
+                    description: 'Création de l\'identité visuelle pour Bistro Authentique, restaurant gastronomique français. Le logo capture l\'esprit artisanal et l\'authenticité de la cuisine traditionnelle française.',
+                    services: ['Logo design', 'Identité visuelle', 'Applications restaurant', 'Signalétique'],
+                    mainImage: 'https://readdy.ai/api/search-image?query=creative%20restaurant%20logo%20design%2C%20food%20and%20beverage%20branding%2C%20warm%20colors%2C%20artisanal%20style%2C%20hand-crafted%20aesthetic%2C%20culinary%20identity%20design%2C%20professional%20presentation&width=400&height=300&seq=portfolio-4&orientation=landscape',
+                    gallery: [
+                        'https://readdy.ai/api/search-image?query=restaurant%20branding%20materials%2C%20menu%20design%2C%20business%20cards%20for%20bistro%2C%20French%20culinary%20identity%2C%20warm%20elegant%20design&width=400&height=300&seq=modal-bistro-2&orientation=landscape',
+                        'https://readdy.ai/api/search-image?query=restaurant%20signage%20design%2C%20bistro%20exterior%20branding%2C%20French%20restaurant%20identity%2C%20elegant%20storefront%20design%2C%20culinary%20branding&width=400&height=300&seq=modal-bistro-3&orientation=landscape'
+                    ],
+                    client: 'Bistro Authentique',
+                    year: '2024',
+                    duration: '2 semaines'
+                },
+                cartes: {
+                    title: 'Cartes de Visite Premium',
+                    category: 'Carte Design',
+                    description: 'Conception d\'une collection de cartes de visite premium pour un prestigieux cabinet d\'avocats. Design sophistiqué avec finitions haut de gamme et attention aux détails.',
+                    services: ['Design carte de visite', 'Finitions premium', 'Variations personnalisées', 'Préparation print'],
+                    mainImage: 'https://readdy.ai/api/search-image?query=business%20card%20printing%20details%2C%20embossed%20logo%2C%20premium%20paper%20texture%2C%20professional%20finishing%2C%20luxury%20stationery%20design&width=400&height=300&seq=modal-cartes-3&orientation=landscape',
+                    gallery: [
+                        'https://readdy.ai/api/search-image?query=luxury%20business%20cards%20collection%2C%20law%20firm%20branding%2C%20professional%20attorney%20cards%2C%20elegant%20typography%2C%20premium%20paper%20finish&width=400&height=300&seq=modal-cartes-2&orientation=landscape',
+                        'https://readdy.ai/api/search-image?query=business%20card%20printing%20details%2C%20embossed%20logo%2C%20premium%20paper%20texture%2C%20professional%20finishing%2C%20luxury%20stationery%20design&width=400&height=300&seq=modal-cartes-3&orientation=landscape'
+                    ],
+                    client: 'Cabinet Juridique Excellence',
+                    year: '2024',
+                    duration: '1 semaine'
+                },
+
+            };
+
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const projectId = this.getAttribute('data-project');
+                    const project = projectData[projectId];
+                    if (project) {
+                        showModal(project);
+                    }
+                });
+            });
+
+            function showModal(project) {
+                modalContent.innerHTML = `
+        <div class="mb-8">
+        <div class="flex items-center justify-between mb-4">
+        <span class="text-sm bg-primary text-white px-3 py-1">${project.category}</span>
+        <div class="text-sm text-gray-500">${project.year}</div>
+        </div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">${project.title}</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">${project.description}</p>
+        </div>
+        <div class="mb-8">
+        <img src="${project.mainImage}" alt="${project.title}" class="w-full object-cover object-top">
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+        
+        </div>
+        <div class="mb-8">
+        <h3 class="text-xl font-bold text-gray-900 mb-6">Autres réalisations</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+        ${project.gallery.map(img => `
+        <div class="aspect-video bg-gray-200 overflow-hidden">
+        <img src="${img}" alt="Variation ${project.title}" class="w-full h-full object-cover object-top">
+        </div>
+        `).join('')}
+        </div>
+        </div>
+        <div class="text-center">
+                    <a href="Conception-Graphique.html#detail-de-la-conception" target="_blank">
+                        <button class="bg-primary text-white px-8 py-3 font-semibold hover:bg-primary/90 transition">
+                            Demander un projet similaire
+                        </button>
+                    </a>
+                </div>
+        `;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+    <script id="portfolio-filter-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.portfolio-filter');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const filter = this.getAttribute('data-filter');
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-primary', 'text-white');
+                        btn.classList.add('text-gray-600', 'hover:text-primary');
+                    });
+                    this.classList.add('active', 'bg-primary', 'text-white');
+                    this.classList.remove('text-gray-600', 'hover:text-primary');
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            filterButtons[0].classList.add('bg-primary', 'text-white');
+        });
+    </script>
+
+
+    <style>
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e5e7eb;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3B82F6;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3B82F6;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+
+    <script>
+        // ===== SOLUTION PROFESSIONNELLE AVANCÉE - GESTION DU MENU MOBILE =====
+
+        // Animation du header au scroll
+        const header = document.getElementById('mainHeader');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.remove('header-transparent');
+                header.classList.add('header-scrolled');
+                header.style.borderColor = 'rgba(229, 231, 235, 1)';
+            } else {
+                header.classList.add('header-transparent');
+                header.classList.remove('header-scrolled');
+                header.style.borderColor = 'transparent';
+            }
+        });
+
+        // Gestion du menu mobile
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileServicesButton = document.getElementById('mobileServicesButton');
+        const mobileDropdown = mobileServicesButton?.closest('.mobile-dropdown');
+
+        let isMenuOpen = false;
+
+        // Fonction pour changer l'icône
+        function toggleMenuIcon() {
+            const menuIcon = mobileMenuButton.querySelector('.ri-menu-line');
+            const closeIcon = mobileMenuButton.querySelector('.ri-close-line');
+
+            if (isMenuOpen) {
+                menuIcon.style.display = 'none';
+                closeIcon.style.display = 'block';
+            } else {
+                menuIcon.style.display = 'block';
+                closeIcon.style.display = 'none';
+            }
+        }
+
+        // Fonction pour ouvrir le menu
+        function openMobileMenu() {
+            mobileMenu.style.display = 'block';
+
+            // Forcer le reflow pour l'animation
+            void mobileMenu.offsetHeight;
+
+            mobileMenu.classList.add('mobile-menu-open');
+            document.body.style.overflow = 'hidden';
+
+            isMenuOpen = true;
+            toggleMenuIcon();
+        }
+
+        // Fonction pour fermer le menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('mobile-menu-open');
+
+            // Fermer le dropdown si ouvert
+            if (mobileDropdown?.classList.contains('active')) {
+                mobileDropdown.classList.remove('active');
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            }
+
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+
+            isMenuOpen = false;
+            toggleMenuIcon();
+        }
+
+        // Gestion du dropdown mobile - OPTIMISÉ
+        if (mobileServicesButton && mobileDropdown) {
+            mobileServicesButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isActive = mobileDropdown.classList.contains('active');
+                mobileDropdown.classList.toggle('active');
+
+                // Animation de la flèche
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) {
+                    icon.style.transform = isActive ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
+
+                // EMPÊCHER LE DÉPLACEMENT DES AUTRES ÉLÉMENTS
+                // L'animation CSS s'occupe déjà de ça
+            });
+        }
+
+        // Événements
+        mobileMenuButton.addEventListener('click', () => {
+            if (!isMenuOpen) {
+                openMobileMenu();
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+        // Fermer le menu en cliquant sur un lien (sauf Services)
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link:not(#mobileServicesButton), .mobile-dropdown-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Petit délai pour voir l'animation
+                setTimeout(() => {
+                    closeMobileMenu();
+                }, 100);
+            });
+        });
+
+        // Fermer le menu en cliquant en dehors
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+
+        // Fermer avec Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMobileMenu();
+            }
+        });
+
+        // Initialiser l'icône
+        toggleMenuIcon();
+
+        // Empêcher le scroll quand le dropdown est ouvert
+        document.addEventListener('touchmove', (e) => {
+            if (isMenuOpen && mobileDropdown?.classList.contains('active')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Loading screen
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.style.opacity = '0';
+                setTimeout(function () {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 3000);
+        });
+
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.text-reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Smooth scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bouton Retour en Haut -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut de la page">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+
+    <style>
+        /* ===== BOUTON RETOUR EN HAUT ÉLÉGANT & PROFESSIONNEL ===== */
+
+        .back-to-top {
+            /* Position et apparence */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 9990;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.8);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+            /* Pas de bords arrondis */
+            border-radius: 0;
+
+            /* Effets d'ombre élégants */
+            box-shadow:
+                0 4px 20px rgba(99, 102, 241, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+                0 2px 10px rgba(0, 0, 0, 0.1);
+
+            /* Pour centrer l'icône */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* Effet de brillance */
+            overflow: hidden;
+        }
+
+        /* Effet de brillance animé */
+        .back-to-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent);
+            transition: left 0.7s ease;
+        }
+
+        .back-to-top:hover::before {
+            left: 100%;
+        }
+
+        /* Bouton visible */
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Animation au hover */
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow:
+                0 8px 30px rgba(99, 102, 241, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                0 4px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        }
+
+        /* Animation au clic */
+        .back-to-top:active {
+            transform: translateY(-1px) scale(0.98);
+            transition: transform 0.1s ease;
+        }
+
+        /* Icône avec animation */
+        .back-to-top i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-top:hover i {
+            transform: translateY(-2px);
+        }
+
+        /* Effet de lueur externe */
+        .back-to-top::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center,
+                    rgba(99, 102, 241, 0.2) 0%,
+                    transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .back-to-top:hover::after {
+            opacity: 1;
+        }
+
+        /* Animation d'apparition progressive */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Animation de pulsation subtile */
+        @keyframes subtlePulse {
+
+            0%,
+            100% {
+                box-shadow:
+                    0 4px 20px rgba(99, 102, 241, 0.3),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            }
+
+            50% {
+                box-shadow:
+                    0 6px 25px rgba(99, 102, 241, 0.4),
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            }
+        }
+
+        .back-to-top.visible {
+            animation:
+                fadeInUp 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+                subtlePulse 3s ease-in-out infinite;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        /* Desktop large */
+        @media (min-width: 1440px) {
+            .back-to-top {
+                bottom: 40px;
+                right: 40px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .back-to-top i {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* Desktop moyen */
+        @media (max-width: 1439px) and (min-width: 1024px) {
+            .back-to-top {
+                bottom: 35px;
+                right: 35px;
+            }
+        }
+
+        /* Tablet landscape */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .back-to-top {
+                bottom: 30px;
+                right: 30px;
+                width: 52px;
+                height: 52px;
+            }
+
+            .back-to-top i {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Tablet portrait & Mobile landscape */
+        @media (max-width: 767px) and (min-width: 480px) {
+            .back-to-top {
+                bottom: 25px;
+                right: 25px;
+                width: 48px;
+                height: 48px;
+            }
+
+            .back-to-top i {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Mobile portrait */
+        @media (max-width: 479px) and (min-width: 375px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+
+            .back-to-top i {
+                font-size: 1.2rem;
+            }
+
+            /* Réduire les effets d'ombre sur très petit écran */
+            .back-to-top {
+                box-shadow:
+                    0 3px 15px rgba(99, 102, 241, 0.25),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            }
+
+            .back-to-top:hover {
+                box-shadow:
+                    0 5px 20px rgba(99, 102, 241, 0.35),
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            }
+        }
+
+        /* Très petit mobile */
+        @media (max-width: 374px) {
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .back-to-top i {
+                font-size: 1.1rem;
+            }
+
+            /* Encore plus léger sur très petit écran */
+            .back-to-top {
+                box-shadow:
+                    0 2px 10px rgba(99, 102, 241, 0.2),
+                    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            }
+        }
+
+        /* Pour les écrans très hauts (par exemple en mode paysage) */
+        @media (max-height: 500px) {
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .back-to-top i {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Adaptation pour le mode sombre si jamais vous l'implémentez */
+        @media (prefers-color-scheme: dark) {
+            .back-to-top {
+                background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+                box-shadow:
+                    0 4px 20px rgba(99, 102, 241, 0.4),
+                    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            }
+
+            .back-to-top:hover {
+                box-shadow:
+                    0 8px 30px rgba(99, 102, 241, 0.5),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            }
+        }
+
+        /* Pour les appareils avec préférence de mouvement réduit */
+        @media (prefers-reduced-motion: reduce) {
+            .back-to-top {
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+
+            .back-to-top,
+            .back-to-top i,
+            .back-to-top::before,
+            .back-to-top::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+
+
+
+    <script>
+        // ===== BOUTON RETOUR EN HAUT PROFESSIONNEL =====
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopButton = document.getElementById('backToTop');
+
+            // Vérifier si le bouton existe
+            if (!backToTopButton) return;
+
+            // Seuil d'apparition du bouton (en pixels)
+            const SCROLL_THRESHOLD = 300;
+
+            // Durée de l'animation de scroll (en ms)
+            const SCROLL_DURATION = 800;
+
+            // Fonction pour afficher/masquer le bouton
+            function toggleBackToTopButton() {
+                if (window.scrollY > SCROLL_THRESHOLD) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            }
+
+            // Fonction pour le scroll smooth vers le haut
+            function scrollToTop() {
+                // Animation avec easing (easeInOutCubic)
+                const startPosition = window.scrollY;
+                const startTime = performance.now();
+
+                function animateScroll(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / SCROLL_DURATION, 1);
+
+                    // Easing function: easeInOutCubic
+                    const easing = progress < 0.5
+                        ? 4 * progress * progress * progress
+                        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+                    window.scrollTo(0, startPosition * (1 - easing));
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animateScroll);
+                    } else {
+                        // Animation terminée
+                        backToTopButton.blur();
+                    }
+                }
+
+                requestAnimationFrame(animateScroll);
+            }
+
+            // Événements
+            window.addEventListener('scroll', toggleBackToTopButton);
+            backToTopButton.addEventListener('click', scrollToTop);
+
+            // Vérifier l'état initial
+            toggleBackToTopButton();
+
+            // Animation au clic avec feedback visuel
+            backToTopButton.addEventListener('mousedown', function () {
+                this.style.transform = 'translateY(-1px) scale(0.95)';
+            });
+
+            backToTopButton.addEventListener('mouseup', function () {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+
+            backToTopButton.addEventListener('mouseleave', function () {
+                if (window.scrollY > SCROLL_THRESHOLD) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+
+            // Support clavier (accessibilité)
+            backToTopButton.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    scrollToTop();
+                }
+            });
+
+            // Pour les écrans tactiles
+            backToTopButton.addEventListener('touchstart', function () {
+                this.style.transform = 'translateY(-1px) scale(0.95)';
+            }, { passive: true });
+
+            backToTopButton.addEventListener('touchend', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            }, { passive: true });
+        });
+    </script>
+
+
+
+<h1 class="sr-only">Création de logo, brochure, carte de visite et design graphique professionnel par Talservis au Togo</h1>
+</body>
+
+</html>

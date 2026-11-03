@@ -1,0 +1,14 @@
+techflow: {
+                        title: 'Informaticien sans frontière',
+                        category: 'Logo Design',
+                        description: 'Création d\'une identité visuelle moderne et technologique pour Informaticien sans frontière, une startup spécialisée dans les solutions cloud. Le projet comprenait la conception du logo principal, ses déclinaisons, et l\'ensemble de la charte graphique.',
+                        services: ['Conception de logo', 'Charte graphique', 'Déclinaisons couleurs', 'Formats vectoriels'],
+                        mainImage: 'Portofolio imge/LOGO/Logo design1.jpg',
+                        // gallery: [
+                        //     'https://readdy.ai/api/search-image?query=tech%20company%20logo%20variations%2C%20different%20sizes%20and%20formats%2C%20horizontal%20and%20vertical%20layouts%2C%20black%20and%20white%20versions%2C%20professional%20branding%20materials&width=400&height=300&seq=modal-techflow-2&orientation=landscape',
+                        //     'https://readdy.ai/api/search-image?query=tech%20company%20logo%20variations%2C%20different%20sizes%20and%20formats%2C%20horizontal%20and%20vertical%20layouts%2C%20black%20and%20white%20versions%2C%20professional%20branding%20materials&width=400&height=300&seq=modal-techflow-2&orientation=landscape'
+                        // ],
+                        client: '',
+                        year: '',
+                        duration: ''
+                    },

@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Talservis : 50+ Sites Web et Designs Graphiques Réalisés au Togo</title>
+    <meta name="description"
+        content="Explorez le portfolio de Talservis : création de sites web professionnels, e-commerce, logos, brochures et affiches. Plus de 50 projets réalisés pour des clients au Togo et en Afrique.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    
+    
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Portfolio Talservis",
+        "creator": {
+            "@type": "Organization",
+            "name": "Talservis"
+        },
+        "description": "Portfolio de créations web et graphiques",
+        "keywords": "création site web, design graphique, logo, e-commerce, Togo"
+        }
+    </script>
+
+
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'Montserrat': ['Montserrat', 'Montserrat']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Styles pour le slider horizontal */
+        .portfolio-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 2rem 0;
+            gap: 2rem;
+        }
+
+        .portfolio-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .portfolio-slider::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .portfolio-slider::-webkit-scrollbar-thumb {
+            background: #6366f1;
+        }
+
+        .portfolio-slider::-webkit-scrollbar-thumb:hover {
+            background: #8b5cf6;
+        }
+
+        .portfolio-item {
+            flex: 0 0 auto;
+            width: 80%;
+            max-width: 600px;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-item {
+                width: 45%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .portfolio-item {
+                width: 30%;
+            }
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            padding: 2rem;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* Styles pour le popup */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            padding: 2rem;
+        }
+
+        .popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-content {
+            background: white;
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: #f1f1f1;
+        }
+
+        .popup-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .popup-details {
+            padding: 2rem;
+        }
+
+        .popup-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .popup-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #475569;
+        }
+
+        .popup-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-item i {
+            color: #6366f1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Navigation entre les projets dans le popup */
+        .popup-nav {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            padding: 0 1rem;
+            pointer-events: none;
+
+        }
+
+        .popup-nav button {
+            background: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            pointer-events: all;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .popup-nav button:hover {
+            background: #f1f1f1;
+        }
+
+        /* Loading screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-logo {
+            font-size: 2rem;
+            color: white;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .loading-logo {
+                font-size: 1.3rem;
+                color: white;
+                animation: pulse 2s ease-in-out infinite;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+
+    <!-- Loading Screen -->
+    <!-- <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo font-['Montserrat'] font-bold">Talservis</div>
+    </div> -->
+
+
+    <div class="loading-screen" id="loadingScreen">
+        <img 
+            src="Logo talservis/LOGO-blancs-04.png" 
+            alt="Talservis"
+            class="loading-logo-image"
+        >
+    </div>
+
+    <style>
+                .loading-logo-image{
+            width: 220px;
+            max-width: 80%;
+            height: auto;
+            object-fit: contain;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px){
+            .loading-logo-image{
+                width: 170px;
+            }
+        }
+
+        @media (max-width: 480px){
+            .loading-logo-image{
+                width: 140px;
+            }
+        }
+    </style>
+
+
+
+
+
+            
+
+
+
+
+    <!-- Header avec le même comportement que la première page -->
+    <!-- <header class="header-transparent fixed top-0 w-full z-50 border-b border-transparent transition-all duration-500" id="mainHeader">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html">
+                    <div class="flex items-center">
+                        <div class="font-['Montserrat'] text-2xl font-bold gradient-text">Talservis</div>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index-up.html" class="nav-link text-gray-700 hover:text-primary font-medium">Accueil</a>
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 hover:text-primary font-medium flex items-center">
+                            Services
+                            <div class="w-4 h-4 flex items-center justify-center ml-1">
+                                <i class="ri-arrow-down-s-line text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                            </div>
+                        </button>
+                        <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-white shadow-lg border border-gray-100 py-2">
+                            <a href="index.html#creation-web" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Création de sites web</a>
+                            <a href="index.html#ecommerce" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">E-commerce</a>
+                            <a href="index.html#wordpress" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">WordPress</a>
+                        </div>
+                    </div>
+                    <a href="index.html#design" class="nav-link text-gray-700 hover:text-primary font-medium">Conception graphique</a>
+                    <a href="index.html#marketing" class="nav-link text-gray-700 hover:text-primary font-medium">Marketing digital</a>
+                    <a href="portfolio.html" class="nav-link text-gray-700 hover:text-primary font-medium">Portfolio</a>
+                    <a href="index.html#rendez-vous" class="nav-link text-gray-700 hover:text-primary font-medium">Contact</a>
+                </div>
+
+                <button class="md:hidden flex items-center justify-center w-8 h-8 transition-all duration-300" id="mobileMenuButton">
+                    <i class="ri-menu-line"></i>
+                    <i class="ri-close-line" style="display: none;"></i>
+                </button>
+            </div>
+        </nav>
+    </header> -->
+
+    <!-- Menu mobile -->
+    <!-- <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <i class="ri-close-line"></i>
+        </button>
+        <div class="mobile-menu-container">
+            <nav class="mobile-nav">
+                <a href="index.html" class="mobile-nav-link">Accueil</a>
+                <div class="mobile-dropdown">
+                    <button class="mobile-nav-link flex items-center justify-center gap-2" id="mobileServicesButton">
+                        Services <i class="ri-arrow-down-s-line text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="index.html#creation-web" class="mobile-dropdown-link">Création de sites web</a>
+                        <a href="index.html#ecommerce" class="mobile-dropdown-link">E-commerce</a>
+                        <a href="index.html#wordpress" class="mobile-dropdown-link">WordPress</a>
+                    </div>
+                </div>
+                <a href="index.html#design" class="mobile-nav-link">Conception graphique</a>
+                <a href="index.html#marketing" class="mobile-nav-link">Marketing digital</a>
+                <a href="portfolio.html" class="mobile-nav-link">Portfolio</a>
+                <a href="index.html#rendez-vous" class="mobile-nav-link">Contact</a>
+            </nav>
+        </div>
+    </div> -->
+
+    <main class="pt-0 md:pt-16">
+
+
+
+
+
+
+        <!-- Section Hero Portfolio -->
+
+        <section class="md:py-20 py-32 md:pb-20 bg-gradient-to-br from-primary to-secondary text-white relative">
+
+            <!-- Bouton Professionnel en haut à gauche -->
+            <div class="absolute top-4 left-1/2 transform -translate-x-1/2 md:top-0 md:left-56 z-20">
+                <a href="index.html"
+                    class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-medium px-4 py-2 hover:bg-white/20 transition-all duration-300 flex items-center gap-2 text-sm md:text-base">
+                    <i class="ri-home-4-line"></i>
+                    Accueil
+                </a>
+            </div>
+
+
+            <!-- Profil circulaire - Position absolue en bas à gauche -->
+            <div class="absolute bottom-0 left-32 md:left-8 lg:left-36 transform translate-y-1/2 z-10">
+                <div
+                    class="w-32 h-32 md:w-40 md:h-40 lg:w-40 lg:h-40 rounded-[50%] border-8 border-white overflow-hidden bg-white transform hover:scale-105 transition-transform duration-300 shadow-2xl shadow-gray/40">
+                    <img src="images/expert-talservis.jpeg" alt="Profil" class="object-cover w-full h-full">
+                </div>
+            </div>
+
+            <!-- Contenu décalé vers la droite sur desktop/tablette -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+                <div class="text-center md:text-left md:ml-48 lg:ml-56 xl:ml-64">
+                    <div class="fade-in">
+                        <h1 class="text-5xl md:text-6xl uppercase lg:text-6xl font-bold mb-3 tracking-tight">Notre
+                            Portfolio</h1>
+                        <p class="text-lg max-w-3xl mx-auto md:mx-0 opacity-90 leading-tight mb-6">
+                            Découvrez quelque réalisations de site optimiser, adaptable à tous les écrans avec
+                            l'expertise qui transforme vos idées en solutions
+                            digitales
+                            performantes et durables. création de site web Lomé | agence web Togo | prix création site internet
+                        </p>
+
+                        <!-- Boutons type réseaux -->
+                        <!-- Boutons type réseaux -->
+                        <div class="space-y-6">
+                            <!-- Boutons principaux -->
+                            <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                                <button
+                                    class="bg-white text-primary font-medium px-6 py-2.5 shadow hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+                                    <i class="ri-user-add-line"></i>
+                                    Suivre
+                                </button>
+                                <a href="https://wa.me/message/NG2EWZCC5VKZA1"><button
+                                        class="bg-[#25D366] text-white font-medium px-6 py-2.5  hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+                                        <i class="ri-whatsapp-fill text-lg"></i>
+                                        WhatsApp
+                                    </button></a>
+                            </div>
+
+                            <!-- Icônes réseaux sociaux -->
+                            <div class="flex justify-center md:justify-start gap-4">
+                                <a href="https://www.facebook.com/profile.php?id=61590102373688" target="_blank"
+                                    class="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 transform hover:-translate-y-1">
+                                    <i class="ri-facebook-fill text-lg"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/wassihou-djima-b085b6212/" target="_blank"
+                                    class="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 transform hover:-translate-y-1">
+                                    <i class="ri-linkedin-fill text-lg"></i>
+                                </a>
+                                <a href="https://www.behance.net/wassihoudjima" target="_blank"
+                                    class="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 transform hover:-translate-y-1">
+                                    <i class="ri-behance-fill text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section des types de site Section des types de site
+        Section des types de site Section des types de site -->
+
+        <!-- Section Filtres -->
+        <section class="py-24 pt-32 pb-8 bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-28">
+                <h2 class="text-4xl md:text-5xl text-center font-bold text-gray-900 mt-2 mb-6">Section des types de site</h2>
+                <!-- <p class="text-gray-600 text-center font-bold font-[poppins] mb-8 text-2xl">
+                    Section des types de site
+                </p> -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="filter-btn px-6 py-2 bg-primary text-white font-medium active" data-filter="all">
+                        Tous les projets
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors"
+                        data-filter="web">
+                        Sites Web
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors"
+                        data-filter="ecommerce">
+                        E-commerce
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors"
+                        data-filter="landing">
+                        Landing Pages
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors"
+                        data-filter="ONG">
+                        Site d'organisation ONG
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Portfolio Slider -->
+        <section class="py-0 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-28">
+                <div class="portfolio-slider" id="portfolioSlider">
+                    <!-- Projet 1 -->
+                    <div class="portfolio-item" data-category="web">
+                        <img src="PNG C-F/Mesa.jpg" alt="Site web d'entreprise" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">Site Corporate</h3>
+                            <p class="text-white text-lg text-center leading-tight mb-4">Site vitrine élégant pour un
+                                centre de formation</p>
+                            <button class="btn-primary view-project" data-project="1">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projet 2 -->
+                    <div class="portfolio-item" data-category="ecommerce">
+                        <img src="boutique/lsanda-classy_Mesa1.jpg" alt="Boutique en ligne" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">Boutique Mode</h3>
+                            <p class="text-white text-center mb-4">Plateforme e-commerce avec système de facture
+                                automatique</p>
+                            <button class="btn-primary view-project" data-project="2">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projet 3 -->
+                    <div class="portfolio-item" data-category="ecommerce">
+                        <img src="boutique/Omnicel1.jpg"
+                            alt="Page de destination" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">Omnicelstore</h3>
+                            <p class="text-white text-center mb-4">Plateforme e-commerce avec système de facture
+                                automatique
+                            </p>
+                            <button class="btn-primary view-project" data-project="3">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projet 4 -->
+                    <div class="portfolio-item" data-category="ONG">
+                        <img src="sos/sos-association_Mesa.jpg" alt="Application web" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">Soshumatogo</h3>
+                            <p class="text-white text-center mb-4">Interface utilisateur moderne pour partager les
+                                mission divers</p>
+                            <button class="btn-primary view-project" data-project="4">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projet 5 -->
+                    <div class="portfolio-item" data-category="ONG">
+                        <img src="sos/soshumatogo2.jpg"
+                            alt="Marketplace" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">Atdis ONG</h3>
+                            <p class="text-white text-center mb-4">Plateforme multi-vendeurs avec système de commissions
+                            </p>
+                            <button class="btn-primary view-project" data-project="5">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projet 6 -->
+                    <div class="portfolio-item" data-category="landing">
+                        <img src="PNG T-A/Mesa.jpg" alt="Page événement" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">Page de conversion</h3>
+                            <p class="text-white text-center mb-4">Landing page pour un événement avec système
+                                d'inscription</p>
+                            <button class="btn-primary view-project" data-project="6">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projet 7 -->
+                    <div class="portfolio-item" data-category="web">
+                        <img src="western industrie/west_Mesa.jpg" alt="Application web" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">Site de Production</h3>
+                            <p class="text-white text-center mb-4">Interface utilisateur moderne pour une expérience
+                                optimale.</p>
+                            <button class="btn-primary view-project" data-project="7">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projet 8 -->
+                    <div class="portfolio-item" data-category="web">
+                        <img src="dio-menage/dio_Mesa.jpg" alt="Application web" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">Site Web</h3>
+                            <p class="text-white text-center mb-4">site de menage, entretient professionnel.</p>
+                            <button class="btn-primary view-project" data-project="8">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projet 9 -->
+                    <div class="portfolio-item" data-category="ecommerce">
+                        <img src="boutique/lunettestorepro2.jpg"
+                            alt="Page de destination" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">lunettestorepro</h3>
+                            <p class="text-white text-center mb-4">Plateforme e-commerce avec système de facture
+                                automatique
+                            </p>
+                            <button class="btn-primary view-project" data-project="9">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projet 10 -->
+                    <div class="portfolio-item" data-category="ecommerce">
+                        <img src="boutique/Hibiscosmetics2.jpg"
+                            alt="Page de destination" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-white text-2xl font-bold mb-0">Hibiscosmetics</h3>
+                            <p class="text-white text-center mb-4">Plateforme e-commerce avec système de facture
+                                automatique
+                            </p>
+                            <button class="btn-primary view-project" data-project="10">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ============================================ -->
+        <!-- SECTION PORTFOLIO SUPPORT DE COMMUNICATION   -->
+        <!-- ============================================ -->
+        <!-- ============================================ -->
+        <!-- SECTION PORTFOLIO SUPPORT DE COMMUNICATION   -->
+        <!-- ============================================ -->
+        <!-- ============================================ -->
+        <!-- SECTION PORTFOLIO SUPPORT DE COMMUNICATION   -->
+        <!-- ============================================ -->
+        <section class="py-20 bg-gradient-to-b from-gray-50 to-white"
+            id="portfolio-communication">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-28">
+                <!-- En-tête de section -->
+                <div class="text-center mb-16">
+                    <span class="text-primary font-semibold text-sm uppercase tracking-wider">Notre créativité</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">Supports de Communication</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Des visuels percutants pour donner vie à votre marque. Découvrez nos créations en logo, print et
+                        infographie. portfolio design graphique | designer graphique freelance
+                    </p>
+                </div>
+
+
+                <!-- PROJET 1 : LOGO (AVEC DÉTAILS) -->
+                <div class="portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer border-0"
+                    data-category="logo" data-project="techflow"
+                    onclick="this.classList.contains('portfolio-card') && this.getAttribute('data-project') && document.querySelector(`#portfolio-communication .portfolio-view-btn[data-project='${this.getAttribute('data-project')}']`).click()">
+                    <div class="aspect-square bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
+                        <img src="Portofolio imge/LOGO/Logo design.jpg" alt="Création de logo pour TechFlow Solutions par Talservis - Design moderne et technologique"
+                            class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <span class="portfolio-view-btn hidden" data-project="techflow"></span>
+                    <div
+                        class="absolute text-center bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 z-10 opacity-1 group-hover:opacity-100 transition-opacity duration-300">
+                        Cliquez pour voir →
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Filtres -->
+                <div class="flex justify-center mb-12">
+                    <div class="bg-white p-1.5 shadow-md flex flex-wrap justify-center gap-1 max-w-full mx-auto">
+                        <button
+                            class="comm-filter comm-filter-active px-6 py-2.5 text-sm font-semibold transition-all duration-300 bg-primary text-white"
+                            data-comm-filter="all">
+                            Tous les projets
+                        </button>
+                        <button
+                            class="comm-filter px-6 py-2.5 text-sm font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            data-comm-filter="logo">
+                            Logos
+                        </button>
+                        <button
+                            class="comm-filter px-6 py-2.5 text-sm font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            data-comm-filter="Affiche">
+                            Affiches
+                        </button>
+                        <button
+                            class="comm-filter px-6 py-2.5 text-sm font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            data-comm-filter="infographic">
+                            Emballages
+                        </button>
+                        <button
+                            class="comm-filter px-6 py-2.5 text-sm font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            data-comm-filter="Brochure">
+                            Brochures
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grille des projets -->
+                <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+
+                    <!-- PROJET 1 : LOGO (carré) -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="logo" data-project="techflow">
+                        <img src="Portofolio imge/LOGO/Logo design.jpg" alt="Logo TechFlow Solutions"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700"
+                            data-fslightbox="gallery">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white font-semibold"></p>
+                        </div>
+                        <div
+                            class="absolute text-center bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-1 z-10 opacity-1 group-hover:opacity-100 transition-opacity duration-300">
+                            Cliquez pour voir →
+                        </div>
+                    </div>
+
+                    <!-- PROJET 3 : PACKAGING (carré) -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="infographic" data-project="rapport">
+                        <img src="Portofolio imge/packging/packaging design.jpg" alt="Packaging Design"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700"
+                            data-fslightbox="gallery">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white font-semibold">Packaging Design</p>
+                        </div>
+                        <div
+                            class="absolute text-center bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-1 z-10 opacity-1 group-hover:opacity-100 transition-opacity duration-300">
+                            Cliquez pour voir →
+                        </div>
+                    </div>
+
+                    <!-- PROJET 8 : AFFICHE PAYSAGE (format horizontal) -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/support de promotion.jpg" data-fslightbox="gallery"
+                            alt="Support de promotion" class="w-full h-auto group-hover:scale-110 transition-transform duration-700">
+
+                    </div>
+
+                    <!-- PROJET 4 : LOGO (carré) -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="logo" data-project="bistro">
+                        <img src="Portofolio imge/LOGO/Logo design quixo.jpg" data-fslightbox="gallery"
+                            alt="Logo Bistro group-hover:scale-110 transition-transform duration-700"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700">
+
+                        <div
+                            class="absolute text-center bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-1 z-10 opacity-1 group-hover:opacity-100 transition-opacity duration-300">
+                            Cliquez pour voir →
+                        </div>
+                    </div>
+
+                    <!-- PROJET 9 : AFFICHE (format moyen) -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Support publicitaire kit scolaire.jpg"
+                            alt="Kit scolaire" class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <!-- PROJET 7 : BROCHURE (carré) -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Brochure" data-project="durable">
+                        <img src="Portofolio imge/Brochure design/Brochure design.jpg" alt="Brochure Design"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700"
+                            data-fslightbox="gallery">
+
+                        <div
+                            class="absolute text-center bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-1 z-10 opacity-1 group-hover:opacity-100 transition-opacity duration-300">
+                            Cliquez pour voir →
+                        </div>
+                    </div>
+
+                    <!-- PROJET 10 : AFFICHE VERTICALE (haute) -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Support publicitaire.jpg" alt="Support publicitaire"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <!-- PROJET 11 : AFFICHE VERTICALE -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Attestation de gratitude.jpg" alt="Attestation"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <!-- PROJET 12 : AFFICHE VERTICALE -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Affiche église1.jpg" alt="Affiche église"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <!-- PROJET 13 : AFFICHE VERTICALE -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Affiche église.jpg" alt="Affiche église"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <!-- PROJET 15-17 : FAIRE-PART (regroupés) -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Support de communication fait part1.jpg"
+                            alt="Faire-part 1" class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Support de communication fait part.jpg"
+                            alt="Faire-part 2" class="w-full h-auto group-hover:scale-110 transition-transform duration-700"  data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Support de communication fait part2.jpg"
+                            alt="Faire-part 3" class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Affiche de communication beauté.jpg" alt="Faire-part 3"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Support de communication beauté.jpg" alt="Faire-part 3"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <!-- PROJET 14 : AFFICHE BEAUTÉ -->
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Support de communication beauté1.jpg" alt="Beauté"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Support de communication beauté2.jpg"
+                            alt="Faire-part 3" class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Catalogue de smarphone.jpg" alt="Faire-part 3"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/support de promotion smarphone.jpg" alt="Faire-part 3"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Catalogue de smarphone 1.jpg" alt="Faire-part 3"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Support de communication tailleur.jpg"
+                            alt="Faire-part 3" class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+
+                    <div class="break-inside-avoid portfolio-card group relative bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                        data-category="Affiche">
+                        <img src="Portofolio imge/Affiche visuel/Facebook bannier cover.jpg" alt="Faire-part 3"
+                            class="w-full h-auto group-hover:scale-110 transition-transform duration-700" data-fslightbox="gallery">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <style>
+            /* Animation douce au chargement */
+            .portfolio-card {
+                opacity: 0;
+                animation: fadeIn 0.5s ease forwards;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Amélioration du hover */
+            .portfolio-card:hover {
+                z-index: 10;
+            }
+
+            /* Délais d'animation pour un effet cascade */
+            .portfolio-card:nth-child(1) {
+                animation-delay: 0.1s;
+            }
+
+            .portfolio-card:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .portfolio-card:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+
+            /* etc... */
+        </style>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ============================================ -->
+        <!-- MODAL UNIQUE POUR LES DÉTAILS                 -->
+        <!-- ============================================ -->
+        <div id="portfolio-modal"
+            class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[100000] hidden flex items-center justify-center p-4 transition-all duration-300">
+            <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto relative">
+                <!-- Bouton de fermeture -->
+                <button id="close-modal"
+                    class="absolute top-5 right-5 w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition-all duration-300 z-20 group">
+                    <i
+                        class="ri-close-line text-2xl text-gray-600 group-hover:rotate-90 transition-transform duration-300"></i>
+                </button>
+
+                <!-- Contenu dynamique du modal -->
+                <div id="modal-content" class="p-3 md:p-10">
+                    <!-- Le contenu est injecté par JavaScript -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ============================================ -->
+        <!-- SCRIPT UNIQUE POUR LA SECTION COMMUNICATION  -->
+        <!-- ============================================ -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                console.log("✅ Script communication chargé");
+
+                // ========== 1. FILTRAGE ==========
+                const commFilterBtns = document.querySelectorAll('#portfolio-communication .comm-filter');
+                const commCards = document.querySelectorAll('#portfolio-communication .portfolio-card');
+
+                // Initialisation
+                if (commFilterBtns[0]) {
+                    commFilterBtns[0].classList.add('bg-primary', 'text-white');
+                }
+
+                function filterCommItems(filter) {
+                    commCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+
+                commFilterBtns.forEach(btn => {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const filter = this.getAttribute('data-comm-filter');
+
+                        commFilterBtns.forEach(b => {
+                            b.classList.remove('bg-primary', 'text-white');
+                            b.classList.add('bg-gray-100', 'text-gray-700');
+                        });
+                        this.classList.remove('bg-gray-100', 'text-gray-700');
+                        this.classList.add('bg-primary', 'text-white');
+
+                        filterCommItems(filter);
+                    });
+                });
+
+                filterCommItems('all');
+
+                // ========== 2. DONNÉES DES PROJETS ==========
+                const commProjectData = {
+                    techflow: {
+                        title: 'Informaticien sans frontière',
+                        category: 'Logo Design',
+                        description: 'Création d\'une identité visuelle moderne et technologique.',
+                        mainImage: 'Portofolio imge/LOGO/Logo design1.jpg',
+                    },
+                    bistro: {
+                        title: 'Quixuo',
+                        category: 'Logo Design',
+                        description: 'Création de l\'identité visuelle pour Quixuo.',
+                        mainImage: 'Portofolio imge/LOGO/Logo design quixo1.jpg',
+                    },
+                    rapport: {
+                        title: 'Lait céleste naturel',
+                        category: 'Emballage',
+                        description: 'Création d\'un packaging design unique.',
+                        mainImage: 'Portofolio imge/packging/packaging design1.jpg',
+                    },
+                    durable: {
+                        title: 'Brochure Design',
+                        category: 'Brochure',
+                        description: 'Design de brochure professionnelle.',
+                        mainImage: 'Portofolio imge/Brochure design/Brochure design1.jpg',
+                    }
+                };
+
+                // ========== 3. GESTION DU MODAL ==========
+                const commModal = document.getElementById('portfolio-modal');
+                const commModalContent = document.getElementById('modal-content');
+                const commCloseModal = document.getElementById('close-modal');
+
+                if (!commModal || !commModalContent || !commCloseModal) {
+                    console.error("❌ Éléments du modal non trouvés");
+                    return;
+                }
+
+                // Fonction pour ouvrir le modal avec les détails
+                function openCommModal(project) {
+                    if (!project) return;
+
+                    commModalContent.innerHTML = `
+                <div class="mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-sm font-semibold bg-primary text-white px-4 py-2">${project.category}</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">${project.title}</h2>
+                    <p class="text-gray-700 leading-relaxed">${project.description}</p>
+                </div>
+                
+                <div class="mb-8 overflow-hidden shadow-xl lg:px-36">
+                    <img src="${project.mainImage}" alt="${project.title}" class="w-full h-auto">
+                </div>
+                
+                <div class="text-center">
+                    <a href="Conception-Graphique.html#detail-de-la-conception" target="_blank">
+                        <button class="bg-primary text-white px-8 py-3 font-semibold hover:bg-primary/90 transition">
+                            Demander un projet similaire
+                        </button>
+                    </a>
+                </div>
+            `;
+
+                    commModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                // Fonction pour fermer le modal
+                function closeCommModal() {
+                    commModal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+
+                // ========== 4. INITIALISATION DE FSLIGHTBOX ==========
+                // S'assurer que fslightbox est chargé
+                if (typeof FsLightbox !== 'undefined') {
+                    // Rafraîchir fslightbox pour prendre en compte tous les éléments
+                    setTimeout(() => {
+                        if (window.refreshFsLightbox) {
+                            window.refreshFsLightbox();
+                        }
+                    }, 100);
+                }
+
+                // ========== 5. GESTION DES CLICS SUR LES CARTES ==========
+                commCards.forEach(card => {
+                    card.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        const projectId = this.getAttribute('data-project');
+
+                        // Vérifier si la carte a une image avec data-fslightbox
+                        const img = this.querySelector('img');
+
+                        // Si la carte a un attribut data-project (projet avec détails)
+                        if (projectId && commProjectData[projectId]) {
+                            openCommModal(commProjectData[projectId]);
+                        }
+                        // Sinon, c'est un projet sans détails - on utilise fslightbox
+                        else if (img && img.hasAttribute('data-fslightbox')) {
+                            try {
+                                // Collecter toutes les images de la galerie
+                                const galleryImages = Array.from(document.querySelectorAll('[data-fslightbox="gallery"]'));
+                                const currentIndex = galleryImages.indexOf(img);
+
+                                // Utiliser fslightbox directement
+                                if (window.FsLightbox) {
+                                    const lightbox = new window.FsLightbox();
+                                    lightbox.props.sources = galleryImages.map(img => img.src);
+                                    lightbox.props.type = 'image';
+                                    lightbox.open(currentIndex);
+                                } else {
+                                    // Fallback si fslightbox n'est pas disponible
+                                    const lightbox = new FsLightbox();
+                                    lightbox.open(currentIndex);
+                                }
+                            } catch (error) {
+                                console.error("Erreur avec fslightbox:", error);
+                                // Alternative simple : ouvrir l'image dans un nouvel onglet
+                                if (img && img.src) {
+                                    window.open(img.src, '_blank');
+                                }
+                            }
+                        }
+                    });
+                });
+
+                // ========== 6. FERMETURE DU MODAL ==========
+                commCloseModal.addEventListener('click', closeCommModal);
+
+                commModal.addEventListener('click', (e) => {
+                    if (e.target === commModal) closeCommModal();
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !commModal.classList.contains('hidden')) {
+                        closeCommModal();
+                    }
+                });
+
+                // ========== 7. SUPPRIMER LES ANCIENS ATTRIBUTS ONCLICK ==========
+                commCards.forEach(card => {
+                    card.removeAttribute('onclick');
+                });
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Section CTA -->
+        <section class="text-center mt-16 mb-16 bg-white pt-12 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+                <p class="text-gray-600 mb-8 text-lg">
+                    Prêt à donner vie à votre projet digital ? Contactez-nous pour votre accompagnement et pour plus
+                    d'information.
+                </p>
+                <a href="https://wa.me/message/NG2EWZCC5VKZA1">
+                    <button
+                        class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center mx-auto">
+                        <i class="ri-calendar-check-line mr-2"></i>
+                        Discuter de votre projet
+                    </button>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-16 mt-12">
+
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-20">
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Solution Web. Tous droits réservés.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Politique de
+                        confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">CGV</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+    <!-- Popup Portfolio -->
+    <div class="popup" id="projectPopup">
+        <div class="popup-content">
+            <button class="popup-close fixed" id="popupClose">
+                <i class="ri-close-line"></i>
+            </button>
+
+            <div class="popup-nav fixed">
+                <button id="prevProject">
+                    <i class="ri-arrow-left-line"></i>
+                </button>
+                <button id="nextProject">
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+
+            <img src="" alt="" class="popup-image" id="popupImage">
+
+            <div class="popup-details">
+                <h2 class="popup-title" id="popupTitle">Titre du projet</h2>
+                <p class="popup-description" id="popupDescription">Description du projet...</p>
+
+                <div class="popup-features" id="popupFeatures">
+                    <!-- Les caractéristiques seront ajoutées dynamiquement -->
+                </div>
+
+                <a href="#" class="btn-primary" id="popupLink" target="_blank">
+                    <i class="ri-external-link-line"></i>
+                    Voir le site
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Données des projets
+        const projects = {
+            1: {
+                title: "Site Corporate",
+                description: "Site vitrine élégant et professionnel développé pour un centre de formation. Design moderne, responsive et optimisé pour le référencement naturel.",
+                image: "Web image portfolio/C-F home.webp",
+                features: ["Design responsive", "Optimisation SEO", "Formulaire de contact", "Intégration CMS"],
+                link: "https://centre-de-formation.netlify.app/"
+            },
+            2: {
+                title: "Boutique Mode",
+                description: "Plateforme e-commerce complète avec catalogue produits, système de panier et gestion des commandes. Interface utilisateur intuitive et expérience d'achat optimisée.",
+                image: "Web image portfolio/lsanda-classy full.webp",
+                features: ["Catalogue produits", "facture automatique", "Gestion des stocks", "Interface intutive"],
+                link: "https://lsanda-s-classy.netlify.app/"
+            },
+            3: {
+                title: "Omnicelstore",
+                 description: "une entreprise dédiée à offrir des produits de qualité supérieure aux clients. Garantir une expérience d’achat simple, rapide et fiable, tout en mettant l’accent sur la satisfaction client.",
+                 image: "boutique/Omnicel2.jpg",
+                 features: ["Design épuré", "Formulaires de capture", "A/B Testing", "Analytics intégrés"],
+                 link: "https://omnicelstore.com/"
+            },
+            4: {
+                title: "Application Web",
+                description: "Interface utilisateur moderne et intuitive pour une application de gestion d'entreprise. Tableaux de bord personnalisés, reporting avancé et fonctionnalités collaboratives.",
+                image: "sos/soshumatogo-org.png",
+                features: ["Reporting avancé", "Fonctionnalités collaboratives", "Interface responsive"],
+                link: "https://soshumatogo.org/"
+            },
+            5: {
+                 title: "Atdis",
+                 description: "ATDIS est une association apolitique à but non lucratif engagée dans la lutte contre la pauvreté, l’exclusion sociale et les inégalités. Elle œuvre pour le développement durable à travers des actions sociales, éducatives et économiques.",
+                 image: "sos/soshumatogo1.jpg",
+                 features: ["Gestion des commissions", "Système de notation", "Outils promotionnels"],
+                 link: "https://moccasin-capybara-125309.hostingersite.com/"
+            },
+            6: {
+                title: "Page Événement",
+                description: "Landing page événementielle avec système d'inscription en ligne, intégration de billetterie, compte à rebours et partage social optimisé pour maximiser la participation.",
+                image: "Web image portfolio/T-A home.png",
+                features: ["Système d'inscription", "Intégration billetterie", "Compte à rebours", "Partage social"],
+                link: "https://tal-academy.netlify.app/"
+            },
+            7: {
+                title: "Application Web",
+                description: "Interface utilisateur moderne et intuitive pour une application de gestion d'entreprise. Tableaux de bord personnalisés, reporting avancé et fonctionnalités collaboratives.",
+                image: "Web image portfolio/Home.png",
+                features: ["design sur mésure", "Reporting avancé", "Fonctionnalités collaboratives", "Interface responsive"],
+                link: "https://westafricaindustrie-up.netlify.app"
+            },
+            8: {
+                title: "Site Web",
+                description: "site de menage, entretient professionnel des entreprises, des évènement..., reporting avancé et fonctionnalités collaboratives.",
+                image: "dio-menage/dio-g-full.png",
+                features: ["design sur mésure", "Reporting avancé", "Fonctionnalités collaboratives", "Interface responsive"],
+                link: "https://dio-g.netlify.app/"
+            },
+            9: {
+                title: "Lunettestorepro",
+                description: "Spécialiste des lunettes de vue, lunettes anti-lumière bleue et montures tendance. Avec u système de Téléchargement d'ordonnance, choisissez votre monture et laissez nos spécialistes réaliser des verres parfaitement adapter à votre vue.",
+                image: "boutique/lunettestorepro1.jpg",
+                features: ["design sur mésure", "Reporting avancé", "Fonctionnalités collaboratives", "Interface responsive"],
+                link: "https://lunettestorepro.com/"
+            },
+            10: {
+                title: "Hibiscosmetics",
+                description: "Hibis Cosmétics, un centre de bien-être dédié à la mise en valeur de votre beauté naturelle. Proposant des soins du visage professionnels, le blanchiment des dents, des séances de sauna relaxantes et des gommages corporels revitalisants, adaptés à tous les types de peau.",
+                image: "boutique/Hibiscosmetics1.jpg",
+                features: ["design sur mésure", "Reporting avancé", "Fonctionnalités collaboratives", "Interface responsive"],
+                link: "https://hibiscosmetics.com/"
+            }
+        };
+
+        // Variables globales
+        let currentProjectId = 1;
+        const projectIds = Object.keys(projects).map(Number);
+
+        // Éléments DOM
+        const popup = document.getElementById('projectPopup');
+        const popupClose = document.getElementById('popupClose');
+        const popupImage = document.getElementById('popupImage');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupDescription = document.getElementById('popupDescription');
+        const popupFeatures = document.getElementById('popupFeatures');
+        const popupLink = document.getElementById('popupLink');
+        const prevProjectBtn = document.getElementById('prevProject');
+        const nextProjectBtn = document.getElementById('nextProject');
+        const viewProjectBtns = document.querySelectorAll('.view-project');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        // Loading screen
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                loadingScreen.style.opacity = '0';
+                setTimeout(function () {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 2500);
+        });
+
+        // Ouvrir le popup
+        function openPopup(projectId) {
+            currentProjectId = parseInt(projectId);
+            updatePopupContent();
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fermer le popup
+        function closePopup() {
+            popup.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Mettre à jour le contenu du popup
+        function updatePopupContent() {
+            const project = projects[currentProjectId];
+
+            popupImage.src = project.image;
+            popupTitle.textContent = project.title;
+            popupDescription.textContent = project.description;
+            popupLink.href = project.link;
+
+            // Mettre à jour les caractéristiques
+            popupFeatures.innerHTML = '';
+            project.features.forEach(feature => {
+                const featureItem = document.createElement('div');
+                featureItem.className = 'feature-item';
+                featureItem.innerHTML = `
+                    <i class="ri-check-line"></i>
+                    <span>${feature}</span>
+                `;
+                popupFeatures.appendChild(featureItem);
+            });
+        }
+
+        // Navigation entre les projets
+        function showNextProject() {
+            const currentIndex = projectIds.indexOf(currentProjectId);
+            const nextIndex = (currentIndex + 1) % projectIds.length;
+            currentProjectId = projectIds[nextIndex];
+            updatePopupContent();
+        }
+
+        function showPrevProject() {
+            const currentIndex = projectIds.indexOf(currentProjectId);
+            const prevIndex = (currentIndex - 1 + projectIds.length) % projectIds.length;
+            currentProjectId = projectIds[prevIndex];
+            updatePopupContent();
+        }
+
+        // Filtrer les projets
+        function filterProjects(category) {
+            portfolioItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Événements pour le portfolio
+        viewProjectBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                openPopup(btn.dataset.project);
+            });
+        });
+
+        popupClose.addEventListener('click', closePopup);
+
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                closePopup();
+            }
+        });
+
+        prevProjectBtn.addEventListener('click', showPrevProject);
+        nextProjectBtn.addEventListener('click', showNextProject);
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-white');
+                    b.classList.add('bg-gray-100', 'text-gray-700');
+                });
+
+                btn.classList.add('active', 'bg-primary', 'text-white');
+                btn.classList.remove('bg-gray-100', 'text-gray-700');
+
+                filterProjects(btn.dataset.filter);
+            });
+        });
+
+        // ===== GESTION DU HEADER ET MENU MOBILE =====
+
+        // Animation du header au scroll
+        const header = document.getElementById('mainHeader');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.remove('header-transparent');
+                header.classList.add('header-scrolled');
+                header.style.borderColor = 'rgba(229, 231, 235, 1)';
+            } else {
+                header.classList.add('header-transparent');
+                header.classList.remove('header-scrolled');
+                header.style.borderColor = 'transparent';
+            }
+        });
+
+        // Gestion du menu mobile
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileServicesButton = document.getElementById('mobileServicesButton');
+        const mobileDropdown = mobileServicesButton?.closest('.mobile-dropdown');
+
+        let isMenuOpen = false;
+
+        // Fonction pour changer l'icône
+        function toggleMenuIcon() {
+            const menuIcon = mobileMenuButton.querySelector('.ri-menu-line');
+            const closeIcon = mobileMenuButton.querySelector('.ri-close-line');
+
+            if (isMenuOpen) {
+                menuIcon.style.display = 'none';
+                closeIcon.style.display = 'block';
+            } else {
+                menuIcon.style.display = 'block';
+                closeIcon.style.display = 'none';
+            }
+        }
+
+        // Fonction pour ouvrir le menu
+        function openMobileMenu() {
+            mobileMenu.style.display = 'block';
+            void mobileMenu.offsetHeight; // Forcer le reflow
+            mobileMenu.classList.add('mobile-menu-open');
+            document.body.style.overflow = 'hidden';
+            isMenuOpen = true;
+            toggleMenuIcon();
+        }
+
+        // Fonction pour fermer le menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('mobile-menu-open');
+            if (mobileDropdown?.classList.contains('active')) {
+                mobileDropdown.classList.remove('active');
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            }
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+            isMenuOpen = false;
+            toggleMenuIcon();
+        }
+
+        // Gestion du dropdown mobile
+        if (mobileServicesButton && mobileDropdown) {
+            mobileServicesButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const isActive = mobileDropdown.classList.contains('active');
+                mobileDropdown.classList.toggle('active');
+                const icon = mobileServicesButton.querySelector('i:last-child');
+                if (icon) {
+                    icon.style.transform = isActive ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
+            });
+        }
+
+        // Événements du menu mobile
+        mobileMenuButton.addEventListener('click', () => {
+            if (!isMenuOpen) {
+                openMobileMenu();
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+        // Fermer le menu en cliquant sur un lien (sauf Services)
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link:not(#mobileServicesButton), .mobile-dropdown-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                setTimeout(() => {
+                    closeMobileMenu();
+                }, 100);
+            });
+        });
+
+        // Fermer le menu en cliquant en dehors
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+
+        // Fermer avec Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMobileMenu();
+            }
+        });
+
+        // Initialiser l'icône
+        toggleMenuIcon();
+
+        // Animation d'apparition des éléments
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Ajoutez ceci avant la fermeture du body -->
+    <script src="https://cdn.jsdelivr.net/npm/fslightbox@3.4.1/index.js"></script>
+
+
+</body>
+
+</html>
